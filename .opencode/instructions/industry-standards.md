@@ -17,6 +17,7 @@ Apply these standards to every task unless a user instruction explicitly overrid
 ## 1) Core Operating Principles
 
 - Deliver value in small, reviewable increments.
+- Keep agent replies short, straight to the point, and focused on only relevant information while preserving important context, decisions, risks, and verification details.
 - Prefer clarity over cleverness.
 - Make decisions based on evidence from code, tests, and documentation.
 - Keep all changes traceable, testable, and reversible where practical.
