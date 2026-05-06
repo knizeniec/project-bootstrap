@@ -7,11 +7,24 @@ Quick reference for locating files and directories during search.
 |-- .editorconfig
 |-- .gitattributes
 |-- .github/
+|   |-- AGENTS.md
 |   |-- CODEOWNERS
 |   `-- workflows/
 |       `-- ci.yml
 |-- .gitignore
 |-- .opencode/
+|   |-- .gitignore
+|   |-- AGENTS.md
+|   |-- instructions/
+|   |   |-- AGENTS.md
+|   |   `-- industry-standards.md
+|   |-- memory/
+|   |-- node_modules/
+|   |-- package-lock.json
+|   |-- package.json
+|   `-- prompts/
+|       |-- language-adaptation.md
+|       `-- repo-template-prompt.md
 |-- AGENTS.md
 |-- bin/
 |   `-- README.md
@@ -23,7 +36,9 @@ Quick reference for locating files and directories during search.
 |-- diagrams/
 |   `-- README.md
 |-- docs/
+|   |-- AGENTS.md
 |   |-- project/
+|   |   |-- AGENTS.md
 |   |   |-- 00-documentation-standards.md
 |   |   |-- 00-source-of-truth.md
 |   |   |-- 00_governance/
@@ -54,6 +69,7 @@ Quick reference for locating files and directories during search.
 |   |   `-- INDEX.md
 |   |-- README.md
 |   `-- superpowers/
+|       |-- AGENTS.md
 |       |-- plans/
 |       |   `-- README.md
 |       |-- README.md

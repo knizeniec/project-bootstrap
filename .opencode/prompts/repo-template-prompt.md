@@ -54,6 +54,7 @@ Monorepo structural requirements (mandatory when repository mode is `monorepo`):
 
 Mandatory top-level baseline files (create practical skeleton versions):
 - `README.md`
+- `REPOSTORY_MAP.md`
 - `LICENSE`
 - `CONTRIBUTING.md`
 - `CODE_OF_CONDUCT.md`
@@ -118,7 +119,8 @@ Execution requirements:
 - Do not create language/framework-specific source code, executable scripts, or app/business logic by default.
 - Create only documentation skeletons, baseline governance files, and folder/readme scaffolding unless user explicitly asks for concrete code/config implementations.
 - Under `src/`, `bin/`, `scripts/`, `tests/`, `config/`, `examples/`, `diagrams/` (and `apps/`, `packages|libs`, `tools` in monorepos), create only folder-level `README.md` placeholders by default.
-- Populate `README.md` with a concise repository overview and a rendered repository tree.
+- Populate `README.md` with a concise repository overview and a pointer to `REPOSTORY_MAP.md`.
+- Populate `REPOSTORY_MAP.md` with the repository directory tree as a quick search/reference map.
 - Populate baseline files with minimal, actionable starter content (not empty placeholders), except `LICENSE` when no license is selected.
 - `docs/project/00-documentation-standards.md` must be initialized with a best-practice baseline at minimum covering:
   - documentation taxonomy (Diátaxis: tutorial/how-to/reference/explanation),
@@ -149,7 +151,20 @@ Execution requirements:
 - Enforce separation of concerns: no mixed ownership between strategy, product, architecture, testing, security, delivery, and references.
 - Avoid duplicated documentation content. Prefer canonical ownership + links to the owning document.
 - Standardize document templates with consistent sections (purpose, scope, owner, inputs, outputs, dependencies, review cadence, change log).
-- `AGENTS.md` must be concise but instructive and include: coding-practice sources, clarifying-question rule for ambiguity, concise-response expectation, memory/context preservation expectation, tool-usage minimization, targeted file-read guidance, plan-gap escalation rule, and strict adherence to approved specs/plans.
+- Create scoped `AGENTS.md` files using context routing instead of putting all agent guidance in root.
+- Root `AGENTS.md` must stay minimal and contain only repo-wide guidance such as reply style, repository structure, global workflow, git/safety rules, and a routing map to deeper `AGENTS.md` files.
+- Add the closest relevant `AGENTS.md` files for scoped rules when directories justify them. For this template, create at minimum:
+  - `docs/AGENTS.md`
+  - `docs/project/AGENTS.md`
+  - `docs/superpowers/AGENTS.md`
+  - `.github/AGENTS.md`
+  - `.opencode/AGENTS.md`
+  - `.opencode/instructions/AGENTS.md`
+  - `src/AGENTS.md`
+- Put the most important instructions first in each `AGENTS.md` file.
+- `src/AGENTS.md` should hold coding best practices and implementation quality rules for source files.
+- Root and scoped `AGENTS.md` files must preserve these expectations where relevant: concise-response style, ambiguity clarification when needed, context preservation, targeted file reads, tool-use discipline, and adherence to approved specs/plans.
+- Root `AGENTS.md` must state that `AGENTS.md` files should be kept up to date when workflow or context-management guidance changes, or when new instructions would materially improve future work.
 - Include traceability hooks across docs (for example IDs for requirements, architecture decisions, tests, and controls).
 - Provide decision records under `docs/project/adr/` (ADR-compatible skeletons).
 - Every ADR must explicitly state:
