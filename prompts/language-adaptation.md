@@ -11,20 +11,24 @@ The adopter has already run [project-bootstrap.md](project-bootstrap.md) and aut
 
 Canonical input documents (read before doing anything else):
 
-- [docs/00_governance/00_project_brief.md](../docs/00_governance/00_project_brief_TEMPLATE.md) — project name, problem, goals, scope, stakeholders, constraints.
-- [docs/02_product/01_prd.md](../docs/02_product/01_prd_TEMPLATE.md) — product scope, users, journeys, functional and non-functional requirements.
-- [docs/03_architecture/01_solution_design.md](../docs/03_architecture/01_solution_design_TEMPLATE.md) — chosen language stack, primary technologies and frameworks, building blocks, runtime and deployment view, basic application plan. This file is the primary source for stack decisions.
+- [docs/00_governance/00_project_brief.md](../docs/00_governance/00_project_brief.md) — active project brief: project name, problem, goals, scope, stakeholders, constraints.
+- [docs/02_product/01_prd.md](../docs/02_product/01_prd.md) — active PRD: product scope, users, journeys, functional and non-functional requirements.
+- [docs/03_architecture/01_solution_design.md](../docs/03_architecture/01_solution_design.md) — chosen language stack, primary technologies and frameworks, building blocks, runtime and deployment view, basic application plan. This file is the primary source for stack decisions.
 - [docs/03_architecture/README.md](../docs/03_architecture/README.md) and any other active files under [docs/03_architecture/](../docs/03_architecture/) — supporting architecture context, interface contracts, and quality concerns.
 - [docs/adr/](../docs/adr/) — accepted ADRs that lock in language, framework, repository mode, or structural ownership decisions.
 
-Preflight gate (halt before adapting if any of the following hold):
+Blocking gaps:
 
-- [docs/03_architecture/01_solution_design.md](../docs/03_architecture/01_solution_design_TEMPLATE.md) does not exist as an active instance file.
-- The active solution design file is empty or still contains template placeholder text in the sections that name language(s), primary technologies, building blocks, or runtime and deployment view.
-- The bootstrap canonical docs ([docs/00_governance/00_project_brief.md](../docs/00_governance/00_project_brief_TEMPLATE.md), [docs/02_product/01_prd.md](../docs/02_product/01_prd_TEMPLATE.md)) are missing or still contain template placeholders for project name, problem, goals, or scope.
-- The architecture and bootstrap docs disagree on project name, scope, or stack direction.
+- gaps that prevent repository structure or baseline decisions
 
-If any halt condition holds, do not adapt. Instead, list the missing or inconsistent inputs precisely (file path, section, what is missing or contradicting), point the adopter to [project-bootstrap.md](project-bootstrap.md) for missing bootstrap content and to [docs/03_architecture/01_solution_design_TEMPLATE.md](../docs/03_architecture/01_solution_design_TEMPLATE.md) for the architecture template, and stop. Do not infer stack facts.
+Non-blocking gaps:
+
+- unresolved ownership, later-phase delivery details, and optional constraints that do not change the current structural baseline
+
+If blocking gaps exist:
+
+- ask targeted clarification questions or direct the adopter to [refine-specs.md](refine-specs.md)
+- do not stop on non-blocking TBDs alone
 
 Stack and project-shape extraction (when preflight passes):
 
@@ -58,9 +62,9 @@ Repository structure updates:
 
 Documentation updates:
 
-- Treat [docs/03_architecture/01_solution_design.md](../docs/03_architecture/01_solution_design_TEMPLATE.md) and accepted ADRs as the source of truth for stack and architecture facts. Do not rewrite or summarize their content elsewhere; link to them.
+- Treat [docs/03_architecture/01_solution_design.md](../docs/03_architecture/01_solution_design.md) and accepted ADRs as the source of truth for stack and architecture facts. Do not rewrite or summarize their content elsewhere; link to them.
 - Update [README.md](../README.md) with a concise overview of the selected language stack that points to the solution design as the authoritative source.
-- Update [docs/Architecture.md](../docs/Architecture.md) only with structural and ownership changes the adaptation introduced into the docs control spine. Do not duplicate stack facts that already live in `03_architecture/01_solution_design.md`.
+- Update [docs/Architecture.md](../docs/Architecture.md) only with structural and ownership changes the adaptation introduced into the docs control spine. Do not duplicate stack facts that already live in [docs/03_architecture/01_solution_design.md](../docs/03_architecture/01_solution_design.md).
 - Update [docs/00-source-of-truth.md](../docs/00-source-of-truth.md) so any new active instance docs introduced by the adaptation have a canonical owner row, and so existing rows still resolve to the correct owner after structural changes.
 - Update [docs/00-documentation-standards.md](../docs/00-documentation-standards.md) with naming, layout, and documentation expectations introduced by the language stack named in the solution design.
 - Update [docs/INDEX.md](../docs/INDEX.md) so newly active stack-relevant docs are discoverable.

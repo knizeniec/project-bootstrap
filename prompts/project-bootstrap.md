@@ -84,7 +84,9 @@ TBD discipline:
 
 Adopter handoff:
 
-- After generation, summarize what was created, list every `[TBD: ...]` marker grouped by file, and recommend that the user run [`language-adaptation.md`](language-adaptation.md) next.
+- After generation, summarize what was created, list every `[TBD: ...]` marker grouped by file, and recommend that the user run [refine-specs.md](refine-specs.md) next if blocking gaps remain.
+- Recommend [architecture-baseline.md](architecture-baseline.md) next only when the active project brief and PRD are complete enough for technical decisions.
+- Do not recommend [language-adaptation.md](language-adaptation.md) until an active solution design exists.
 - Recommend that any durable decision the user makes between now and language-adaptation be recorded as an ADR per the rule above.
 
 Project bootstrap quality gate:
@@ -102,7 +104,7 @@ Output expectations:
 2. List the gathered project facts that drove generation.
 3. Summarize the proposed approaches that were offered and which (if any) the user confirmed.
 4. List every `[TBD: ...]` marker grouped by file, so the user has a punch list.
-5. State the recommended next step ([`language-adaptation.md`](language-adaptation.md)) and any decisions the user should record as ADRs first.
+5. State the recommended next step: [`refine-specs.md`](refine-specs.md) if blocking gaps remain, [`architecture-baseline.md`](architecture-baseline.md) if the active project brief and PRD are ready for technical decisions, or a note that an active solution design is required before [`language-adaptation.md`](language-adaptation.md). Also list any decisions the user should record as ADRs first.
 
 Response format:
 

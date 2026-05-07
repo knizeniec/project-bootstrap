@@ -2,6 +2,7 @@
 
 - Status: [Proposed | Accepted | Superseded | Deprecated]
 - Date: YYYY-MM-DD
+- Acceptance date: YYYY-MM-DD or `Pending`
 - Deciders: [Role or names with approval authority]
 - Consulted: [Roles or teams consulted before the decision]
 - Informed: [Roles or teams that need visibility]
@@ -10,6 +11,8 @@
 - Supersedes: [ADR reference or `None`]
 - Superseded by: [ADR reference or `None`]
 - Related documents: [PRD, design doc, delivery plan, issue, incident, benchmark, or `None`]
+- Binding statement: [What becomes mandatory once the ADR is accepted]
+- Review trigger: [What event forces the ADR to be revisited]
 
 ## Context and problem statement
 

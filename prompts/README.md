@@ -11,17 +11,18 @@ This directory is the canonical home for prompts that an adopter runs against a 
 
 | Prompt | Purpose | Run order |
 | --- | --- | --- |
-| [project-bootstrap.md](project-bootstrap.md) | Capture project intent and produce a first-pass canonical documentation baseline (project brief, PRD, refreshed root README, optional initial ADR). | First |
-| [architecture-baseline.md](architecture-baseline.md) | Decide the language stack and technical approach, then generate the solution design and ADRs. Reads the project brief and PRD; produces the architecture baseline that language-adaptation requires. | After Phase 2 specs iteration |
-| [language-adaptation.md](language-adaptation.md) | Specialize the structural baseline to the language stack recorded in the canonical architecture docs. Reads the docs as the source of truth and refuses to run if they are missing or unfilled. | After architecture baseline is complete |
+| [project-bootstrap.md](project-bootstrap.md) | Capture project intent and create the active project brief, PRD, and refreshed root README from starter templates. | First |
+| [refine-specs.md](refine-specs.md) | Close blocking gaps in the active project brief and PRD before architecture work. | After bootstrap |
+| [architecture-baseline.md](architecture-baseline.md) | Decide the technical approach and create the active solution design and ADRs. | After spec refinement |
+| [language-adaptation.md](language-adaptation.md) | Adapt the repository structure to the active architecture documents. | After architecture baseline |
 
 ## How adopters use this directory
 
 1. Clone the template into your new project directory.
 2. Open [project-bootstrap.md](project-bootstrap.md) and paste it into your AI coding tool (Claude Code, Codex, Cursor, or another agent that supports prompt instructions). Answer the required questions (project name, what the project needs to achieve, planned product description), review the proposed approach options, and accept the generated first-pass canonical docs.
-3. Iterate on the bootstrap canonical docs ([docs/00_governance/00_project_brief.md](../docs/00_governance/00_project_brief_TEMPLATE.md) and [docs/02_product/01_prd.md](../docs/02_product/01_prd_TEMPLATE.md)) until project specifications, requirements, and goals are robust enough to design against. Resolve `[TBD: ...]` markers, challenge assumptions, and add early ADRs for any durable decisions already made.
-4. Open [architecture-baseline.md](architecture-baseline.md) and paste it into the same tool. The prompt reads the project brief and PRD, confirms its understanding, guides the stack and architecture decision conversation, proposes two or three approaches, and generates the solution design and ADRs once you confirm a direction.
-5. Open [language-adaptation.md](language-adaptation.md) and paste it into the same tool. The prompt reads the canonical docs as authoritative input and halts if the architecture baseline is missing or still contains placeholders. Review the structural changes before accepting them.
+3. If the active project brief and PRD still have blocking gaps, open [refine-specs.md](refine-specs.md) and resolve those gaps before making architecture decisions.
+4. Open [architecture-baseline.md](architecture-baseline.md) and paste it into the same tool. The prompt reads the active project brief and PRD, confirms its understanding, guides the stack and architecture decision conversation, proposes two or three approaches, and generates the solution design and ADRs once you confirm a direction.
+5. Open [language-adaptation.md](language-adaptation.md) and paste it into the same tool. The prompt reads the active architecture docs as authoritative input and adapts the repository structure once the solution design is ready.
 6. Follow the remaining steps in the bootstrap checklist in the root [README.md](../README.md) (set the LICENSE, replace placeholder ownership metadata, etc.).
 7. Commit the bootstrap state as one or two clean commits before starting feature work, and continue with deeper documentation work or implementation planning on the adapted template.
 

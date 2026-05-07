@@ -3,9 +3,15 @@
 Status: Active
 Owner: Documentation maintainers
 Purpose: serve as the entrypoint for the active documentation system rooted under `docs/`
-Last updated: 2026-05-06
+Last updated: 2026-05-07
 
-Use this root for canonical project documentation.
+Use this root for active documents, starter templates, and historical records.
+
+## Terms
+
+- `template`: a reusable `_TEMPLATE.md` starter file.
+- `active document`: a project-specific document that governs current work.
+- `historical record`: a non-canonical planning or archive document.
 
 ## Start here
 
@@ -40,7 +46,7 @@ Use this root for canonical project documentation.
 ## Supporting areas
 
 - [adr/README.md](adr/README.md) for durable architecture decisions.
-- [superpowers/README.md](superpowers/README.md) for working-history specs and plans.
+- [superpowers/README.md](superpowers/README.md) for historical records of specs and plans.
 - [99_archive/README.md](99_archive/README.md) for historical evidence only.
 
 ## Rule

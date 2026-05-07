@@ -18,11 +18,12 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 
 - Root purpose: repository scaffold and governance baseline.
 - Main directories: `docs/`, `prompts/`, `.github/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
+- Terms used in this repo: `template` is a reusable `_TEMPLATE.md` starter file, `active document` is a project-specific document that governs current work, and `historical record` is a non-canonical planning or archive document.
 - Optional local tooling directories such as `.opencode/` are intentionally gitignored and are not part of the tracked template contract.
 
 ## Global Workflow
 
-- A fresh clone of this template is unspecialized. The adoption sequence is: run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) to capture project intent → iterate on specs → run [`prompts/architecture-baseline.md`](prompts/architecture-baseline.md) to decide the stack and produce the architecture docs → run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) to specialize the structural baseline. See the bootstrap checklist in the root [`README.md`](README.md) for the full sequence.
+- A fresh clone of this template is unspecialized. The adoption sequence is documented in the root [`README.md`](README.md): run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md), then [`prompts/refine-specs.md`](prompts/refine-specs.md), then [`prompts/architecture-baseline.md`](prompts/architecture-baseline.md), then [`prompts/language-adaptation.md`](prompts/language-adaptation.md).
 - Define scope before editing and avoid unrelated changes.
 - Prefer root-cause fixes and explicit, simple changes.
 - Keep `AGENTS.md` files up to date when workflow or context-management guidance changes, or when new instructions would materially improve future work.

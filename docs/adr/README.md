@@ -3,7 +3,7 @@
 Status: Active
 Owner: Architecture decision maintainers
 Purpose: define `docs/adr/` as the home for durable implementation and architecture decisions
-Last updated: 2026-05-06
+Last updated: 2026-05-07
 
 This directory contains Architecture Decision Records (ADRs).
 
@@ -31,7 +31,7 @@ Do not create an ADR for routine implementation details, local refactors with no
 ## Status lifecycle
 
 - `Proposed` - under review and not yet binding.
-- `Accepted` - approved and binding for active work.
+- `Accepted` - approved and binding for active work until superseded by a later accepted ADR.
 - `Superseded` - replaced by a newer accepted ADR.
 - `Deprecated` - no longer preferred, but not replaced by a direct successor.
 
@@ -41,6 +41,9 @@ Do not create an ADR for routine implementation details, local refactors with no
 - Update ADRs before implementation begins when a decision changes.
 - Do not change an accepted ADR during implementation except for approved factual corrections.
 - Other docs may reference ADRs but must not override them.
+
+Accepted ADRs are binding for active work until superseded by a later accepted ADR.
+Proposed ADRs are not binding.
 
 ## Roles and review
 

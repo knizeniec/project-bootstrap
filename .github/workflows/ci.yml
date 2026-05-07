@@ -29,9 +29,10 @@ jobs:
           test -f prompts/language-adaptation.md
           test -f prompts/project-bootstrap.md
           test -f prompts/architecture-baseline.md
+          test -f prompts/refine-specs.md
       - name: Validate canonical path consistency
         run: |
-          ! rg -n --glob '!.github/workflows/ci.yml' "docs/project/adr|docs/project/AGENTS|REPOSTORY_MAP|REPOSITORY_MAP" README.md AGENTS.md CLAUDE.md CONTRIBUTING.md prompts .github diagrams src tests config scripts bin examples docs/README.md docs/INDEX.md docs/00-documentation-standards.md docs/00-source-of-truth.md docs/Architecture.md docs/00_governance docs/01_strategy docs/02_product docs/03_architecture docs/04_ai_governance docs/05_testing_acceptance docs/06_security_operations docs/07_delivery docs/08_references docs/adr
+          ! rg -n --glob '!.github/workflows/ci.yml' "docs/project/adr|docs/project/AGENTS|REPOSTORY_MAP|REPOSITORY_MAP" README.md AGENTS.md CONTRIBUTING.md prompts .github diagrams src tests config scripts bin examples docs/README.md docs/INDEX.md docs/00-documentation-standards.md docs/00-source-of-truth.md docs/Architecture.md docs/00_governance docs/01_strategy docs/02_product docs/03_architecture docs/04_ai_governance docs/05_testing_acceptance docs/06_security_operations docs/07_delivery docs/08_references docs/adr
       - name: Validate LICENSE is set when README declares one
         run: |
           if grep -q "^License:" README.md; then
@@ -44,15 +45,26 @@ jobs:
         run: |
           set -e
           missing=0
-          for f in \
-            docs/README.md \
-            docs/Architecture.md \
-            docs/00-documentation-standards.md \
-            docs/00-source-of-truth.md \
-            docs/INDEX.md \
-            prompts/README.md \
-            $(ls docs/*/*_TEMPLATE.md 2>/dev/null)
-          do
+          active_docs="docs/README.md docs/Architecture.md docs/00-documentation-standards.md docs/00-source-of-truth.md docs/INDEX.md prompts/README.md docs/00_governance/README.md docs/02_product/README.md docs/03_architecture/README.md docs/adr/README.md"
+          template_files=$(find docs -mindepth 2 -maxdepth 2 -name '*_TEMPLATE.md' | sort)
+          if [ -z "$template_files" ]; then
+            echo "ERROR: no starter templates found under docs/"
+            missing=1
+          fi
+          for f in $active_docs; do
+            for field in "Status:" "Owner:" "Purpose:" "Last updated:"; do
+              if ! grep -q "^$field" "$f"; then
+                echo "ERROR: $f missing frontmatter field: $field"
+                missing=1
+              fi
+            done
+            metadata_block=$(sed -n '1,25p' "$f")
+            if printf '%s\n' "$metadata_block" | grep -Eq '^(Status|Owner|Purpose|Last updated): (\[|YYYY-MM-DD$)'; then
+              echo "ERROR: $f still contains placeholder metadata"
+              missing=1
+            fi
+          done
+          for f in $template_files; do
             for field in "Status:" "Owner:" "Purpose:" "Last updated:"; do
               if ! grep -q "^$field" "$f"; then
                 echo "ERROR: $f missing frontmatter field: $field"

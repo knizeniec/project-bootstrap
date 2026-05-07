@@ -7,21 +7,26 @@ agent: "agent"
 
 Author the canonical architecture baseline for a project whose intent and requirements are already captured in the canonical docs.
 
-Run this prompt after [`project-bootstrap.md`](project-bootstrap.md) and after the project brief and PRD have been iterated to a solid state. This prompt produces [`docs/03_architecture/01_solution_design.md`](../docs/03_architecture/01_solution_design_TEMPLATE.md) and the corresponding ADRs, which [`language-adaptation.md`](language-adaptation.md) reads as its primary source of truth. It does not generate implementation code or lock dependency versions.
+Run this prompt after [`project-bootstrap.md`](project-bootstrap.md) and after the project brief and PRD have been iterated to a solid state. This prompt produces [docs/03_architecture/01_solution_design.md](../docs/03_architecture/01_solution_design.md) and the corresponding ADRs, which [`language-adaptation.md`](language-adaptation.md) reads as its primary source of truth. It does not generate implementation code or lock dependency versions.
 
 Canonical input documents (read before doing anything else):
 
-- [`docs/00_governance/00_project_brief.md`](../docs/00_governance/00_project_brief_TEMPLATE.md) — project name, problem, goals, scope, stakeholders, constraints, risks.
-- [`docs/02_product/01_prd.md`](../docs/02_product/01_prd_TEMPLATE.md) — product scope, users, functional and non-functional requirements, user journeys, acceptance criteria.
-- [`docs/adr/`](../docs/adr/) — any ADRs already accepted from the bootstrap phase.
+- [docs/00_governance/00_project_brief.md](../docs/00_governance/00_project_brief.md) — active project brief: project name, problem, goals, scope, stakeholders, constraints, risks.
+- [docs/02_product/01_prd.md](../docs/02_product/01_prd.md) — active PRD: product scope, users, functional and non-functional requirements, user journeys, acceptance criteria.
+- [docs/adr/](../docs/adr/) — any ADRs already accepted from the bootstrap phase.
 
-Preflight gate (halt before asking anything if any of the following hold):
+Blocking gaps:
 
-- [`docs/00_governance/00_project_brief.md`](../docs/00_governance/00_project_brief_TEMPLATE.md) or [`docs/02_product/01_prd.md`](../docs/02_product/01_prd_TEMPLATE.md) does not exist as an active instance file.
-- Either file still contains template placeholder text `[Technical or system goal]`, `[TBD: ...]`, or other unfilled markers in the problem statement, goals, scope, or requirements sections.
-- The project name, problem statement, or primary goals cannot be read from the files.
+- gaps that prevent architecture or structural decisions
 
-If any halt condition holds, list the missing or incomplete inputs precisely (file path, section, what is missing), point to [`project-bootstrap.md`](project-bootstrap.md) if the bootstrap docs are the problem, and stop. Do not infer missing facts.
+Non-blocking gaps:
+
+- unresolved ownership, later-phase delivery details, and optional constraints that do not change the current architectural choice
+
+If blocking gaps exist:
+
+- ask targeted clarification questions or direct the adopter to [refine-specs.md](refine-specs.md)
+- do not stop on non-blocking TBDs alone
 
 Context extraction (before asking questions):
 Read the input documents and summarise what you already know:
@@ -73,7 +78,7 @@ Primary objective:
 
 Document creation rules:
 
-- Create [`docs/03_architecture/01_solution_design.md`](../docs/03_architecture/01_solution_design_TEMPLATE.md) from [`docs/03_architecture/01_solution_design_TEMPLATE.md`](../docs/03_architecture/01_solution_design_TEMPLATE.md). Fill every section:
+- Create [docs/03_architecture/01_solution_design.md](../docs/03_architecture/01_solution_design.md) from [docs/03_architecture/01_solution_design_TEMPLATE.md](../docs/03_architecture/01_solution_design_TEMPLATE.md). Fill every section:
   - **Goals and constraints**: derive from the project brief and PRD. Add technical goals and constraints the brief does not capture but that are implied by the chosen approach.
   - **Scope and system context**: derive from the PRD scope. Add the external systems and trust boundaries that the architectural choice introduces.
   - **Solution strategy**: explain the chosen approach in two to four sentences. State why it fits the goals and constraints extracted from the canonical docs.
@@ -93,17 +98,17 @@ Document creation rules:
   - Set `Status: Accepted`, `Date:` to the current date, and fill every section from the conversation.
   - Pick the next free `ADR-NNN` number. Use a short hyphenated topic in the filename.
   - Do not create an ADR for a decision the user did not explicitly make or confirm.
-- Update [`docs/03_architecture/README.md`](../docs/03_architecture/README.md):
+- Update [docs/03_architecture/README.md](../docs/03_architecture/README.md):
   - Add a `## Project documents` subsection listing the new solution design instance file, alongside any existing `## Starter templates` list.
-- Update [`docs/INDEX.md`](../docs/INDEX.md):
+- Update [docs/INDEX.md](../docs/INDEX.md):
   - Add the new solution design and any new ADRs under the Active tree. Use the same row format already in the file.
-- Update [`docs/00-source-of-truth.md`](../docs/00-source-of-truth.md):
+- Update [docs/00-source-of-truth.md](../docs/00-source-of-truth.md):
   - Add a row for the active solution design file after the existing solution design template row.
   - Add rows for new ADRs after the existing architecture decisions row.
 
 Out-of-scope updates:
 
-- Do not modify [`docs/Architecture.md`](../docs/Architecture.md), [`docs/00-documentation-standards.md`](../docs/00-documentation-standards.md), the existing `_TEMPLATE.md` files, any `AGENTS.md`, the project brief, the PRD, or any file outside the list above.
+- Do not modify [docs/Architecture.md](../docs/Architecture.md), [docs/00-documentation-standards.md](../docs/00-documentation-standards.md), the existing `_TEMPLATE.md` files, any `AGENTS.md`, the project brief, the PRD, or any file outside the list above.
 - Do not generate implementation code, configuration files, directory structure, or dependency specifications.
 - Do not create documents in canonical areas the user has not engaged with (no delivery plan, no security runbook, no AI use policy).
 

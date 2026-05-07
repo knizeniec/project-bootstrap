@@ -1,9 +1,9 @@
 # Product Documentation
 
 Status: Active
-Owner: Product maintainers
+Owner: Template maintainers
 Purpose: provide the landing page for scope, requirements, user journeys, and acceptance outcomes
-Last updated: 2026-05-06
+Last updated: 2026-05-07
 
 ## Use this area for
 

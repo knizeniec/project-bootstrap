@@ -3,7 +3,7 @@
 Status: Active
 Owner: Documentation maintainers
 Purpose: define writing, ownership, and maintenance rules for the active docs system
-Last updated: 2026-05-06
+Last updated: 2026-05-07
 
 ## Scope
 
@@ -45,6 +45,9 @@ Owner: [role or team]
 Purpose: [one sentence describing the scope]
 Last updated: YYYY-MM-DD
 ```
+
+Active documents must not retain starter placeholders such as `[Role or team ...]`, `[TBD: ...]`, or `YYYY-MM-DD` in required metadata fields.
+Starter templates may keep placeholder metadata when the file is explicitly labeled as a template.
 
 Add `Approval state` or `Review cadence` when the document governs controls or delivery commitments.
 

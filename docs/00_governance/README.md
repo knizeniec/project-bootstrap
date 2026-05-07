@@ -1,9 +1,9 @@
 # Governance Documentation
 
 Status: Active
-Owner: [Role or team responsible for governance docs]
+Owner: Template maintainers
 Purpose: provide the landing page for governance, controls, traceability, and ownership records
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-07
 
 ## Use this area for
 

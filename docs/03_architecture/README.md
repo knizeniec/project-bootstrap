@@ -1,9 +1,9 @@
 # Architecture Documentation
 
 Status: Active
-Owner: Architecture maintainers
+Owner: Template maintainers
 Purpose: provide the landing page for solution design, integrations, runtime patterns, and technical decisions
-Last updated: 2026-05-06
+Last updated: 2026-05-07
 
 ## Use this area for
 
