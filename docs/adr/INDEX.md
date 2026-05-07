@@ -26,6 +26,7 @@ last_reviewed: 2026-05-07
 
 | ADR | Title | Status | Date | Notes |
 | --- | --- | --- | --- | --- |
+| [ADR-001](ADR-001-skill-first-template-adoption.md) | Command-First Template Adoption | Accepted | 2026-05-07 | Makes tool-native phase commands the primary adoption workflow; removes prompts/. |
 | ADR-000 | Template | draft | 2026-05-07 | Starting point for new decisions |
 
 ## Status notes
