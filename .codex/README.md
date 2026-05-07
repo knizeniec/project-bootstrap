@@ -4,9 +4,16 @@ Tracked Codex-facing Superpowers assets for this template live here.
 
 ## What is here
 
-- `skills/` — vendored Superpowers 5.1.0 skills
+- `hooks.json` — repo-native Codex hook registration
 - `hooks/` — vendored bootstrap helper scripts
+- `skills/` — vendored Superpowers 5.1.0 mirror kept aligned with `.agents/skills/`
 
 ## Runtime note
 
-Codex still uses root `AGENTS.md` for repository instructions. This directory holds the repo-owned Codex asset set that stays in parity with the other harnesses.
+Codex uses these repo-native surfaces in this template:
+
+- `AGENTS.md` — repo-wide instructions
+- `.codex/hooks.json` — repo-local hook registration
+- `.agents/skills/` — repo-local skill discovery
+
+This directory keeps the Codex-specific hook assets plus a vendored mirror of the skill tree for parity with the other assistant directories.
