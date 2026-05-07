@@ -12,7 +12,7 @@ The project brief is complete when:
 - Problem statement is specific: names the problem, not the solution.
 - Target users are identified: a qualified description, not "users" or "developers".
 - A one-line project summary exists (usable as the `Goal` in the plan file).
-- No `[TBD: ...]` markers remain in the executive summary or scope sections.
+- No `[TBD: ...]` markers remain in the executive summary, problem statement, or any scope section (what is in scope, what is out of scope).
 
 ## Interview mode
 
@@ -24,7 +24,7 @@ Ask in order. Stop when gating criteria are met.
 4. "What do those people do today, without this project? What makes that inadequate?"
 5. "Are there hard constraints — timeline, budget, regulatory, integration, or technical — you must acknowledge upfront?"
 
-If any answer is a placeholder ("TBD", "not sure yet"), ask a follow-up: "What's your best current hypothesis for [that item]? We can mark it as provisional."
+If any answer is a placeholder ("TBD", "not sure yet"), ask a follow-up: "What's your best current hypothesis for [that item]? We can capture it as provisional, but we'll need to confirm it before this phase closes."
 
 ## Confirm mode
 
@@ -44,7 +44,7 @@ Then ask only the questions whose gating criteria are not met.
 
 ## Extract mode
 
-Fill `docs/00_governance/00_project_brief_TEMPLATE.md` using `Project Facts` and the current phase's `Future-Phase Facts` sub-section. Where required sections lack captured content, add `[NEEDS-REVIEW: describe what is missing]` so the user can spot gaps at review time. Present the draft and iterate until the user accepts.
+Fill `docs/00_governance/00_project_brief_TEMPLATE.md` using `Project Facts` and the current phase's `Future-Phase Facts` sub-section. Where required sections lack captured content, add `[NEEDS-REVIEW: describe what is missing]` so the user can spot gaps at review time. Files with `[NEEDS-REVIEW]` markers do not pass the phase gate — present them to the user and resolve every marker before marking the artifact complete.
 
 ## Review hooks
 
@@ -54,3 +54,4 @@ Pass to `init-reviewer`:
 - No `[TBD]` or `[NEEDS-REVIEW]` remains in the executive summary, problem statement, or primary users sections.
 - Frontmatter is complete per `docs/00_operating_model/04_frontmatter_schema.md`.
 - Output path `docs/00_governance/00_project_brief.md` exists and is the file that was written.
+- No `[TBD]` or `[NEEDS-REVIEW]` remains in any scope section of the brief.
