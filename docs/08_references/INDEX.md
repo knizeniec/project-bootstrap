@@ -1,0 +1,26 @@
+# References Index
+
+Status: Active
+Owner: [Role or team responsible for reference curation]
+Purpose: provide a topic-based index for external references used by the active docs set
+Last updated: YYYY-MM-DD
+
+## Documentation and architecture
+
+- Add links to documentation frameworks, authoring standards, and ADR guidance used by this repository.
+
+## Governance and delivery
+
+- Add links to governance models, release-management references, and process standards used by active docs.
+
+## Security and compliance
+
+- Add links to security frameworks, privacy standards, and operational control references.
+
+## Product and domain
+
+- Add links to user-research sources, domain references, and external requirement inputs.
+
+## Rule
+
+Only keep references here when they support an active canonical document or ADR.

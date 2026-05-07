@@ -39,7 +39,7 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 ## Routing Map
 
 - `docs/AGENTS.md` — documentation rules and doc update expectations.
-- `docs/project/AGENTS.md` — source-of-truth docs, ADRs, governance, and template architecture rules.
+- `docs/project/AGENTS.md` — ADR authoring and durable implementation decision rules.
 - `docs/superpowers/AGENTS.md` — specs, plans, and historical implementation record rules.
 - `.github/AGENTS.md` — CI, CODEOWNERS, and branch protection guidance.
 - `.opencode/AGENTS.md` — OpenCode local tooling and prompt/instruction assets.

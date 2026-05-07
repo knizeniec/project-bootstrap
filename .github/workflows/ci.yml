@@ -21,5 +21,5 @@ jobs:
           test -f SECURITY.md
           test -f CHANGELOG.md
           test -f .github/CODEOWNERS
-          test -f docs/project/00-source-of-truth.md
+          test -f docs/00-source-of-truth.md
           test -f docs/project/adr/ADR-000-template.md

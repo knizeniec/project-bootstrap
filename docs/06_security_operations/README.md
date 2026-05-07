@@ -1,0 +1,25 @@
+# Security And Operations Documentation
+
+Status: Active
+Owner: [Role or team responsible for security and operations docs]
+Purpose: provide the landing page for security, privacy, operational control, and recovery documents
+Last updated: YYYY-MM-DD
+
+## Use this area for
+
+- security and privacy baselines
+- operational runbooks and access models
+- incident response, backup, and recovery procedures
+
+## Common documents
+
+- security baseline
+- operating runbook
+- access-control matrix
+- incident-response plan
+
+## Related documents
+
+- [../04_ai_governance/README.md](../04_ai_governance/README.md) for AI-specific controls.
+- [../07_delivery/README.md](../07_delivery/README.md) for release and rollout dependencies.
+- [../INDEX.md](../INDEX.md) for full navigation.
