@@ -25,6 +25,29 @@ Use this template when a delivery increment is approaching release and needs a f
 - Optional: deployment window details if they are owned in the cutover document.
 - Remove backlog items that are no longer in the approved release scope.
 
+## What not to include
+
+- **Ordered cutover or rollback steps** — step-by-step operational procedures belong in the cutover and rollback template ([08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md)). The release plan summarises the approach; the runbook provides the ordered steps.
+- **Product requirements or acceptance scenarios** — requirements belong in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)) and acceptance catalog. The release plan states what is in scope; requirements documents define what each item means.
+- **UAT or test results** — test evidence belongs in the verification evidence index ([../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md](../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md)). Link to evidence; do not reproduce it.
+- **Communications message drafts** — full communications copy belongs in the communications plan ([../00_governance/05_communications_plan_TEMPLATE.md](../00_governance/05_communications_plan_TEMPLATE.md)). Reference the plan here.
+- **Architecture decisions or technical rationale** — design decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)). Note relevant decisions without reproducing their rationale.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `execution` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator. Add `source_of_truth: repo` (or the appropriate value) to the frontmatter.
+
 ## Release scope
 
 State exactly what is included in the release and what is deferred. Clear scope helps stakeholders distinguish a release decision from a general status update.

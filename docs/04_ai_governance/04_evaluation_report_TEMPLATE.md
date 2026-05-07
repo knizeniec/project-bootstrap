@@ -24,6 +24,29 @@ Use one report per evaluation cycle that could influence a ship, hold, rollback,
 - Record both good results and important failures so review is credible.
 - Remove sample metrics before publishing a real evaluation record.
 
+## What not to include
+
+- **Prompt content or prompt versioning** — prompts belong in the prompt registry ([05_prompt_registry_TEMPLATE.md](05_prompt_registry_TEMPLATE.md)). Reference prompt IDs here; do not paste prompt text.
+- **Dataset raw data or schema detail** — data specifics belong in the dataset card ([03_dataset_card_TEMPLATE.md](03_dataset_card_TEMPLATE.md)). Reference the dataset version here by ID or name.
+- **Policy approval or use-case decisions** — approved use boundaries belong in the AI use policy ([01_ai_use_policy_TEMPLATE.md](01_ai_use_policy_TEMPLATE.md)). The evaluation report provides evidence; the policy makes the governing decision.
+- **Incident response narratives** — live incidents belong in the postmortem template ([../06_security_operations/12_incident_postmortem_TEMPLATE.md](../06_security_operations/12_incident_postmortem_TEMPLATE.md)) and the AI risk register ([06_ai_risk_register_TEMPLATE.md](06_ai_risk_register_TEMPLATE.md)).
+- **Full benchmark dumps or raw CSV results** — link to stored evidence artefacts rather than embedding large result tables. This report captures the decision-relevant summary.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `ai_governance` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Evaluation date
 
 Record when the evaluation happened and, if useful, the time window or environment used. The date anchors change history and supports later regression analysis.

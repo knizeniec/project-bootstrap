@@ -24,6 +24,29 @@ Use this template when a requirement list alone does not explain the real user f
 - Link journey IDs back to PRD stories, requirements, and acceptance scenarios.
 - Remove low-value narrative detail that does not change product or test decisions.
 
+## What not to include
+
+- **Detailed UI wireframes or visual designs** — design artefacts live in the design system or linked design tools, not in this canonical document.
+- **Requirement statements or acceptance criteria** — these belong in the requirements catalog ([02_requirements_catalog_TEMPLATE.md](02_requirements_catalog_TEMPLATE.md)) and acceptance catalog ([05_acceptance_catalog_TEMPLATE.md](05_acceptance_catalog_TEMPLATE.md)). User journeys reveal which requirements are needed; they do not replace them.
+- **Test case scripts or step-by-step verification** — test scenarios belong in the acceptance catalog and UAT plan ([../05_testing_acceptance/04_uat_plan_TEMPLATE.md](../05_testing_acceptance/04_uat_plan_TEMPLATE.md)). Journey maps explain what happens; UAT plans describe how to verify it.
+- **Technical implementation or API detail** — implementation belongs in the solution design ([../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)).
+- **Analytics dashboards or quantitative data dumps** — link to dashboards as evidence sources; do not embed raw data tables in journey maps.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `product` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## User journeys
 
 Describe each journey in enough detail that a reader can understand the user goal, the main steps, and the points most likely to fail. A simple table is often enough if the flow is linear; use bullets under the table for exceptions or edge cases.

@@ -24,6 +24,29 @@ Use this template at each planned gate to confirm readiness, evidence completene
 - Optional: separate checklists per stage if the program is very large.
 - Remove items that are not genuinely decision-relevant for the stage in question.
 
+## What not to include
+
+- **Detailed test cases or acceptance scenarios** — these belong in the acceptance catalog ([../02_product/05_acceptance_catalog_TEMPLATE.md](../02_product/05_acceptance_catalog_TEMPLATE.md)) and verification evidence index ([../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md](../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md)). The checklist references evidence; it does not reproduce it.
+- **RAID register entries** — live risk and issue detail belongs in the RAID register ([06_raid_register_TEMPLATE.md](06_raid_register_TEMPLATE.md)). The checklist summarises RAID status for the gate review.
+- **Architecture decisions or technical rationale** — design decisions belong in ADRs; the gate checklist confirms they exist and are accepted.
+- **Status report narrative or progress history** — delivery progress belongs in the status report ([../07_delivery/04_status_report_TEMPLATE.md](../07_delivery/04_status_report_TEMPLATE.md)).
+- **Future-stage planning** — this document covers one gate; next-stage planning belongs in the stage plan ([../07_delivery/03_stage_plan_TEMPLATE.md](../07_delivery/03_stage_plan_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `monitoring` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Entry criteria
 
 Define what must already be true before the gate review can start. This prevents time being spent on reviews that are not actually ready for a decision.

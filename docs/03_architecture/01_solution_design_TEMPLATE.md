@@ -22,6 +22,29 @@ last_reviewed: 2026-05-07
 - Keep each section short, decision-oriented, and linked to supporting C4 views and ADRs.
 - Replace placeholder bullets with project-specific facts; remove sections that are truly out of scope only if the omission is explicit.
 
+## What not to include
+
+- **Product requirements or user stories** — these belong in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)) and requirements catalog. The solution design explains how; the PRD explains what and why.
+- **Step-by-step operational runbooks** — procedures for operators belong in runbooks ([../06_security_operations/11_runbook_TEMPLATE.md](../06_security_operations/11_runbook_TEMPLATE.md)). The solution design describes how the system is built, not how it is operated day to day.
+- **Low-level code or configuration dump** — implementation detail belongs in the code, ADRs, or the configuration baseline ([10_configuration_baseline_TEMPLATE.md](10_configuration_baseline_TEMPLATE.md)). Keep this document at the design level.
+- **Architecture decision rationale** — binding decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)). Reference ADR IDs here rather than duplicating the rationale.
+- **Project delivery timelines or milestones** — scheduling belongs in the delivery plan ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal]` | Add `manager` only when needed for reviews |
+| `capability` | `architecture` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## 1. Introduction and goals
 
 State the problem, intended outcome, and why this architecture exists.

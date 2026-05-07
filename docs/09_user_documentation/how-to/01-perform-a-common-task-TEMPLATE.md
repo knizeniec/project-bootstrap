@@ -24,6 +24,27 @@ Copy this file when you need a focused action guide for one repeatable task. Kee
 - Use numbered steps and exact labels for commands, buttons, fields, or menus.
 - Move deep rationale to an explanation page and exact field lists to reference.
 
+## What not to include
+
+- **Conceptual background or tradeoff explanations** — rationale and mental model content belong in explanation pages ([../explanation/01-concept-explanation-TEMPLATE.md](../explanation/01-concept-explanation-TEMPLATE.md)). Keep how-to guides focused on steps, not on why the product works a certain way.
+- **First-run guided tutorials with sample data** — onboarding experiences belong in tutorials ([../tutorials/01-getting-started-TEMPLATE.md](../tutorials/01-getting-started-TEMPLATE.md)). A how-to assumes the reader already knows the basics; a tutorial teaches them.
+- **Exact option lists, field descriptions, and error codes** — these belong in reference pages ([../reference/01-feature-reference-TEMPLATE.md](../reference/01-feature-reference-TEMPLATE.md)). A how-to may mention a field name; the reference page lists all allowed values.
+- **Internal implementation procedures or operational runbooks** — system-level procedures for operators belong in runbooks ([../../06_security_operations/11_runbook_TEMPLATE.md](../../06_security_operations/11_runbook_TEMPLATE.md)). This template targets end users, not internal operations teams.
+- **Multiple unrelated tasks in one page** — keep one how-to per distinct user goal. Tasks that belong together in a flow should each have their own page with cross-links.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[end_user]` | This folder targets end users; add `internal` only for dual-purpose content |
+| `capability` | `user_docs` | Fixed for this folder |
+| `phase` | `n/a` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
 ## Goal
 
 Start with one sentence that states the task outcome in user language. The reader should know immediately whether this page solves their problem.

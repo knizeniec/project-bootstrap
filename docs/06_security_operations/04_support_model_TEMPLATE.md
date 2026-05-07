@@ -25,6 +25,29 @@ Use this template to describe the ongoing support path for live users and operat
 - Optional: tool-specific queue settings if those are maintained elsewhere.
 - Remove one-off launch-support arrangements once steady-state support begins.
 
+## What not to include
+
+- **Individual support tickets or incident records** — live ticket content belongs in the support tool. This template defines the process model, not individual cases.
+- **Incident response lifecycle steps** — incident response procedures belong in the incident response template ([06_incident_response_TEMPLATE.md](06_incident_response_TEMPLATE.md)). The support model handles intake and escalation, not major incident management.
+- **Operational runbook content** — runbook procedures belong in runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)). The support model points to runbooks as part of the knowledge base.
+- **Operating model ownership and escalation** — broader live-service ownership belongs in the operating model ([03_operating_model_TEMPLATE.md](03_operating_model_TEMPLATE.md)). The support model covers the support function within that model.
+- **Service acceptance criteria** — readiness conditions belong in the service acceptance template ([08_service_acceptance_TEMPLATE.md](08_service_acceptance_TEMPLATE.md)). The handover section here summarises what delivery must provide, not the acceptance check.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Support tiers (L1/L2/L3)
 
 Define what each support tier owns and where escalation between tiers should occur. Keep the distinctions practical so ticket routing is predictable.

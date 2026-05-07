@@ -24,6 +24,27 @@ Use this template when a project, audit, or client asks "where do we show that r
 - If coverage is partial, say so and note the gap or follow-up action.
 - Prefer links to canonical templates over repeated control prose.
 
+## What not to include
+
+- **Standards posture decisions** — whether a standard is adopted, adapted, or reference-only belongs in the standards register ([01_standards_register_TEMPLATE.md](01_standards_register_TEMPLATE.md)). This template maps obligations to evidence; the register classifies the posture.
+- **Control prose reproduced from external sources** — link to the external document; do not paste clause text. This mapping is a traceability index, not a copy of the source material.
+- **Requirements traceability to product features** — product requirement coverage belongs in the requirements traceability matrix ([../00_governance/12_requirements_traceability_matrix_TEMPLATE.md](../00_governance/12_requirements_traceability_matrix_TEMPLATE.md)). Policy mappings cover external obligations, not internal functional requirements.
+- **Test evidence content** — evidence that a control is met belongs in the verification evidence index ([../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md](../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md)). Map the artifact here; keep the evidence there.
+- **Glossary definitions for control terminology** — control and policy terms that need shared definitions belong in the glossary ([02_glossary_TEMPLATE.md](02_glossary_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `references` | Fixed for this folder |
+| `phase` | `monitoring` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
 ## Mapping principles
 
 Good mappings are concrete and reviewable.

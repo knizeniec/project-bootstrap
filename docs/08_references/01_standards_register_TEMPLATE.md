@@ -24,6 +24,27 @@ Use this register when you need one canonical answer to "why do we use this fram
 - Add downstream target paths so readers can see where each standard actually affects artifacts.
 - If a standard is informative only, say so clearly and state the boundary to prevent accidental over-adoption.
 
+## What not to include
+
+- **Project-specific control evidence** — evidence that a standard is met for a specific delivery belongs in the verification evidence index ([../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md](../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md)) or the policy mappings ([04_policy_mappings_TEMPLATE.md](04_policy_mappings_TEMPLATE.md)), not in this register.
+- **Glossary definitions** — term definitions that derive from a standard belong in the glossary ([02_glossary_TEMPLATE.md](02_glossary_TEMPLATE.md)). Reference the standard here; define the term there.
+- **Architecture decisions justified by a standard** — record that in an ADR ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)). The standards register records posture; the ADR records the decision.
+- **Full standard text or detailed clauses** — link to the external source. This register records disposition, scope, and target areas, not the standard content itself.
+- **Per-project tailoring rules** — tailoring decisions that go beyond this repo's baseline belong in the project initiation document ([../00_governance/02_project_initiation_document_TEMPLATE.md](../00_governance/02_project_initiation_document_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `references` | Fixed for this folder |
+| `phase` | `n/a` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
 ## Classification rules
 
 Use exactly one disposition per standard in this register.

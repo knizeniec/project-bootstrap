@@ -24,6 +24,29 @@ Use this registry when prompts materially affect product behavior, safety, or co
 - Record the prompt text location, not just the friendly name.
 - Remove sample rows before publishing an active registry.
 
+## What not to include
+
+- **Full prompt text in the registry table** — long prompts should be stored in version-controlled source files and referenced by path or link here. The registry is the index, not the storage location.
+- **Model evaluation metrics or test results** — measured evaluation outcomes belong in the evaluation report ([04_evaluation_report_TEMPLATE.md](04_evaluation_report_TEMPLATE.md)). The registry tracks prompt versions; the report tracks how they performed.
+- **AI policy decisions or approved use cases** — policy belongs in the AI use policy ([01_ai_use_policy_TEMPLATE.md](01_ai_use_policy_TEMPLATE.md)).
+- **Model technical detail or training data** — model-level governance belongs in the model card ([02_model_card_TEMPLATE.md](02_model_card_TEMPLATE.md)).
+- **Incident narratives or live risk tracking** — incidents and ongoing risks belong in the AI risk register ([06_ai_risk_register_TEMPLATE.md](06_ai_risk_register_TEMPLATE.md)) and postmortem template ([../06_security_operations/12_incident_postmortem_TEMPLATE.md](../06_security_operations/12_incident_postmortem_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `ai_governance` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Prompt registry
 
 Use the table below as the canonical inventory for governed prompts. Each row should make it easy to answer what the prompt does, which model it targets, who owns it, and when it was last evaluated.

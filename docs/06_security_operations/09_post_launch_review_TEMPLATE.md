@@ -25,6 +25,29 @@ Use this template after go-live to capture what actually happened, what it means
 - Optional: trend charts if they materially support the review.
 - Remove speculation that is not grounded in observed launch data.
 
+## What not to include
+
+- **Full incident postmortem content** — detailed incident analysis belongs in the postmortem template ([12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md)). Summarise and link to postmortems here; do not reproduce their content.
+- **Benefits realization tracking** — detailed post-delivery benefit measurement belongs in the benefits realization plan ([../00_governance/08_benefits_realization_TEMPLATE.md](../00_governance/08_benefits_realization_TEMPLATE.md)). The post-launch review captures the initial benefits picture; the realization plan tracks it over time.
+- **Ongoing defect management** — live defect status belongs in the defect management process ([../05_testing_acceptance/05_defect_management_TEMPLATE.md](../05_testing_acceptance/05_defect_management_TEMPLATE.md)). This review captures what escaped and what pattern it reveals.
+- **Status report content or delivery metrics** — delivery-phase tracking belongs in the status report ([../07_delivery/04_status_report_TEMPLATE.md](../07_delivery/04_status_report_TEMPLATE.md)). This review is a post-go-live retrospective, not a delivery status update.
+- **Future feature requirements** — product ideas arising from feedback belong in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)) and backlog, not embedded in the launch review.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `closure` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Outcomes vs goals
 
 Compare actual launch outcomes against the goals, success measures, or release criteria that justified the launch. Focus on what changed in reality.

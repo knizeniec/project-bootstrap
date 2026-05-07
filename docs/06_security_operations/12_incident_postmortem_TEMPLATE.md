@@ -32,6 +32,21 @@ Copy this file and rename it: `12_postmortem_<YYYY-MM-DD>_<short-incident-title>
 - **Status updates about the incident while it is ongoing** — these belong in the incident channel and status report template (`docs/07_delivery/04_status_report_TEMPLATE.md`). The postmortem is a post-event artifact, not a live update.
 - **Implementation of the action items** — track action item work in the backlog or issue tracker, not in this document. This document records the decision to act; the tracker records the work.
 
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `closure` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `ad-hoc` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ---
 
 ## Incident metadata

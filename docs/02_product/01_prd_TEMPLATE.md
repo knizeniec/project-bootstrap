@@ -24,6 +24,29 @@ Copy this file when a project needs a single narrative source for why a product 
 - Move large tables into [02_requirements_catalog_TEMPLATE.md](02_requirements_catalog_TEMPLATE.md) and [05_acceptance_catalog_TEMPLATE.md](05_acceptance_catalog_TEMPLATE.md) once the list grows.
 - Remove placeholder bullets before publishing an active PRD.
 
+## What not to include
+
+- **Implementation timelines or delivery milestones** — scheduling belongs in the delivery plan ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)). The PRD defines what to build and why; the delivery plan defines when.
+- **Architectural design or technical decisions** — design belongs in the solution design ([../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)) and ADRs. The PRD specifies desired behavior, not implementation.
+- **Detailed test cases or verification steps** — test scenarios belong in the acceptance catalog ([05_acceptance_catalog_TEMPLATE.md](05_acceptance_catalog_TEMPLATE.md)) and test strategy ([../05_testing_acceptance/01_test_strategy_TEMPLATE.md](../05_testing_acceptance/01_test_strategy_TEMPLATE.md)).
+- **Roadmap items or strategy horizon** — product sequencing belongs in the roadmap ([../01_strategy/02_roadmap_TEMPLATE.md](../01_strategy/02_roadmap_TEMPLATE.md)). The PRD covers one release or increment, not the whole product journey.
+- **Stakeholder analysis or engagement plans** — stakeholder management belongs in the stakeholder register ([../00_governance/04_stakeholder_register_TEMPLATE.md](../00_governance/04_stakeholder_register_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `product` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Problem
 
 State the user or business problem in one or two short paragraphs, then explain why it matters now. Focus on the gap between the current state and the desired outcome so downstream teams can test the right thing.

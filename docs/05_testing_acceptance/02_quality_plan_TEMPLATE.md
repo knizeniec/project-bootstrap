@@ -25,6 +25,29 @@ Use this template to describe the control system around testing, reviews, and as
 - Optional: team-local dashboards if the canonical thresholds are already stated here.
 - Remove vanity measures that do not change decisions or trigger actions.
 
+## What not to include
+
+- **Individual test case definitions** — test cases belong in the acceptance catalog ([../02_product/05_acceptance_catalog_TEMPLATE.md](../02_product/05_acceptance_catalog_TEMPLATE.md)) and test strategy ([01_test_strategy_TEMPLATE.md](01_test_strategy_TEMPLATE.md)). This plan governs quality control, not test content.
+- **Live defect counts or bug status** — defect tracking belongs in the defect management template ([05_defect_management_TEMPLATE.md](05_defect_management_TEMPLATE.md)) and delivery tooling.
+- **Verification evidence or test run results** — actual evidence belongs in the verification evidence index ([03_verification_evidence_index_TEMPLATE.md](03_verification_evidence_index_TEMPLATE.md)).
+- **Product requirements or acceptance scenarios** — requirements belong in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)) and acceptance catalog. This plan references quality thresholds, not product scope.
+- **Delivery scheduling or milestone plans** — delivery timelines belong in the delivery plan ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `quality` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Quality objectives
 
 State the few quality outcomes that matter most for this work. Objectives should describe the intended level of reliability, usability, security, or compliance rather than vague aspirations.

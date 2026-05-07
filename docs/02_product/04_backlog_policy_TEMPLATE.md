@@ -24,6 +24,29 @@ Use this template when a project needs explicit rules for backlog hygiene and de
 - Use definitions that are strict enough to support triage and planning discipline.
 - Remove sample options that do not apply to the project’s chosen workflow.
 
+## What not to include
+
+- **Live backlog items or ticket content** — the actual backlog lives in the delivery tool (for example, Jira or GitHub Issues). This document defines the policy for what belongs there, not the content itself.
+- **Acceptance criteria or test scenarios** — acceptance criteria belong in the acceptance catalog ([05_acceptance_catalog_TEMPLATE.md](05_acceptance_catalog_TEMPLATE.md)). Backlog items should link to acceptance criteria, not reproduce them.
+- **Requirements narrative or PRD content** — the PRD ([01_prd_TEMPLATE.md](01_prd_TEMPLATE.md)) explains the problem and scope. This policy explains how items enter and move through the backlog once the problem is understood.
+- **Delivery plan milestones** — scheduling and milestone ownership belongs in the delivery plan ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)).
+- **Defect management rules** — defect triage and severity guidance belongs in the defect management template ([../05_testing_acceptance/05_defect_management_TEMPLATE.md](../05_testing_acceptance/05_defect_management_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template’s typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `product` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## What goes in the backlog
 
 Define which classes of work belong in the product backlog and which belong elsewhere. This keeps the backlog useful instead of turning it into a general note dump.

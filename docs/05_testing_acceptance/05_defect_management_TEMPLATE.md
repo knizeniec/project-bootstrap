@@ -25,6 +25,29 @@ Use this template to document the common defect workflow used across testing, UA
 - Optional: team-specific queue views if the canonical workflow is already clear here.
 - Remove duplicate status definitions if they already exist in the defect tool configuration.
 
+## What not to include
+
+- **Live defect lists or individual bug records** — the actual defect list lives in the delivery tool (for example, Jira or GitHub Issues). This template defines the process, not the content.
+- **Acceptance scenarios or test case detail** — test scenarios belong in the acceptance catalog ([../02_product/05_acceptance_catalog_TEMPLATE.md](../02_product/05_acceptance_catalog_TEMPLATE.md)).
+- **Test strategy or verification scope** — approach belongs in the test strategy ([01_test_strategy_TEMPLATE.md](01_test_strategy_TEMPLATE.md)).
+- **Post-launch incident narrative** — operational incidents that escape into live use belong in the postmortem template ([../06_security_operations/12_incident_postmortem_TEMPLATE.md](../06_security_operations/12_incident_postmortem_TEMPLATE.md)) for formal review.
+- **Architecture or design decisions** — root-cause fixes that require design changes belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)); defect management records the process, not the design outcome.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `quality` | Fixed for this folder |
+| `phase` | `monitoring` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `weekly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Triage process
 
 Describe how defects are logged, reviewed, assigned, and moved through decision states. Make the ownership and escalation path explicit so work does not stall between teams.

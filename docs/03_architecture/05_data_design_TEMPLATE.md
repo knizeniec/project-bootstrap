@@ -22,6 +22,29 @@ last_reviewed: 2026-05-07
 - Keep domain concepts and lifecycle rules readable before listing storage specifics.
 - Link storage-affecting decisions to ADRs.
 
+## What not to include
+
+- **Full DDL scripts or raw schema exports** — database migration scripts and DDL belong in version-controlled migration files in the repository, not in this canonical document.
+- **Operational backup or restore procedures** — these belong in the backup and recovery template ([../06_security_operations/07_backup_and_recovery_TEMPLATE.md](../06_security_operations/07_backup_and_recovery_TEMPLATE.md)).
+- **Access control rules for data** — identity and access management belongs in the access control template ([../06_security_operations/05_access_control_TEMPLATE.md](../06_security_operations/05_access_control_TEMPLATE.md)) and security baseline ([../06_security_operations/01_security_baseline_TEMPLATE.md](../06_security_operations/01_security_baseline_TEMPLATE.md)).
+- **Architecture decision rationale** — binding decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)); link the relevant ADR for each significant storage choice.
+- **API or interface contracts** — exact interface schemas belong in the interface control document ([06_interface_control_document_TEMPLATE.md](06_interface_control_document_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal]` | Add `manager` only when needed for reviews |
+| `capability` | `architecture` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Domain model
 
 Describe the main business concepts and how they relate.

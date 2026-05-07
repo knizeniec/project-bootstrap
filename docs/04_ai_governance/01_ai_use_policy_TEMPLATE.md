@@ -24,6 +24,29 @@ Copy this file when defining the AI governance baseline for a project that uses,
 - Link evaluation evidence and security controls instead of duplicating detailed test or baseline content.
 - Remove sample rows and placeholders before publishing a project policy.
 
+## What not to include
+
+- **Model evaluation metrics or test results** — measured evaluation evidence belongs in the evaluation report ([04_evaluation_report_TEMPLATE.md](04_evaluation_report_TEMPLATE.md)). This policy sets the bar; the evaluation report shows whether it was met.
+- **Model technical detail or training data description** — that belongs in the model card ([02_model_card_TEMPLATE.md](02_model_card_TEMPLATE.md)) and dataset card ([03_dataset_card_TEMPLATE.md](03_dataset_card_TEMPLATE.md)).
+- **Prompt registry or prompt text** — managed prompts belong in the prompt registry ([05_prompt_registry_TEMPLATE.md](05_prompt_registry_TEMPLATE.md)).
+- **Security infrastructure detail** — control implementation belongs in the security baseline ([../06_security_operations/01_security_baseline_TEMPLATE.md](../06_security_operations/01_security_baseline_TEMPLATE.md)). This policy states what controls are required; the baseline states how they are implemented.
+- **Live incident records or breach narratives** — incidents belong in the postmortem template ([../06_security_operations/12_incident_postmortem_TEMPLATE.md](../06_security_operations/12_incident_postmortem_TEMPLATE.md)) and AI risk register ([06_ai_risk_register_TEMPLATE.md](06_ai_risk_register_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `ai_governance` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Scope
 
 Define the systems, workflows, and model classes covered by this policy, plus any explicit exclusions. A clear scope prevents teams from assuming the policy covers every experimental or adjacent AI use automatically.

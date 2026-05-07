@@ -25,6 +25,29 @@ Use this template during design and major change review to reason about threat e
 - Optional: diagrams if they help explain complex trust boundaries.
 - Remove duplicate architectural detail that is already canonical elsewhere and link to it instead.
 
+## What not to include
+
+- **Security control implementation detail** — how controls are implemented belongs in the security baseline ([01_security_baseline_TEMPLATE.md](01_security_baseline_TEMPLATE.md)) and access control template ([05_access_control_TEMPLATE.md](05_access_control_TEMPLATE.md)). The threat model identifies threats and mitigations at a conceptual level.
+- **Incident narratives or past breach records** — historical incidents belong in the postmortem template ([12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md)). The threat model addresses future risk, not past events.
+- **Architecture design rationale** — design decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)) and the solution design ([../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)). Reference the design; do not duplicate it here.
+- **Compliance standard text** — restate standards by linking to them in the standards register ([../08_references/01_standards_register_TEMPLATE.md](../08_references/01_standards_register_TEMPLATE.md)).
+- **Runbook procedures** — step-by-step response actions belong in runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)). The threat model names the mitigations; runbooks implement them.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## System decomposition
 
 Break the service into the components, actors, and integrations needed for threat analysis. The goal is to show meaningful security-relevant boundaries, not every implementation detail.

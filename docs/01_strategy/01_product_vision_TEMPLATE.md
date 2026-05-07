@@ -24,6 +24,29 @@ Use this template to align teams on destination before detailed requirements or 
 - Optional: supporting market evidence if it helps explain the case.
 - Remove workshop notes and exploratory options before publishing.
 
+## What not to include
+
+- **Specific features or requirements** — product requirements belong in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)). The vision describes the destination, not the feature list.
+- **Delivery milestones or release sequencing** — sequencing belongs in the roadmap ([02_roadmap_TEMPLATE.md](02_roadmap_TEMPLATE.md)). The vision states where to go; the roadmap states how to get there.
+- **Investment approval or business case analysis** — financial justification belongs in the business case ([../00_governance/01_business_case_TEMPLATE.md](../00_governance/01_business_case_TEMPLATE.md)).
+- **Technical architecture choices** — design decisions belong in ADRs and the solution design ([../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)).
+- **Stakeholder names or individual commitments** — stakeholder ownership belongs in the stakeholder register ([../00_governance/04_stakeholder_register_TEMPLATE.md](../00_governance/04_stakeholder_register_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `strategy` | Fixed for this folder |
+| `phase` | `initiation` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `one-shot` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Vision statement
 
 Write a concise statement of the future the product is meant to create. The statement should be memorable enough to guide choices after the workshop that produced it has ended.

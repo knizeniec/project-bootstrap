@@ -24,6 +24,27 @@ Use this template to instantiate a project-specific RACI or DACI view from the o
 - Reuse the same role names already used in the PID, board terms, and change-control log.
 - Update this matrix before major governance or release reviews, not after confusion has already happened.
 
+## What not to include
+
+- **Individual change requests or approval records** — formal change decisions belong in the change control log ([../00_governance/07_change_control_log_TEMPLATE.md](../00_governance/07_change_control_log_TEMPLATE.md)). This matrix defines who has authority; that log records how it was exercised.
+- **Board governance terms and quorum rules** — these belong in the board terms of reference ([../00_governance/03_board_terms_of_reference_TEMPLATE.md](../00_governance/03_board_terms_of_reference_TEMPLATE.md)). Reference the board ToR from a row here rather than re-stating its rules.
+- **RACI for task-level activities** — keep rows at decision class level, not at the level of individual work tasks. Task assignments belong in delivery tooling or stage plans ([../07_delivery/03_stage_plan_TEMPLATE.md](../07_delivery/03_stage_plan_TEMPLATE.md)).
+- **Glossary definitions for role names** — if a role name needs explanation, define it in the glossary ([02_glossary_TEMPLATE.md](02_glossary_TEMPLATE.md)) and reference it here.
+- **Risk escalation procedures** — escalation paths for issues and risks belong in the RAID register ([../00_governance/06_raid_register_TEMPLATE.md](../00_governance/06_raid_register_TEMPLATE.md)). The matrix says who decides; the RAID register tracks what needs a decision.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `references` | Fixed for this folder |
+| `phase` | `initiation` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
 ## Matrix setup
 
 State the notation, the role set, and any decision thresholds before filling the table. This keeps readers from guessing whether a row is advisory, binding, or outside the project's tolerance model.

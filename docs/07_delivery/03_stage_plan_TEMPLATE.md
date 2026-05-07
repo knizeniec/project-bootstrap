@@ -25,6 +25,29 @@ Use this template to turn the overall delivery plan into a stage-specific contro
 - Optional: stage-specific dependency or resource notes if they materially affect control.
 - Remove completed draft assumptions once the stage baseline is approved.
 
+## What not to include
+
+- **Content from other stages** — keep one stage plan per stage. Cross-stage dependencies should be referenced in the delivery plan ([01_delivery_plan_TEMPLATE.md](01_delivery_plan_TEMPLATE.md)), not duplicated here.
+- **Full RAID register entries** — individual risks and issues belong in the RAID register ([../00_governance/06_raid_register_TEMPLATE.md](../00_governance/06_raid_register_TEMPLATE.md)). Summarise the stage-level exceptions here.
+- **Architecture decisions or technical rationale** — design belongs in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)). Reference relevant decisions; do not explain them here.
+- **Test case or acceptance scenario detail** — these belong in the acceptance catalog ([../02_product/05_acceptance_catalog_TEMPLATE.md](../02_product/05_acceptance_catalog_TEMPLATE.md)). Gate criteria reference the evidence; they do not reproduce the scenarios.
+- **Status report content** — weekly delivery status belongs in the status report ([04_status_report_TEMPLATE.md](04_status_report_TEMPLATE.md)), which reports against this plan.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `execution` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator. Add `source_of_truth: repo` (or the appropriate value) to the frontmatter.
+
 ## Stage objectives
 
 Describe what the stage is meant to achieve and how it advances the overall plan. Objectives should be outcome-based so the gate review can assess completion clearly.

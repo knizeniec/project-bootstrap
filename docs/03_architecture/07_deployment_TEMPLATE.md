@@ -22,6 +22,29 @@ last_reviewed: 2026-05-07
 - Link the operational procedures to the runbook index.
 - Keep infrastructure, release, and secrets guidance at the level needed for design review and delivery planning.
 
+## What not to include
+
+- **Step-by-step operational procedures** — runbook-style steps belong in runbooks ([../06_security_operations/11_runbook_TEMPLATE.md](../06_security_operations/11_runbook_TEMPLATE.md)). This document describes deployment shape, not execution procedure.
+- **Secret values or credentials** — never store secrets in documentation. Describe where secrets live and how they are managed, but do not put values here.
+- **Application-level architecture or component design** — internal structure belongs in the C4 views and solution design ([01_solution_design_TEMPLATE.md](01_solution_design_TEMPLATE.md)).
+- **Observability or alerting configuration** — telemetry setup belongs in the observability template ([08_observability_TEMPLATE.md](08_observability_TEMPLATE.md)).
+- **Architecture decision rationale** — binding infrastructure or platform decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal]` | Add `manager` only when needed for reviews |
+| `capability` | `architecture` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Environments
 
 List the environments, their purpose, and the promotion path.

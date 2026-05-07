@@ -24,6 +24,29 @@ Copy this template when a new initiative needs a concise mandate before deeper p
 - Optional: deeper risk detail if a separate RAID register already exists.
 - Remove any example bullets and unused placeholders before publishing.
 
+## What not to include
+
+- **Detailed business case analysis or cost modelling** — this belongs in the business case ([01_business_case_TEMPLATE.md](01_business_case_TEMPLATE.md)). The brief states the problem and approval ask; the business case justifies the investment.
+- **Full delivery milestones or stage plans** — milestone detail belongs in the delivery plan ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)). The brief summarises the intent, not the execution schedule.
+- **Technical architecture or solution design** — design decisions belong in the solution design ([../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)). The brief explains what is being built, not how.
+- **Detailed RAID entries** — risks and dependencies should be summarised here and tracked in the RAID register ([../00_governance/06_raid_register_TEMPLATE.md](06_raid_register_TEMPLATE.md)) once the project is active.
+- **Stakeholder sentiment or engagement actions** — stakeholder analysis belongs in the stakeholder register ([04_stakeholder_register_TEMPLATE.md](04_stakeholder_register_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `initiation` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `one-shot` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Summary
 
 Use this section to state what the project is, why it exists, and who is accountable for it. A reader should understand the initiative in under a minute without opening any other file.

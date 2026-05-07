@@ -25,6 +25,29 @@ Use this template to document the live-service operating model once a product mo
 - Optional: links to detailed schedules or runbooks maintained elsewhere.
 - Remove delivery-only responsibilities once the service has a stable live owner.
 
+## What not to include
+
+- **Step-by-step operational runbook procedures** — specific procedures belong in runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)). The operating model defines who does what; runbooks define how to do it.
+- **Incident narrative or postmortem records** — incident records belong in the postmortem template ([12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md)). The operating model defines the response framework, not individual incident histories.
+- **Support intake procedures or ticket content** — support tier rules and intake flows belong in the support model ([04_support_model_TEMPLATE.md](04_support_model_TEMPLATE.md)).
+- **Security control posture** — control design belongs in the security baseline ([01_security_baseline_TEMPLATE.md](01_security_baseline_TEMPLATE.md)). The operating model covers live ownership and escalation, not the security baseline.
+- **Delivery project management or delivery tracking** — delivery milestones belong in the delivery plan ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)). The operating model covers live-service operations, not project delivery.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Service catalog
 
 List the services, service components, or operated capabilities covered by this operating model. Make ownership and customer-facing purpose visible.

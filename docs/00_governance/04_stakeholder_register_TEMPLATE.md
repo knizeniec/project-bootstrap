@@ -24,6 +24,29 @@ Use this template as the single register for stakeholder analysis and engagement
 - Optional: substitute named individuals with role groups if privacy or churn is a concern.
 - Remove stale names and duplicate groups during each review cycle.
 
+## What not to include
+
+- **Personal contact data beyond role and preferred channel** — do not record personal email addresses, phone numbers, or home details; use role-based or official contact methods only to protect privacy.
+- **Status updates or delivery progress** — delivery progress belongs in the status report ([../07_delivery/04_status_report_TEMPLATE.md](../07_delivery/04_status_report_TEMPLATE.md)). This register tracks who stakeholders are and how to engage them, not what is happening.
+- **Meeting minutes or individual stakeholder conversations** — capture those in separate meeting notes or communications logs; this register summarises the overall picture.
+- **Detailed communications content or messaging** — message content and scheduling belong in the communications plan ([05_communications_plan_TEMPLATE.md](05_communications_plan_TEMPLATE.md)).
+- **Board governance or decision rights** — formal authority is defined in the board terms of reference ([03_board_terms_of_reference_TEMPLATE.md](03_board_terms_of_reference_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Per-stakeholder register
 
 Capture stakeholders in a structured table so the team can prioritize communication and approval effort. Keep the entries current enough that a new delivery lead can understand the political landscape quickly.

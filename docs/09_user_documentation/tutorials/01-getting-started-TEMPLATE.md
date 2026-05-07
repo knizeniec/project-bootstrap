@@ -24,6 +24,27 @@ Copy this file when you need a first-run tutorial that can be followed without p
 - Include exact commands, button labels, sample values, or screenshots where they remove ambiguity.
 - Remove optional branches unless they are essential to finishing the lesson.
 
+## What not to include
+
+- **Reference material for exact fields, options, or error codes** — these belong in reference pages ([../reference/01-feature-reference-TEMPLATE.md](../reference/01-feature-reference-TEMPLATE.md)). A tutorial may name a field; the reference page lists all allowed values and error states.
+- **Conceptual explanations or design tradeoffs** — rationale and mental model content belong in explanation pages ([../explanation/01-concept-explanation-TEMPLATE.md](../explanation/01-concept-explanation-TEMPLATE.md)). Tutorials focus on observable steps and outcomes, not on why things work a certain way.
+- **Day-two or advanced task procedures** — once the reader has completed the tutorial, specific follow-on tasks belong in how-to guides ([../how-to/01-perform-a-common-task-TEMPLATE.md](../how-to/01-perform-a-common-task-TEMPLATE.md)). Tutorials should end at the first success state and link forward.
+- **Multiple independent tutorials in one page** — each tutorial teaches one complete workflow. If two workflows are not meaningfully connected, they each deserve their own tutorial page.
+- **Internal onboarding for team members** — staff onboarding belongs in the project initiation document ([../../00_governance/02_project_initiation_document_TEMPLATE.md](../../00_governance/02_project_initiation_document_TEMPLATE.md)) or internal runbooks. This template targets end users of the product, not project contributors.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[end_user]` | This folder targets end users; add `internal` only for dual-purpose content |
+| `capability` | `user_docs` | Fixed for this folder |
+| `phase` | `n/a` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
 ## What you'll build
 
 Start with one short paragraph describing the finished outcome the learner will achieve. This section should motivate the exercise and give the reader a picture of success before they begin.

@@ -24,6 +24,29 @@ Create one model card per model version or materially distinct deployment config
 - Summarize rather than duplicate training or evaluation detail that already lives elsewhere.
 - Remove example prompts and placeholder caveats before publishing.
 
+## What not to include
+
+- **Training infrastructure or compute detail** — infrastructure details belong in the deployment template ([../03_architecture/07_deployment_TEMPLATE.md](../03_architecture/07_deployment_TEMPLATE.md)) or model provider documentation. The model card summarises governance-relevant attributes, not training setup.
+- **Prompt content or prompt engineering notes** — managed prompts belong in the prompt registry ([05_prompt_registry_TEMPLATE.md](05_prompt_registry_TEMPLATE.md)).
+- **User-facing release notes or product announcements** — release notes belong in the release plan ([../07_delivery/07_release_plan_TEMPLATE.md](../07_delivery/07_release_plan_TEMPLATE.md)) and user documentation.
+- **Raw evaluation data or full benchmark results** — detailed metrics belong in the evaluation report ([04_evaluation_report_TEMPLATE.md](04_evaluation_report_TEMPLATE.md)). The model card summarises the headline recommendation supported by that report.
+- **Live incident records** — AI incidents belong in the AI risk register ([06_ai_risk_register_TEMPLATE.md](06_ai_risk_register_TEMPLATE.md)) and postmortem template ([../06_security_operations/12_incident_postmortem_TEMPLATE.md](../06_security_operations/12_incident_postmortem_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `ai_governance` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Model details
 
 Record the model name, version, type, provider, and any deployment-specific notes needed to identify exactly what is being governed. A reviewer should be able to distinguish this model from related variants without reading another file first.

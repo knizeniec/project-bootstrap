@@ -25,6 +25,29 @@ Use this template when the release plan is stable enough to define the operation
 - Optional: rehearsal findings appendix if it directly changes the runbook.
 - Remove superseded steps immediately after rehearsal updates so operators see only the current path.
 
+## What not to include
+
+- **Release scope or product acceptance criteria** — what is being released belongs in the release plan ([07_release_plan_TEMPLATE.md](07_release_plan_TEMPLATE.md)) and acceptance catalog. This document describes how to execute the release, not what is included.
+- **Architecture decisions or rationale** — design decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)). Reference the relevant ADR if a cutover step depends on a design choice.
+- **Post-release monitoring or incident response** — ongoing operational procedures belong in runbooks ([../06_security_operations/11_runbook_TEMPLATE.md](../06_security_operations/11_runbook_TEMPLATE.md)) and the incident response template ([../06_security_operations/06_incident_response_TEMPLATE.md](../06_security_operations/06_incident_response_TEMPLATE.md)).
+- **Communications message drafts** — communications copy belongs in the communications plan ([../00_governance/05_communications_plan_TEMPLATE.md](../00_governance/05_communications_plan_TEMPLATE.md)). List who must be notified and when; keep the message in the comms plan.
+- **Test evidence or UAT results** — test evidence belongs in the verification evidence index ([../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md](../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md)). A decision point may depend on test evidence; link to it, do not reproduce it.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `execution` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator. Add `source_of_truth: repo` (or the appropriate value) to the frontmatter.
+
 ## Cutover runbook (ordered steps, owners, durations)
 
 List the production transition steps in strict order with an owner and expected duration for each. The runbook should be detailed enough to execute but still readable under time pressure.

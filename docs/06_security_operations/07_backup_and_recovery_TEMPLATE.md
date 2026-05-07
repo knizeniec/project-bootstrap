@@ -25,6 +25,29 @@ Use this template to document resilience expectations for restore-capable servic
 - Optional: storage implementation details if those are already documented elsewhere.
 - Remove backup assumptions that are not validated by restore testing.
 
+## What not to include
+
+- **Step-by-step restore procedures** — detailed restore steps belong in runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)). This document defines the backup and recovery policy; runbooks implement it.
+- **Incident-specific restore narratives** — records of actual restore actions during an incident belong in the postmortem ([12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md)).
+- **Data model or schema detail** — data structure belongs in the data design ([../03_architecture/05_data_design_TEMPLATE.md](../03_architecture/05_data_design_TEMPLATE.md)). This template covers backup cadence and retention, not data content.
+- **Security control or access policy** — access rules for backup storage belong in the security baseline ([01_security_baseline_TEMPLATE.md](01_security_baseline_TEMPLATE.md)) and access control template ([05_access_control_TEMPLATE.md](05_access_control_TEMPLATE.md)).
+- **Infrastructure or storage vendor configuration** — implementation-level settings belong in the deployment template ([../03_architecture/07_deployment_TEMPLATE.md](../03_architecture/07_deployment_TEMPLATE.md)) or infrastructure-as-code.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Data classes
 
 List the data types or systems that require backup or reconstruction planning. Distinguish between critical records, rebuildable data, and externally sourced data.

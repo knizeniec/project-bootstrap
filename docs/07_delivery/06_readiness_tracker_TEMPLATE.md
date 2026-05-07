@@ -25,6 +25,29 @@ Use this template as the canonical view of release and stage readiness across ke
 - Optional: note required recovery actions for amber or red items.
 - Remove green-by-assumption entries that do not yet have evidence.
 
+## What not to include
+
+- **Evidence content itself** — link to evidence artefacts rather than embedding them. This tracker is the status view; the evidence lives in the source documents.
+- **Status report narrative** — delivery progress belongs in the status report ([04_status_report_TEMPLATE.md](04_status_report_TEMPLATE.md)). The readiness tracker provides the domain-level evidence links that the status report references.
+- **Defect records or test run results** — defect tracking belongs in the defect management process ([../05_testing_acceptance/05_defect_management_TEMPLATE.md](../05_testing_acceptance/05_defect_management_TEMPLATE.md)). Surface the overall defect status as a readiness indicator; link to the defect tool.
+- **Architecture decisions** — design belongs in ADRs. A readiness domain may check that a required ADR exists and is accepted; the ADR content stays there.
+- **RAID entries** — individual risks belong in the RAID register ([../00_governance/06_raid_register_TEMPLATE.md](../00_governance/06_raid_register_TEMPLATE.md)). The readiness tracker surfaces whether RAID-related risks have acceptable mitigations.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `execution` | Fixed for this folder |
+| `phase` | `monitoring` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `weekly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator. Add `source_of_truth: repo` (or the appropriate value) to the frontmatter.
+
 ## Per-readiness-domain register
 
 Track readiness by domain so the team can spot weak areas early and focus action where it matters most. The listed domains should cover the whole delivery path from scope stability through operations preparedness.

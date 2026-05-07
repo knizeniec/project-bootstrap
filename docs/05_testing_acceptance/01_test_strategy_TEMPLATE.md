@@ -25,6 +25,29 @@ Use this template to set the verification baseline before detailed test design b
 - Optional: tool-specific workflows if they already live in a team runbook.
 - Remove assumptions that are no longer true once environments and ownership are confirmed.
 
+## What not to include
+
+- **Individual test cases or Given/When/Then scenarios** — detailed scenarios belong in the acceptance catalog ([../02_product/05_acceptance_catalog_TEMPLATE.md](../02_product/05_acceptance_catalog_TEMPLATE.md)). The test strategy defines the approach; the catalog holds the scenarios.
+- **Test execution results or run evidence** — results belong in the verification evidence index ([03_verification_evidence_index_TEMPLATE.md](03_verification_evidence_index_TEMPLATE.md)).
+- **Defect records or triage decisions** — defect management belongs in the defect management template ([05_defect_management_TEMPLATE.md](05_defect_management_TEMPLATE.md)).
+- **UAT logistics or participant scheduling** — UAT planning detail belongs in the UAT plan ([04_uat_plan_TEMPLATE.md](04_uat_plan_TEMPLATE.md)).
+- **Requirements or product scope narrative** — what is being built belongs in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)). The strategy references the scope; it does not reproduce the requirement list.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `quality` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Scope
 
 State the system, release, or change set covered by this strategy and note any explicit exclusions. Keep the wording decision-ready so reviewers can tell what the strategy governs.

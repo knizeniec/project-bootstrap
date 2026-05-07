@@ -24,6 +24,29 @@ Use this template to turn the business case into a measurable benefits tracking 
 - Optional: separate benefit groups by financial and non-financial categories.
 - Remove speculative benefits that cannot be measured or owned.
 
+## What not to include
+
+- **Investment justification or option analysis** — the case for investment belongs in the business case ([01_business_case_TEMPLATE.md](01_business_case_TEMPLATE.md)). This template tracks whether promised benefits are realized, not whether the project should proceed.
+- **Delivery milestones or release plans** — delivery tracking belongs in the delivery plan and status report ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)). Benefit reviews are post-delivery, not delivery tracking.
+- **Feature requirements or acceptance criteria** — product requirements belong in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)). Benefits should connect to outcomes, not feature lists.
+- **Operational incident reports or defect logs** — post-launch issues belong in the post-launch review ([../06_security_operations/09_post_launch_review_TEMPLATE.md](../06_security_operations/09_post_launch_review_TEMPLATE.md)).
+- **Raw source data or survey instruments** — link to data sources here rather than embedding raw measurement artefacts in the plan.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `closure` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Benefit map
 
 List the major benefits the initiative is expected to produce and how they relate to project outputs. This helps later reviewers see the chain from delivered capability to business outcome.

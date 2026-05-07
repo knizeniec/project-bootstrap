@@ -32,6 +32,21 @@ Copy this file and rename it `RFC-NNN-short-title.md` where `NNN` is the next av
 - **Final binding decisions** — once the team accepts the proposal, the durable decision lives in an ADR. The RFC graduates; it does not absorb ADR content. Mark it `accepted` and link the ADR.
 - **Operational runbook content** — step-by-step operating procedures belong in runbooks (`docs/06_security_operations/11_runbook_TEMPLATE.md`).
 
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal]` | Add `manager` only when needed for reviews |
+| `capability` | `architecture` | Fixed for the rfcs folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `ad-hoc` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ---
 
 ## Title

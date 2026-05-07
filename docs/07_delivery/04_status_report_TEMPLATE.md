@@ -25,6 +25,29 @@ Use this template for the canonical weekly status view, even if detailed task tr
 - Optional: supporting links to detailed metrics or delivery tooling.
 - Remove narrative history that no longer affects the current reporting decision.
 
+## What not to include
+
+- **Decisions or change approvals** — formal decisions belong in the change control log ([../00_governance/07_change_control_log_TEMPLATE.md](../00_governance/07_change_control_log_TEMPLATE.md)) or ADRs. The status report flags that a decision is needed; the log records the outcome.
+- **Detailed implementation progress or technical narrative** — keep delivery status at a management summary level. Detailed task status belongs in delivery tooling.
+- **Full RAID entries** — individual risk and issue detail belongs in the RAID register ([../00_governance/06_raid_register_TEMPLATE.md](../00_governance/06_raid_register_TEMPLATE.md)). The status report summarises the most important changes; the register tracks all items.
+- **Test results or defect counts** — raw testing data belongs in the verification evidence index ([../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md](../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md)) and defect management process. Surface the trend signal here.
+- **Architecture or design rationale** — design decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)). Reference a decision by ID if it affects the status picture.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `execution` | Fixed for this folder |
+| `phase` | `monitoring` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `weekly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator. Add `source_of_truth: repo` (or the appropriate value) to the frontmatter.
+
 ## Period
 
 Record the reporting window, report owner, and any meeting or decision forum the update supports. A clear period marker keeps weekly reports auditable and comparable.

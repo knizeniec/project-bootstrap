@@ -25,6 +25,29 @@ Use this template once the delivery baseline is approved and the team needs an e
 - Optional: workstream-specific appendices if the implementation is unusually complex.
 - Remove duplicated schedule detail that already lives in stage plans or tooling.
 
+## What not to include
+
+- **Detailed cutover runbook steps** — step-by-step execution belongs in the cutover and rollback template ([08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md)). This plan summarises the strategy; the runbook provides the ordered steps.
+- **Product requirements or acceptance criteria** — requirements belong in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)) and requirements catalog. This plan covers execution approach, not product scope.
+- **Architecture decisions or design rationale** — design decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)). Reference relevant ADRs here; do not re-explain their rationale.
+- **Sprint-level backlog or ticket detail** — day-to-day task tracking belongs in delivery tooling. The implementation plan covers canonical decisions about approach and sequence, not individual tasks.
+- **Migration data or SQL scripts** — detailed migration content belongs in the migration plan ([09_migration_plan_TEMPLATE.md](09_migration_plan_TEMPLATE.md)) and version-controlled scripts.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `execution` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator. Add `source_of_truth: repo` (or the appropriate value) to the frontmatter.
+
 ## Approach
 
 Describe the overall implementation style and why it suits the initiative. Readers should understand whether the team is executing a phased rollout, a migration wave model, a pilot-first approach, or another pattern.

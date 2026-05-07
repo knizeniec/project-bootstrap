@@ -24,6 +24,29 @@ Use this template to turn stakeholder analysis into a simple communication opera
 - Optional: separate internal and client communication tables if the project is large.
 - Remove one-off launch notes once they are replaced by normal reporting cadence.
 
+## What not to include
+
+- **Message drafts or full communications copy** — draft communications content should be kept in separate documents or templates, not embedded in the plan. This plan defines the communication framework, not the messages.
+- **Stakeholder influence analysis or sentiment** — that belongs in the stakeholder register ([04_stakeholder_register_TEMPLATE.md](04_stakeholder_register_TEMPLATE.md)). Reference it here but do not duplicate it.
+- **Status report content or delivery updates** — live delivery status belongs in the status report ([../07_delivery/04_status_report_TEMPLATE.md](../07_delivery/04_status_report_TEMPLATE.md)). This plan defines when and how to report, not what is being reported.
+- **Board governance rules or meeting agendas** — governance forum rules belong in the board terms of reference ([03_board_terms_of_reference_TEMPLATE.md](03_board_terms_of_reference_TEMPLATE.md)).
+- **Incident response communications** — crisis comms procedures belong in the incident response template ([../06_security_operations/06_incident_response_TEMPLATE.md](../06_security_operations/06_incident_response_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Audiences
 
 Group readers by the information they need rather than by organization chart alone. This helps keep communication targeted and avoids producing the same update in too many forms.

@@ -24,6 +24,27 @@ Copy this file when documenting a product surface that users will consult for ex
 - Use one consistent entry format for every command, field, or object.
 - Remove narrative guidance that belongs in how-to or explanation pages.
 
+## What not to include
+
+- **Step-by-step task instructions** — procedures belong in how-to guides ([../how-to/01-perform-a-common-task-TEMPLATE.md](../how-to/01-perform-a-common-task-TEMPLATE.md)). Reference pages are for looking up exact facts, not for completing a task sequence.
+- **Conceptual explanations or design tradeoffs** — rationale and mental model content belong in explanation pages ([../explanation/01-concept-explanation-TEMPLATE.md](../explanation/01-concept-explanation-TEMPLATE.md)). A brief description of what an item does is appropriate; background on why it was designed that way is not.
+- **First-run tutorials or learning exercises** — guided onboarding belongs in tutorials ([../tutorials/01-getting-started-TEMPLATE.md](../tutorials/01-getting-started-TEMPLATE.md)). Reference pages assume the reader already knows the product.
+- **Internal system specifications or API contracts for developers** — internal interface contracts belong in the interface control document ([../../03_architecture/06_interface_control_document_TEMPLATE.md](../../03_architecture/06_interface_control_document_TEMPLATE.md)). This template documents user-facing behavior, not implementation-level interfaces.
+- **Release notes or version history** — changes over time belong in release notes or the changelog. Reference pages document current behavior, not its history.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[end_user]` | This folder targets end users; add `internal` only for dual-purpose content |
+| `capability` | `user_docs` | Fixed for this folder |
+| `phase` | `n/a` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
 ## Surface listing
 
 List the documented surface at a glance before diving into per-item details. This helps users jump directly to the command, field, option, or section they need.

@@ -22,6 +22,29 @@ last_reviewed: 2026-05-07
 - Keep the canonical ADR records in `../adr/`.
 - Include only enough metadata to help readers find the binding decision quickly.
 
+## What not to include
+
+- **Full ADR content** — the complete ADR lives in `../adr/`. This index provides a navigation layer; it does not duplicate the content.
+- **Open proposals or RFCs under debate** — proposals in progress belong in the RFC index ([12_rfc_index_TEMPLATE.md](12_rfc_index_TEMPLATE.md)) and `rfcs/` directory. Only accepted or formally rejected ADRs belong here.
+- **Architecture design rationale** — detailed reasoning belongs in the ADR itself and the solution design ([01_solution_design_TEMPLATE.md](01_solution_design_TEMPLATE.md)).
+- **Delivery status or implementation tracking** — progress on implementing a decision belongs in the delivery plan and status reports.
+- **Test or quality evidence** — evidence of decision compliance belongs in the verification evidence index ([../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md](../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal]` | Add `manager` only when needed for reviews |
+| `capability` | `architecture` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## ADR list
 
 Use a simple table with one row per ADR.

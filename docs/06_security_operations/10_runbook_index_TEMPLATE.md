@@ -25,6 +25,29 @@ Use this template as the canonical pointer list for runbooks, even when the runb
 - Optional: environment or service tags if they help readers find the right runbook quickly.
 - Remove stale links as soon as a runbook is superseded or retired.
 
+## What not to include
+
+- **Runbook procedure content** — step-by-step procedures belong in individual runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)). This index is a navigation layer, not a procedure store.
+- **Incident records or postmortem summaries** — incident records belong in the postmortem template ([12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md)). The runbook index points to operational procedures, not incident history.
+- **Service acceptance criteria** — readiness checks belong in the service acceptance template ([08_service_acceptance_TEMPLATE.md](08_service_acceptance_TEMPLATE.md)). The index confirms that runbooks exist; the acceptance check confirms they are sufficient.
+- **Operating model or on-call ownership** — broader service ownership belongs in the operating model ([03_operating_model_TEMPLATE.md](03_operating_model_TEMPLATE.md)).
+- **Security policy or threat model content** — control design belongs in the security baseline ([01_security_baseline_TEMPLATE.md](01_security_baseline_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Central index linking to per-component runbooks (some may live next to code)
 
 Explain how the runbook set is organized and how readers should find the right operating procedure under pressure. Make clear that this index is the discovery layer, not the full procedure content.

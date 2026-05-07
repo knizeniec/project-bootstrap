@@ -24,6 +24,27 @@ Copy this file when users need to understand an idea rather than follow instruct
 - Use short examples to clarify the concept.
 - Link to how-to and reference pages for action and lookup details.
 
+## What not to include
+
+- **Step-by-step task instructions** — procedures and task steps belong in how-to guides ([../how-to/01-perform-a-common-task-TEMPLATE.md](../how-to/01-perform-a-common-task-TEMPLATE.md)). Explanation pages orient the reader; they do not walk through a task sequence.
+- **Exact field references, option lists, or error codes** — these belong in reference pages ([../reference/01-feature-reference-TEMPLATE.md](../reference/01-feature-reference-TEMPLATE.md)). An explanation may mention that fields or options exist, but the canonical list stays in reference.
+- **First-run onboarding exercises** — guided learning experiences with sample values and step-by-step verification belong in tutorials ([../tutorials/01-getting-started-TEMPLATE.md](../tutorials/01-getting-started-TEMPLATE.md)).
+- **Internal architecture or implementation decisions** — design rationale and ADR-level decisions belong in architecture documents ([../../03_architecture/01_solution_design_TEMPLATE.md](../../03_architecture/01_solution_design_TEMPLATE.md)) and ADRs. Explain user-visible concepts and tradeoffs, not internal system internals.
+- **Release notes or change history** — what changed and when belongs in the changelog or release notes. An explanation describes how something works, not its version history.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[end_user]` | This folder targets end users; add `internal` only for dual-purpose content |
+| `capability` | `user_docs` | Fixed for this folder |
+| `phase` | `n/a` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
 ## Background
 
 Open with the context that makes the concept worth understanding. This section should explain what user problem, workflow, or product behavior creates the need for the concept.

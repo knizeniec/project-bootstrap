@@ -24,6 +24,29 @@ Use this file when the PRD needs detailed acceptance coverage that should stay s
 - Keep UAT pass criteria release-focused rather than tool-specific.
 - Remove placeholder examples before publishing a project-specific catalog.
 
+## What not to include
+
+- **Test execution records or run results** — evidence of what happened during testing belongs in the verification evidence index ([../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md](../05_testing_acceptance/03_verification_evidence_index_TEMPLATE.md)). This catalog defines scenarios; the evidence index records outcomes.
+- **Defect records or bug reports** — defects belong in the defect management process ([../05_testing_acceptance/05_defect_management_TEMPLATE.md](../05_testing_acceptance/05_defect_management_TEMPLATE.md)).
+- **Technical test tooling configuration** — test automation scripts and tool settings belong in the test framework, not in canonical acceptance documentation.
+- **Non-functional requirements or load test results** — performance evidence belongs in the verification evidence index, linked from the test strategy ([../05_testing_acceptance/01_test_strategy_TEMPLATE.md](../05_testing_acceptance/01_test_strategy_TEMPLATE.md)).
+- **Requirements narrative** — detailed requirement context belongs in the PRD ([01_prd_TEMPLATE.md](01_prd_TEMPLATE.md)) and requirements catalog ([02_requirements_catalog_TEMPLATE.md](02_requirements_catalog_TEMPLATE.md)). Reference IDs here; do not duplicate the requirement text.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `product` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Given/When/Then acceptance scenarios
 
 List the core acceptance scenarios for each feature or journey in a repeatable format. Prefer a small number of meaningful scenarios over a long list of trivial ones, and link them back to requirement IDs.

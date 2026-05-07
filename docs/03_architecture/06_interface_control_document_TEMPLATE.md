@@ -22,6 +22,29 @@ last_reviewed: 2026-05-07
 - Link it to the parent solution design, relevant C4 views, and governing ADRs.
 - Include examples only for the parts of the contract that are easy to get wrong.
 
+## What not to include
+
+- **Multiple interface contracts in one document** — create one ICD per interface or integration. Bundling unrelated contracts makes each one harder to maintain and version independently.
+- **Internal component structure** — internals belong in the component view ([04_c4_component_TEMPLATE.md](04_c4_component_TEMPLATE.md)). The ICD defines the external boundary, not what is inside.
+- **Architecture decision rationale** — binding decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)); link the ADR that governs versioning or compatibility policy.
+- **Runbook procedures or incident response steps** — operational procedures belong in runbooks ([../06_security_operations/11_runbook_TEMPLATE.md](../06_security_operations/11_runbook_TEMPLATE.md)).
+- **Test scenarios or acceptance criteria** — testing the contract belongs in the acceptance catalog ([../02_product/05_acceptance_catalog_TEMPLATE.md](../02_product/05_acceptance_catalog_TEMPLATE.md)) and verification evidence index.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal]` | Add `manager` only when needed for reviews |
+| `capability` | `architecture` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Interface summary
 
 - Interface name: [Name]

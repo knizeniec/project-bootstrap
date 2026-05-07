@@ -25,6 +25,29 @@ Use this template when a release or milestone needs structured business validati
 - Optional: detailed scheduling if it is managed in a release calendar.
 - Remove scenarios that no longer represent approved acceptance outcomes.
 
+## What not to include
+
+- **Technical test scripts or automated test detail** — automation scripts and tool configuration belong in the test framework. Reference automated test coverage here; do not reproduce script content.
+- **Defect records or individual defect status** — defect tracking belongs in the defect management process ([05_defect_management_TEMPLATE.md](05_defect_management_TEMPLATE.md)). The UAT plan references pass criteria; actual defects are tracked separately.
+- **Acceptance scenario steps in full** — detailed scenario steps belong in the acceptance catalog ([../02_product/05_acceptance_catalog_TEMPLATE.md](../02_product/05_acceptance_catalog_TEMPLATE.md)). Link to scenario IDs here; do not duplicate step content.
+- **Requirements or product narrative** — requirements belong in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)) and requirements catalog. The UAT plan exercises the requirements; it does not restate them.
+- **Release readiness decisions or go/no-go approvals** — release decisions belong in the release plan ([../07_delivery/07_release_plan_TEMPLATE.md](../07_delivery/07_release_plan_TEMPLATE.md)) and readiness tracker ([../07_delivery/06_readiness_tracker_TEMPLATE.md](../07_delivery/06_readiness_tracker_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `quality` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## UAT scope
 
 State the business workflows, user groups, or release increment covered by UAT. Make the scope narrow enough to be testable and broad enough to support a real acceptance decision.

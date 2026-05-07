@@ -24,6 +24,29 @@ Use this template after the brief and business case are accepted and the project
 - Optional: deeper references to quality or configuration procedures if separate files exist.
 - Remove duplicate narrative once linked control documents are in place.
 
+## What not to include
+
+- **Detailed technical design** — architecture and design decisions belong in the solution design ([../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)). The PID defines the management baseline, not the technical approach.
+- **Test case detail or acceptance scenarios** — these belong in the test strategy and acceptance catalog ([../05_testing_acceptance/01_test_strategy_TEMPLATE.md](../05_testing_acceptance/01_test_strategy_TEMPLATE.md)). The PID references quality management, not test content.
+- **Full communications content** — message templates and audience-specific updates belong in the communications plan ([05_communications_plan_TEMPLATE.md](05_communications_plan_TEMPLATE.md)).
+- **Live RAID register entries** — risks and issues should be tracked in the RAID register ([06_raid_register_TEMPLATE.md](06_raid_register_TEMPLATE.md)), not duplicated in the PID body.
+- **Benefits tracking or financial model** — realized-value tracking belongs in the benefits realization plan ([08_benefits_realization_TEMPLATE.md](08_benefits_realization_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `initiation` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `one-shot` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Project definition
 
 Describe what the project is delivering, for whom, and within what boundaries. This section should align directly to the approved brief and business case so governance records tell one story.

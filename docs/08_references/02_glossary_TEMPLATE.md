@@ -24,6 +24,27 @@ Use this glossary for terms that appear in multiple folders or carry a meaning t
 - Prefer one canonical term over near-duplicates; use notes to call out discouraged synonyms.
 - Link each term to the source artifact that gives it operational meaning.
 
+## What not to include
+
+- **Standards rationale or framework posture** — the explanation of why a standard is adopted, adapted, or reference-only belongs in the standards register ([01_standards_register_TEMPLATE.md](01_standards_register_TEMPLATE.md)). This glossary defines shared terms, not standard posture.
+- **Decision rights or RACI assignments** — authority and approval roles belong in the decision rights matrix ([03_decision_rights_matrix_TEMPLATE.md](03_decision_rights_matrix_TEMPLATE.md)). A term used in that matrix may be defined here, but the decision rights themselves stay there.
+- **Product-specific terminology that is local to one artifact** — if a term only appears in a single template, define it inline in that template rather than adding noise to the shared glossary.
+- **Abbreviations or tool names with obvious public definitions** — unless your project redefines a widely understood abbreviation, prefer plain text over adding trivial entries that dilute the glossary's usefulness.
+- **Full narrative explanations or how-to content** — keep definitions brief and operational; tutorials, how-tos, and explanation content belong in the user documentation folder ([../09_user_documentation/](../09_user_documentation/)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `references` | Fixed for this folder |
+| `phase` | `n/a` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
 ## What belongs here
 
 Include terms that affect project control, requirements, design, testing, security, delivery, or end-user support. Do not turn this file into a general encyclopedia.

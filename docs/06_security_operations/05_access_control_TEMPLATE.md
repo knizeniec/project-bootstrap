@@ -25,6 +25,29 @@ Use this template to capture the canonical access model for workforce, service, 
 - Optional: system-specific role maps if they live in a dedicated reference.
 - Remove temporary elevated access once it is no longer justified.
 
+## What not to include
+
+- **Individual user accounts or named credentials** — access control lists for specific accounts belong in identity management tooling, not in a canonical document.
+- **Incident response procedures for access breaches** — breach response belongs in the incident response template ([06_incident_response_TEMPLATE.md](06_incident_response_TEMPLATE.md)).
+- **Security control posture or threat model** — control design belongs in the security baseline ([01_security_baseline_TEMPLATE.md](01_security_baseline_TEMPLATE.md)) and threat model ([02_threat_model_TEMPLATE.md](02_threat_model_TEMPLATE.md)).
+- **Runbook steps for role provisioning** — operational provisioning procedures belong in runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)). This template defines the policy; runbooks implement it.
+- **Compliance standard text** — do not reproduce standards verbatim; link to the standards register ([../08_references/01_standards_register_TEMPLATE.md](../08_references/01_standards_register_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `monitoring` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Identity sources
 
 State where user and service identities originate and how they are trusted. Different identity sources often imply different review and provisioning controls.

@@ -24,6 +24,29 @@ Use this register as the live control log for RAID management throughout the pro
 - Optional: separate tabs or sections by workstream if the project is large.
 - Remove or archive closed items only after decision history is preserved.
 
+## What not to include
+
+- **Formal change decisions** — approved changes belong in the change control log ([07_change_control_log_TEMPLATE.md](07_change_control_log_TEMPLATE.md)). The RAID register may flag the need for a change request, but the decision is recorded elsewhere.
+- **Status report narrative** — high-level progress summaries belong in the status report ([../07_delivery/04_status_report_TEMPLATE.md](../07_delivery/04_status_report_TEMPLATE.md)). This register tracks the detail that the status report summarises.
+- **Delivery plan milestones or workstreams** — schedule and milestone detail belongs in the delivery plan ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)).
+- **Architecture decisions or technical rationale** — design decisions belong in ADRs ([../adr/ADR-000-template.md](../adr/ADR-000-template.md)). If a RAID item drives an architecture decision, link the ADR once it is created.
+- **Meeting minutes or decision narrative** — record RAID items concisely and link to decision logs rather than embedding meeting history in the register.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `monitoring` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `weekly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Risks
 
 Record uncertain events that may affect scope, schedule, cost, quality, or benefits. Include a practical mitigation and owner so each risk can be discussed in governance forums without extra preparation.

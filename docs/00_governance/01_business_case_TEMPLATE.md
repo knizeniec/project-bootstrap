@@ -24,6 +24,29 @@ Use this template when a project needs a formal investment rationale beyond the 
 - Optional: full financial model if the numbers are maintained elsewhere.
 - Remove draft-only assumptions or placeholder figures before approval.
 
+## What not to include
+
+- **Delivery milestones or sprint plans** — execution scheduling belongs in the delivery plan ([../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)). The business case justifies the investment; it does not plan the delivery.
+- **Technical architecture detail** — design decisions belong in the solution design ([../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)). Describe the option shape here without prescribing the implementation.
+- **Benefits tracking actuals** — post-delivery benefit measurement belongs in the benefits realization plan ([08_benefits_realization_TEMPLATE.md](08_benefits_realization_TEMPLATE.md)). The business case projects benefits; the realization plan tracks them.
+- **Full RAID register detail** — summarise risks here and track them in the RAID register ([06_raid_register_TEMPLATE.md](06_raid_register_TEMPLATE.md)) once the project is active.
+- **Stakeholder engagement actions** — stakeholder planning belongs in the stakeholder register and communications plan, not embedded in the investment justification.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `initiation` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `one-shot` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Problem statement
 
 Describe the current pain, missed opportunity, or mandatory change the initiative addresses. Make the problem concrete enough that readers can judge whether the proposed investment is proportionate.

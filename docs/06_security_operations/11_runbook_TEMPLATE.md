@@ -32,6 +32,21 @@ Copy this file and rename it to describe the specific procedure: `11_<topic>_run
 - **One-off scripts not yet formalized** — do not paste draft scripts that have not been tested in a non-production environment. Link to a version-controlled script instead, or formalize the script before publishing the runbook.
 - **Root-cause analysis or architectural reasoning** — these belong in an ADR or the solution design. A runbook operator should not need to understand the architectural rationale to execute the steps safely.
 
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-release` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ---
 
 ## Purpose

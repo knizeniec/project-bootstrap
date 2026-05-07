@@ -25,6 +25,29 @@ Use this template to document the default control stance before implementation a
 - Optional: implementation references if control details live in architecture or runbook documents.
 - Remove controls that do not apply to the service boundary and explain justified exceptions.
 
+## What not to include
+
+- **Incident-specific data or breach narratives** — incident records belong in the postmortem template ([12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md)). This baseline defines what controls are required; it does not record what went wrong.
+- **Secret values or credentials** — never put actual credentials in a canonical document. Describe where secrets live and how they are rotated; do not put values here.
+- **Full compliance standard text** — restate standards verbatim by linking to them in the standards register ([../08_references/01_standards_register_TEMPLATE.md](../08_references/01_standards_register_TEMPLATE.md)). This document states how controls are applied, not the full regulatory text.
+- **Step-by-step operational procedures** — operational steps belong in runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)) and the access control template ([05_access_control_TEMPLATE.md](05_access_control_TEMPLATE.md)).
+- **Threat model detail or STRIDE analysis** — that belongs in the threat model ([02_threat_model_TEMPLATE.md](02_threat_model_TEMPLATE.md)). The baseline states the controls; the threat model explains the threats they address.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `monthly` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Threat surface
 
 Summarize the main assets, entry points, privileged actions, and external dependencies that shape the control baseline. Focus on what must be protected and why.

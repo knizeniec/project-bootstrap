@@ -25,6 +25,29 @@ Use this template as the canonical response model for operational and security i
 - Optional: incident tooling screenshots if they materially help responders.
 - Remove team-local habits that conflict with the canonical response flow.
 
+## What not to include
+
+- **Individual incident timelines or root cause analysis** — incident-specific records belong in the postmortem template ([12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md)). This template defines the response framework; the postmortem records what happened in a specific event.
+- **Detailed restore or failover procedures** — step-by-step recovery belongs in runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)) and the backup and recovery template ([07_backup_and_recovery_TEMPLATE.md](07_backup_and_recovery_TEMPLATE.md)).
+- **Customer-specific SLA commitments** — SLA obligations belong in the support model ([04_support_model_TEMPLATE.md](04_support_model_TEMPLATE.md)) and customer contracts.
+- **Security control or threat model detail** — control design belongs in the security baseline ([01_security_baseline_TEMPLATE.md](01_security_baseline_TEMPLATE.md)) and threat model ([02_threat_model_TEMPLATE.md](02_threat_model_TEMPLATE.md)).
+- **Status report content or operational updates** — live incident communications belong in the incident channel; post-incident summaries belong in the status report ([../07_delivery/04_status_report_TEMPLATE.md](../07_delivery/04_status_report_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `operations` | Fixed for this folder |
+| `phase` | `execution` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `ad-hoc` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Severity classes
 
 Define the severity levels used to declare and prioritize incidents. The scale should support consistent response mobilization and stakeholder communication.

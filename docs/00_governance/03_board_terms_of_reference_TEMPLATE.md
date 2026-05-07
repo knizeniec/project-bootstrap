@@ -24,6 +24,29 @@ Use this template when a project needs a formal decision forum with repeatable g
 - Optional: appendices for named members if the project needs them.
 - Remove draft commentary once the forum is formally approved.
 
+## What not to include
+
+- **Meeting minutes or action logs** — individual meeting records should be kept separately and linked to this document, not embedded in the Terms of Reference.
+- **Status report content** — delivery progress belongs in the status report ([../07_delivery/04_status_report_TEMPLATE.md](../07_delivery/04_status_report_TEMPLATE.md)), which the board consumes but does not own.
+- **RAID item detail** — risks and issues belong in the RAID register ([06_raid_register_TEMPLATE.md](06_raid_register_TEMPLATE.md)); the ToR defines how the board handles escalated RAID items, not their content.
+- **Change request specifics** — formal change decisions belong in the change control log ([07_change_control_log_TEMPLATE.md](07_change_control_log_TEMPLATE.md)).
+- **Technical design decisions** — architecture choices belong in ADRs or the solution design, not in governance forum rules.
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager, client]` | Add `client` only when client-export-safe |
+| `capability` | `governance` | Fixed for this folder |
+| `phase` | `initiation` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator.
+
 ## Purpose
 
 State why the board exists and which classes of project decision it is expected to govern. This keeps the forum focused and avoids overlap with product, architecture, or delivery working groups.

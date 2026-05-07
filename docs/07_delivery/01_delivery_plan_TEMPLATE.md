@@ -25,6 +25,29 @@ Copy this template when a project or major initiative needs a managed delivery b
 - Optional: links to detailed estimates or tooling views if they are authoritative elsewhere.
 - Remove duplicate implementation detail once it is captured in the implementation plan.
 
+## What not to include
+
+- **Sprint-level tasks or backlog items** — day-to-day work belongs in the backlog and delivery tooling. This plan covers workstreams and milestones, not individual tickets.
+- **Detailed implementation steps or cutover procedures** — implementation detail belongs in the implementation plan ([02_implementation_plan_TEMPLATE.md](02_implementation_plan_TEMPLATE.md)) and cutover runbook ([08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md)).
+- **Product requirements or acceptance criteria** — product scope belongs in the PRD ([../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)). This plan references the approved scope; it does not define it.
+- **Full RAID register entries** — detailed RAID items belong in the RAID register ([../00_governance/06_raid_register_TEMPLATE.md](../00_governance/06_raid_register_TEMPLATE.md)). Summarise plan-level risks here; track individual items there.
+- **Architecture decisions or technical design** — design belongs in ADRs and the solution design ([../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)).
+
+## Frontmatter quick reference
+
+This template's typical frontmatter values. The full schema (with all enums and conditional rules) is at [docs/00_operating_model/04_frontmatter_schema.md](../00_operating_model/04_frontmatter_schema.md).
+
+| Field | Typical value here | Notes |
+|---|---|---|
+| `status` | `draft` → `active` → `superseded` | Use `superseded` when replaced; required `superseded_by:` link |
+| `record_class` | `canonical` | This template defines a canonical artifact |
+| `audience` | `[internal, manager]` | Add `client` only when client-export-safe |
+| `capability` | `execution` | Fixed for this folder |
+| `phase` | `planning` | One of `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a` |
+| `cadence` | `per-stage` | One of `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot` |
+
+> When `capability: execution`, both `cadence` and `source_of_truth` are required by the validator. Add `source_of_truth: repo` (or the appropriate value) to the frontmatter.
+
 ## Workstreams
 
 List the major streams of work and the outcome each stream is expected to produce. Workstreams should be broad enough for leadership reporting but specific enough to anchor ownership and dependencies.
