@@ -38,6 +38,8 @@ last_reviewed: 2026-05-07
   Responsibility: Claude-targeted orchestration skill that follows the shared contract and uses reviewer-only subagents.
 - Create: `skills/project-initialization/copilot-codex/SKILL.md`
   Responsibility: Copilot/Codex-targeted orchestration skill with the same contract and adapted review mechanics.
+- Create: `docs/adr/ADR-001-skill-first-template-adoption.md`
+  Responsibility: durable decision record that makes the skill-first adoption workflow binding before implementation lands.
 - Modify: `README.md`
   Responsibility: main adopter entrypoint, stage-by-stage journey, top-level layout, and fallback guidance.
 - Modify: `AGENTS.md`
@@ -52,6 +54,8 @@ last_reviewed: 2026-05-07
   Responsibility: legacy prompt inventory and fallback positioning.
 - Modify: `docs/00-source-of-truth.md`
   Responsibility: source-of-truth ownership for the new skill-first adoption surface and legacy prompt fallback.
+- Modify: `docs/adr/INDEX.md`
+  Responsibility: canonical ADR registry entry for the skill-first adoption decision.
 - Modify: `docs/INDEX.md`
   Responsibility: navigation coverage for the new skill-first entrypoint and the legacy fallback surface.
 - Modify: `src/AGENTS.md`
@@ -66,6 +70,125 @@ last_reviewed: 2026-05-07
   Responsibility: required-file enforcement and path-consistency coverage for the new `skills/` surface.
 
 Keep this as one plan because these files define one user-visible workflow surface. Shipping only the skills without the README/AGENTS/CI migration would leave the repo telling adopters to start in the wrong place.
+
+### Task 0: Record The Skill-First Adoption Decision Before Workflow Implementation
+
+**Files:**
+- Create: `docs/adr/ADR-001-skill-first-template-adoption.md`
+- Modify: `docs/adr/INDEX.md`
+- Test: `docs/adr/ADR-001-skill-first-template-adoption.md`, `docs/adr/INDEX.md`
+
+- [ ] **Step 1: Confirm the next ADR slot is available**
+
+Run:
+
+```bash
+cd /home/hexaper/template && test ! -f docs/adr/ADR-001-skill-first-template-adoption.md
+```
+
+Expected: PASS because `ADR-001` is the next free durable-decision record in the current tree.
+
+- [ ] **Step 2: Create the ADR that makes skill-first adoption the binding repository workflow**
+
+Create `docs/adr/ADR-001-skill-first-template-adoption.md` with exactly this content:
+
+```md
+---
+title: ADR-001 Skill-First Template Adoption
+status: active
+record_class: canonical
+audience: [internal]
+owner: architecture-maintainer
+capability: architecture
+phase: planning
+cadence: per-stage
+last_reviewed: 2026-05-07
+---
+
+# ADR-001: Adopt repo-included skills as the primary template initialization workflow
+
+- Status: Proposed
+- Date: 2026-05-07
+- Deciders: Template maintainers
+- Consulted: Documentation maintainers
+- Informed: Contributors and template adopters
+- Tags: [Architecture, Delivery]
+- Supersedes: None
+- Superseded by: None
+- Related documents: [../superpowers/specs/2026-05-07-adoption-orchestrator-skill-design.md](../superpowers/specs/2026-05-07-adoption-orchestrator-skill-design.md), [../superpowers/plans/2026-05-07-adoption-orchestrator-skill-implementation.md](../superpowers/plans/2026-05-07-adoption-orchestrator-skill-implementation.md)
+
+## Context and problem statement
+
+The repository currently teaches adopters to initialize the template through a prompt-first sequence spread across multiple files. That flow is uneven in depth, requires the user to choose the next prompt manually, and does not provide one resumable control surface for staged initialization. The approved design replaces that primary entrypoint with repo-included `project-initialization` skills for Claude and Copilot/Codex while keeping the existing prompt files as a documented fallback.
+
+## Decision drivers
+
+- give adopters one obvious starting point after cloning
+- keep initialization bounded to one coherent stage per run
+- preserve shared workflow rules across supported AI tools
+- keep repository guidance, control surfaces, and CI aligned with the canonical docs created during initialization
+
+## Considered options
+
+### Option 1: Keep the prompt-first workflow as the primary adoption path
+
+- What it is: continue teaching adopters to run `project-bootstrap.md`, `refine-specs.md`, `architecture-baseline.md`, and `language-adaptation.md` in order.
+- Pros: no new tracked skill surface; keeps the current structure intact.
+- Cons: weak continuity across runs; prompt selection remains manual; stage boundaries and review loops remain inconsistent.
+
+### Option 2: Use repo-included skills as the primary path and keep prompts as fallback
+
+- What it is: ship tool-specific `project-initialization` skills in the repository, backed by one shared contract and one tracked initialization plan, while retaining `prompts/` for tools that cannot use the skills.
+- Pros: one clear entrypoint; resumable stage-by-stage workflow; shared concern-handling and review-loop contract across supported tools.
+- Cons: adds tracked skill-maintenance work and migration effort across repo entry surfaces.
+
+## Decision outcome
+
+Adopt repo-included `project-initialization` skills as the primary template initialization workflow for supported tools, with `prompts/` retained and documented as the legacy fallback path.
+
+### Consequences
+
+- `README.md`, `AGENTS.md`, `CLAUDE.md`, and related slot guidance must point to the skill-first path first.
+- The repository must maintain a shared contract and parity checks across tool-specific skill variants.
+- Prompt files remain supported, but they no longer define the primary adoption journey.
+
+## Pros and cons of the options
+
+- Chosen option: it creates one coherent, resumable initialization path that matches the approved design and reduces prompt-selection drift.
+- Rejected option: it leaves the current fragmentation in place and keeps the repository advertising a weaker onboarding flow.
+
+## More information
+
+- Update `README.md` and `AGENTS.md` when the entrypoint changes.
+- Update `prompts/README.md` so prompt usage stays clearly fallback-only.
+- Keep CI checks aligned with the tracked `skills/` surface.
+```
+
+- [ ] **Step 3: Register the ADR in the canonical index**
+
+Add this row directly below the `ADR-000` row in `docs/adr/INDEX.md`:
+
+```md
+| [ADR-001](ADR-001-skill-first-template-adoption.md) | Skill-First Template Adoption | Proposed | 2026-05-07 | Makes repo-included initialization skills the primary adoption workflow. |
+```
+
+- [ ] **Step 4: Lint the ADR files**
+
+Run:
+
+```bash
+cd /home/hexaper/template && npx -y markdownlint-cli2 docs/adr/ADR-001-skill-first-template-adoption.md docs/adr/INDEX.md
+```
+
+Expected: PASS with no errors.
+
+- [ ] **Step 5: Commit the ADR before changing the workflow surface**
+
+```bash
+cd /home/hexaper/template
+git add docs/adr/ADR-001-skill-first-template-adoption.md docs/adr/INDEX.md
+git commit -m "docs: record skill-first adoption ADR"
+```
 
 ### Task 1: Create The Tracked Skill Surface And Shared Contract
 
@@ -153,6 +276,8 @@ This file is the shared contract for all repo-included `project-initialization` 
 6. Repository sync
 7. Final coherence review
 
+Keep one stage per run.
+
 ## Working plan
 
 - Path: `docs/superpowers/plans/YYYY-MM-DD-project-initialization.md`
@@ -185,7 +310,7 @@ For each invocation:
 
 ## Review/fix loop
 
-Every stage that changes files must check:
+Every stage that changes files must run standards review and coherence review. Check:
 
 - documentation standards
 - cross-document consistency
@@ -230,7 +355,7 @@ cd /home/hexaper/template && npx -y markdownlint-cli2 skills/AGENTS.md skills/RE
 
 Expected: PASS with no errors.
 
-- [ ] **Step 5: Verify the new local links resolve**
+- [ ] **Step 5: Verify the currently-created links resolve and only intentional forward links remain**
 
 Run:
 
@@ -244,7 +369,13 @@ files = [
     Path("skills/project-initialization/README.md"),
 ]
 pattern = re.compile(r"\[[^\]]+\]\(([^)#]+)\)")
-errors = []
+allowed_missing = {
+    "skills/README.md -> project-initialization/claude/SKILL.md",
+    "skills/README.md -> project-initialization/copilot-codex/SKILL.md",
+    "skills/project-initialization/README.md -> testing/pressure-scenarios.md",
+    "skills/project-initialization/README.md -> testing/review-checklist.md",
+}
+missing = set()
 for file in files:
     text = file.read_text()
     for target in pattern.findall(text):
@@ -252,14 +383,17 @@ for file in files:
             continue
         resolved = (file.parent / target).resolve()
         if not resolved.exists():
-            errors.append(f"{file} -> {target}")
-if errors:
-    raise SystemExit("\n".join(errors))
-print("All skill-surface links resolve.")
+            missing.add(f"{file} -> {target}")
+unexpected = sorted(missing - allowed_missing)
+if unexpected:
+    raise SystemExit("Unexpected unresolved links:\n" + "\n".join(unexpected))
+if missing != allowed_missing:
+    raise SystemExit("Forward-link set drifted:\n" + "\n".join(sorted(missing)))
+print("Only the intentional forward links remain unresolved at Task 1.")
 PY
 ```
 
-Expected: PASS and prints `All skill-surface links resolve.`.
+Expected: PASS and prints `Only the intentional forward links remain unresolved at Task 1.`.
 
 - [ ] **Step 6: Commit the skill-surface scaffold**
 
@@ -588,8 +722,6 @@ required = [
     "Final coherence review",
     "docs/superpowers/plans/YYYY-MM-DD-project-initialization.md",
     "Keep one stage per run",
-    "standards review",
-    "coherence review",
     "what the concern is",
     "why it matters here",
     "what stronger option may fit better",
@@ -607,16 +739,20 @@ files = [
     Path("skills/project-initialization/claude/SKILL.md"),
     Path("skills/project-initialization/copilot-codex/SKILL.md"),
 ]
+shared = Path("skills/project-initialization/README.md").read_text()
+for phrase in ["standards review", "coherence review"]:
+    if phrase not in shared:
+        raise SystemExit(f"skills/project-initialization/README.md missing {phrase}")
 for path in files:
     text = path.read_text()
     missing = [item for item in required if item not in text]
     if missing:
         raise SystemExit(f"{path} missing {missing}")
-print("Shared stage and output contract strings exist in all files.")
+print("Shared stage, stop-rule, and concern/output contract strings exist where required.")
 PY
 ```
 
-Expected: PASS and prints `Shared stage and output contract strings exist in all files.`.
+Expected: PASS and prints `Shared stage, stop-rule, and concern/output contract strings exist where required.`.
 
 - [ ] **Step 4: Lint the Copilot/Codex skill**
 
@@ -654,7 +790,13 @@ git commit -m "docs: add Copilot Codex initialization skill"
 Apply these exact content changes in `README.md`:
 
 ```md
+A documentation-first project template with a skill-first initialization workflow. It gives you a clean engineering scaffold, a structured documentation tree, and repo-included `project-initialization` skills that guide you from a blank clone through staged project setup before implementation.
+
+The core idea is simple: initialize one coherent stage at a time, keep progress in a tracked initialization plan, and keep repository guidance aligned with the canonical docs created during setup.
+
 The preferred adoption path is now skill-first: after cloning, open `skills/README.md`, choose the tool-specific `project-initialization` skill that matches your AI tool, and keep re-running that same skill until the initialization plan is complete.
+
+A new project using this template goes through one staged initialization workflow before implementation. Each run completes one bounded stage and updates the tracked plan before stopping.
 
 ## Project journey
 
@@ -709,7 +851,7 @@ If you are not using the repo-included skills, the old step-by-step prompt flow 
 
 Also update the top-level layout table so `skills/` appears as a first-class path and `prompts/` is described as a legacy fallback surface rather than the primary adoption path.
 
-Delete the now-obsolete prompt-first sections (`## Minimal adoption path`, `## Bootstrap your project`, `## Author the architecture baseline`, and `## Adapt to your stack`) so the README does not keep telling adopters to start in `prompts/` after the skill-first entrypoint is added. Replace the old `See [prompts/README.md]` pointer with a primary pointer to `skills/README.md` and keep `prompts/README.md` only inside the fallback guidance.
+Replace the current opening description and the old four-phase framing with the text above so the README no longer describes AI-assisted prompts as the primary setup system. Delete the now-obsolete prompt-first sections (`## Minimal adoption path`, `## Bootstrap your project`, `## Author the architecture baseline`, and `## Adapt to your stack`) so the README does not keep telling adopters to start in `prompts/` after the skill-first entrypoint is added. Replace the old `See [prompts/README.md]` pointer with a primary pointer to `skills/README.md` and keep `prompts/README.md` only inside the fallback guidance.
 
 - [ ] **Step 2: Update repo routing docs to point at the new skills surface**
 
@@ -734,6 +876,11 @@ Apply these exact content changes:
 # prompts/README.md
 # Legacy Adoption Prompts
 
+Status: Active
+Owner: Template maintainers
+Purpose: keep the older prompt-by-prompt template adoption flow available as a fallback when repo-included skills cannot be used
+Last updated: 2026-05-07
+
 The preferred adoption path for this template is now the repo-included skill workflow under `skills/`.
 Use the files in this directory only when your AI tool cannot use the repo-shipped skills or when you intentionally want the older manual prompt-by-prompt flow.
 
@@ -746,6 +893,12 @@ Use the files in this directory only when your AI tool cannot use the repo-shipp
 | [architecture-baseline.md](architecture-baseline.md) | Decide the technical approach and create the active solution design and ADRs. | After spec refinement |
 | [language-adaptation.md](language-adaptation.md) | Adapt the repository structure to the active architecture documents. | After architecture baseline |
 
+## How to use this fallback flow
+
+1. Start in `skills/README.md` first and use this directory only if the repo-included skills are unavailable in your tool or you intentionally want the legacy flow.
+2. Run `project-bootstrap.md`, `refine-specs.md`, `architecture-baseline.md`, and `language-adaptation.md` in that order.
+3. Return to the root `README.md` for the remaining repository bootstrap steps after the fallback flow is complete.
+
 # docs/00-source-of-truth.md
 | Initialization skills | [../skills/README.md](../skills/README.md) | Primary tracked entrypoint for repo adoption across supported AI tools. |
 | Legacy adoption prompts | [../prompts/README.md](../prompts/README.md) | Manual fallback surfaces for tools or users that are not using the repo-shipped skills. |
@@ -756,6 +909,8 @@ Use the files in this directory only when your AI tool cannot use the repo-shipp
 ```
 
 Remove the old narrow `Architecture baseline prompt` ownership row after adding the broader skill-first and legacy-prompt rows above.
+
+Replace the current `## How adopters use this directory` section entirely so `prompts/README.md` no longer instructs fresh adopters to begin with `project-bootstrap.md` unless they are intentionally using the fallback path.
 
 - [ ] **Step 4: Update contributor-facing notes for the new workflow surface**
 
@@ -809,11 +964,13 @@ git commit -m "docs: move template adoption to skills"
 - Modify: `.github/workflows/ci.yml`
 - Test: `src/AGENTS.md`, `bin/README.md`, `diagrams/README.md`, `examples/README.md`, `.github/workflows/ci.yml`
 
-- [ ] **Step 1: Update source-layer guidance to use repository sync as the fill point**
+- [ ] **Step 1: Update source-layer guidance and frontmatter description to use repository sync as the fill point**
 
-Replace the setup paragraph in `src/AGENTS.md` with exactly this text:
+Replace the frontmatter `description` line and the setup paragraph in `src/AGENTS.md` with exactly this text:
 
 ```md
+description: Use for work under src/. Covers code quality, implementation style, and change discipline. Most fields are slot placeholders that the repo-included project-initialization skill fills during Repository sync.
+
 This file is a **slot template**. A fresh clone of the template is language-agnostic, so the placeholders below are intentionally unfilled. Run the repo-included `project-initialization` skill through the `Repository sync` stage to populate them, or use the legacy fallback in `prompts/language-adaptation.md` if you are not using the repo-shipped skills.
 ```
 
@@ -901,14 +1058,14 @@ git commit -m "ci: guard skill-first adoption workflow"
 ### Task 6: Run Final Integration Review Across The Whole Workflow Surface
 
 **Files:**
-- Test: `skills/AGENTS.md`, `skills/README.md`, `skills/project-initialization/README.md`, `skills/project-initialization/testing/pressure-scenarios.md`, `skills/project-initialization/testing/review-checklist.md`, `skills/project-initialization/claude/SKILL.md`, `skills/project-initialization/copilot-codex/SKILL.md`, `README.md`, `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `prompts/README.md`, `docs/00-source-of-truth.md`, `docs/INDEX.md`, `src/AGENTS.md`, `bin/README.md`, `diagrams/README.md`, `examples/README.md`, `.github/workflows/ci.yml`
+- Test: `docs/adr/ADR-001-skill-first-template-adoption.md`, `docs/adr/INDEX.md`, `skills/AGENTS.md`, `skills/README.md`, `skills/project-initialization/README.md`, `skills/project-initialization/testing/pressure-scenarios.md`, `skills/project-initialization/testing/review-checklist.md`, `skills/project-initialization/claude/SKILL.md`, `skills/project-initialization/copilot-codex/SKILL.md`, `README.md`, `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `prompts/README.md`, `docs/00-source-of-truth.md`, `docs/INDEX.md`, `src/AGENTS.md`, `bin/README.md`, `diagrams/README.md`, `examples/README.md`, `.github/workflows/ci.yml`
 
 - [ ] **Step 1: Run markdownlint across every changed Markdown file**
 
 Run:
 
 ```bash
-cd /home/hexaper/template && npx -y markdownlint-cli2 skills/**/*.md README.md AGENTS.md CLAUDE.md CONTRIBUTING.md CHANGELOG.md prompts/README.md docs/00-source-of-truth.md docs/INDEX.md src/AGENTS.md bin/README.md diagrams/README.md examples/README.md
+cd /home/hexaper/template && npx -y markdownlint-cli2 docs/adr/ADR-001-skill-first-template-adoption.md docs/adr/INDEX.md skills/**/*.md README.md AGENTS.md CLAUDE.md CONTRIBUTING.md CHANGELOG.md prompts/README.md docs/00-source-of-truth.md docs/INDEX.md src/AGENTS.md bin/README.md diagrams/README.md examples/README.md
 ```
 
 Expected: PASS with no errors.
@@ -939,6 +1096,8 @@ files = [
     Path('skills/project-initialization/testing/review-checklist.md'),
     Path('skills/project-initialization/claude/SKILL.md'),
     Path('skills/project-initialization/copilot-codex/SKILL.md'),
+    Path('docs/adr/ADR-001-skill-first-template-adoption.md'),
+    Path('docs/adr/INDEX.md'),
     Path('README.md'),
     Path('AGENTS.md'),
     Path('CLAUDE.md'),
@@ -994,7 +1153,8 @@ Run:
 
 ```bash
 cd /home/hexaper/template
-git diff --stat HEAD~5..HEAD
+git diff --stat
+git diff --stat --cached
 git status --short
 ```
 
@@ -1007,7 +1167,7 @@ Run:
 ```bash
 cd /home/hexaper/template
 if [ -n "$(git status --short)" ]; then
-  git add skills/AGENTS.md skills/README.md skills/project-initialization/README.md skills/project-initialization/testing/pressure-scenarios.md skills/project-initialization/testing/review-checklist.md skills/project-initialization/claude/SKILL.md skills/project-initialization/copilot-codex/SKILL.md README.md AGENTS.md CLAUDE.md CONTRIBUTING.md CHANGELOG.md prompts/README.md docs/00-source-of-truth.md docs/INDEX.md src/AGENTS.md bin/README.md diagrams/README.md examples/README.md .github/workflows/ci.yml
+  git add docs/adr/ADR-001-skill-first-template-adoption.md docs/adr/INDEX.md skills/AGENTS.md skills/README.md skills/project-initialization/README.md skills/project-initialization/testing/pressure-scenarios.md skills/project-initialization/testing/review-checklist.md skills/project-initialization/claude/SKILL.md skills/project-initialization/copilot-codex/SKILL.md README.md AGENTS.md CLAUDE.md CONTRIBUTING.md CHANGELOG.md prompts/README.md docs/00-source-of-truth.md docs/INDEX.md src/AGENTS.md bin/README.md diagrams/README.md examples/README.md .github/workflows/ci.yml
   git commit -m "docs: finalize skill-first template adoption workflow"
 else
   echo "No follow-up commit required."
