@@ -21,10 +21,77 @@ jobs:
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f CHANGELOG.md
-          test -f REPOSITORY_MAP.md
+          test -f LICENSE
           test -f .github/CODEOWNERS
           test -f docs/00-source-of-truth.md
           test -f docs/adr/ADR-000-template.md
+          test -f prompts/README.md
+          test -f prompts/AGENTS.md
+          test -f prompts/language-adaptation.md
       - name: Validate canonical path consistency
         run: |
-          ! rg -n "docs/project/adr|docs/project/AGENTS|REPOSTORY_MAP" README.md AGENTS.md CONTRIBUTING.md .github diagrams src tests config scripts bin examples docs/README.md docs/INDEX.md docs/00-documentation-standards.md docs/00-source-of-truth.md docs/Architecture.md docs/00_governance docs/01_strategy docs/02_product docs/03_architecture docs/04_ai_governance docs/05_testing_acceptance docs/06_security_operations docs/07_delivery docs/08_references docs/adr
+          ! rg -n --glob '!.github/workflows/ci.yml' "docs/project/adr|docs/project/AGENTS|REPOSTORY_MAP|REPOSITORY_MAP" README.md AGENTS.md CLAUDE.md CONTRIBUTING.md prompts .github diagrams src tests config scripts bin examples docs/README.md docs/INDEX.md docs/00-documentation-standards.md docs/00-source-of-truth.md docs/Architecture.md docs/00_governance docs/01_strategy docs/02_product docs/03_architecture docs/04_ai_governance docs/05_testing_acceptance docs/06_security_operations docs/07_delivery docs/08_references docs/adr
+      - name: Validate LICENSE is set when README declares one
+        run: |
+          if grep -q "^License:" README.md; then
+            if grep -qF "REPLACE WITH YOUR CHOSEN LICENSE" LICENSE; then
+              echo "ERROR: README declares a License but LICENSE file is still the template placeholder."
+              exit 1
+            fi
+          fi
+      - name: Validate canonical doc frontmatter
+        run: |
+          set -e
+          missing=0
+          for f in \
+            docs/README.md \
+            docs/Architecture.md \
+            docs/00-documentation-standards.md \
+            docs/00-source-of-truth.md \
+            docs/INDEX.md \
+            prompts/README.md \
+            $(ls docs/*/*_TEMPLATE.md 2>/dev/null)
+          do
+            for field in "Status:" "Owner:" "Purpose:" "Last updated:"; do
+              if ! grep -q "^$field" "$f"; then
+                echo "ERROR: $f missing frontmatter field: $field"
+                missing=1
+              fi
+            done
+          done
+          exit $missing
+
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@v18
+        with:
+          globs: |
+            **/*.md
+            !node_modules
+            !.opencode
+            !.tmp
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --exclude-mail './**/*.md'
+          fail: true
+
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run actionlint
+        uses: reviewdog/action-actionlint@v1
+        with:
+          fail_level: error

@@ -63,6 +63,6 @@ Revisit an accepted ADR when one or more of these conditions occurs:
 
 ## Related documents
 
-- [../../03_architecture/README.md](../../03_architecture/README.md) for active architecture ownership.
-- [../../00-source-of-truth.md](../../00-source-of-truth.md) for canonical ownership.
+- [../03_architecture/README.md](../03_architecture/README.md) for active architecture ownership.
+- [../00-source-of-truth.md](../00-source-of-truth.md) for canonical ownership.
 - [ADR-000-template.md](ADR-000-template.md) for the default ADR format.

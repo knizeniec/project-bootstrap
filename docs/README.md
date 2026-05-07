@@ -33,6 +33,7 @@ Use this root for canonical project documentation.
 - [02_product/01_prd_TEMPLATE.md](02_product/01_prd_TEMPLATE.md)
 - [03_architecture/01_solution_design_TEMPLATE.md](03_architecture/01_solution_design_TEMPLATE.md)
 - [03_architecture/06_interface_control_document_TEMPLATE.md](03_architecture/06_interface_control_document_TEMPLATE.md)
+- [04_ai_governance/01_ai_use_policy_TEMPLATE.md](04_ai_governance/01_ai_use_policy_TEMPLATE.md)
 - [07_delivery/01_delivery_plan_TEMPLATE.md](07_delivery/01_delivery_plan_TEMPLATE.md)
 - [07_delivery/02_implementation_plan_TEMPLATE.md](07_delivery/02_implementation_plan_TEMPLATE.md)
 

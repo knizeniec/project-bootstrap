@@ -47,14 +47,13 @@ Repository structure updates:
 - If deployment information is provided and it affects long-lived structure, add only stable deployment-facing placeholders such as infrastructure, deployment config, container, or environment documentation folders.
 
 Documentation updates:
-- Update `README.md` with a concise overview of the selected language stack and keep it pointing to `REPOSTORY_MAP.md`.
-- Update `REPOSTORY_MAP.md` so it reflects the adapted repository tree and remains a quick reference for search.
-- Update `docs/project/Architecture.md` with the selected language/languages, major technology choices, structural boundaries, and deployment assumptions if provided.
-- Update `docs/project/00-source-of-truth.md` with where language, tooling, and project-structure decisions live.
-- Update `docs/project/00-documentation-standards.md` with naming, layout, and documentation expectations introduced by the selected language stack.
-- Update `docs/project/INDEX.md` so the new stack- or structure-relevant docs are discoverable.
-- Create or update ADRs under `docs/project/adr/` when language, technology direction, repository mode, or structural ownership decisions become part of the project baseline.
-- If deployment or operations details are provided, update the relevant docs under `docs/project/06_security_operations/` and `docs/project/07_delivery/` with baseline ownership and assumptions.
+- Update `README.md` with a concise overview of the selected language stack.
+- Update `docs/Architecture.md` with the selected language/languages, major technology choices, structural boundaries, and deployment assumptions if provided.
+- Update `docs/00-source-of-truth.md` with where language, tooling, and project-structure decisions live.
+- Update `docs/00-documentation-standards.md` with naming, layout, and documentation expectations introduced by the selected language stack.
+- Update `docs/INDEX.md` so the new stack- or structure-relevant docs are discoverable.
+- Create or update ADRs under `docs/adr/` when language, technology direction, repository mode, or structural ownership decisions become part of the project baseline.
+- If deployment or operations details are provided, update the relevant docs under `docs/06_security_operations/` and `docs/07_delivery/` with baseline ownership and assumptions.
 
 Baseline file updates:
 - Update `.gitignore`, `.editorconfig`, and `.gitattributes` to fit the selected language stack.

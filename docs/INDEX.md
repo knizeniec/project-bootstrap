@@ -48,6 +48,7 @@ Use this index after reading [README.md](README.md), [Architecture.md](Architect
 | [02_product/01_prd_TEMPLATE.md](02_product/01_prd_TEMPLATE.md) | Product problem, users, requirements, and acceptance outcomes. | Active |
 | [03_architecture/01_solution_design_TEMPLATE.md](03_architecture/01_solution_design_TEMPLATE.md) | Primary solution design baseline. | Active |
 | [03_architecture/06_interface_control_document_TEMPLATE.md](03_architecture/06_interface_control_document_TEMPLATE.md) | Interface and contract documentation. | Active |
+| [04_ai_governance/01_ai_use_policy_TEMPLATE.md](04_ai_governance/01_ai_use_policy_TEMPLATE.md) | AI approved use, restrictions, approval workflow, and oversight. | Active |
 | [07_delivery/01_delivery_plan_TEMPLATE.md](07_delivery/01_delivery_plan_TEMPLATE.md) | Milestones, dependencies, readiness, and rollout sequencing. | Active |
 | [07_delivery/02_implementation_plan_TEMPLATE.md](07_delivery/02_implementation_plan_TEMPLATE.md) | Execution sequencing, workstreams, and validation gates. | Active |
 

@@ -17,12 +17,25 @@ This repository is a governance-first template for projects that want a clean en
 
 ## Bootstrap checklist
 
-1. Update this `README.md` with your project name, purpose, and operator setup.
-2. Replace placeholder ownership metadata in canonical docs under `docs/` as you adopt them.
-3. Keep only the top-level folders you will actually use for your project.
-4. Record durable technical decisions in `docs/adr/`.
-5. Treat `docs/superpowers/` as working history, not canonical guidance.
-6. Keep local workspace tooling such as `.opencode/` ignored and untracked.
+1. Run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) against this fresh clone to specialize the template to your language stack and project type. See [Adapt to your stack](#adapt-to-your-stack) below.
+2. Update this `README.md` with your project name, purpose, and operator setup.
+3. Replace placeholder ownership metadata in canonical docs under `docs/` as you adopt them.
+4. Keep only the top-level folders you will actually use for your project.
+5. Record durable technical decisions in `docs/adr/`.
+6. Treat `docs/superpowers/` as working history, not canonical guidance.
+7. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing the repository.
+8. Keep local workspace tooling such as `.opencode/` ignored and untracked.
+
+## Adapt to your stack
+
+This template ships language-agnostic. Before populating canonical docs or writing code, run the adaptation prompt at [`prompts/language-adaptation.md`](prompts/language-adaptation.md) in your AI coding tool of choice. The prompt:
+
+- Asks the minimum questions needed to specialize the baseline (target language(s), primary technologies, optional deployment target and project description).
+- Adapts the top-level scaffold to the chosen ecosystem and adds language-specific structural directories where they are durable.
+- Updates the documentation control spine, ADRs as needed, baseline files (`.gitignore`, `.editorconfig`, `.gitattributes`), and routed `AGENTS.md` files so they all agree on the chosen stack.
+- Stays implementation-neutral. It does not generate feature code, endpoints, or dependency version pins.
+
+See [`prompts/README.md`](prompts/README.md) for the full inventory and adoption workflow.
 
 ## Top-level layout
 
@@ -35,6 +48,7 @@ This repository is a governance-first template for projects that want a clean en
 | `bin/` | Thin user-facing entrypoints or wrappers for runtime commands. |
 | `examples/` | Copyable examples for implemented features only. |
 | `diagrams/` | Source diagrams that support active architecture docs and ADRs. |
+| `prompts/` | Adoption-time prompts that adapt this template to a chosen language stack. |
 | `docs/` | Canonical documentation tree and governance structure. |
 
 ## Documentation model
@@ -47,7 +61,3 @@ This repository is a governance-first template for projects that want a clean en
 ## Optional local tooling
 
 Repository-local helper tooling is allowed, but it should stay outside the tracked template contract. Keep `.opencode/` and similar workspace directories gitignored so the template remains portable.
-
-## Reference tree
-
-See `REPOSITORY_MAP.md` for the tracked repository tree and quick search reference.

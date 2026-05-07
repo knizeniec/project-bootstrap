@@ -17,12 +17,12 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 ## Repository Structure
 
 - Root purpose: repository scaffold and governance baseline.
-- Main directories: `docs/`, `.github/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
+- Main directories: `docs/`, `prompts/`, `.github/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
 - Optional local tooling directories such as `.opencode/` are intentionally gitignored and are not part of the tracked template contract.
-- Reference tree: `REPOSITORY_MAP.md`.
 
 ## Global Workflow
 
+- A fresh clone of this template is unspecialized. The first action for a new adopter is to run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) before populating canonical docs or writing code.
 - Define scope before editing and avoid unrelated changes.
 - Prefer root-cause fixes and explicit, simple changes.
 - Keep `AGENTS.md` files up to date when workflow or context-management guidance changes, or when new instructions would materially improve future work.
@@ -44,4 +44,5 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 - `docs/adr/AGENTS.md` — ADR authoring and durable implementation decision rules.
 - `docs/superpowers/AGENTS.md` — specs, plans, and historical implementation record rules.
 - `.github/AGENTS.md` — CI, CODEOWNERS, and branch protection guidance.
+- `prompts/AGENTS.md` — adoption-time prompt authoring rules.
 - `src/AGENTS.md` — coding practices and implementation rules for source files.

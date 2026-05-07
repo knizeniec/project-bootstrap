@@ -43,6 +43,27 @@ docs/
 | Working history | [superpowers/](superpowers/README.md) | Specs, plans, and other tracked work records that do not define the active baseline. |
 | Archive/evidence | [99_archive/](99_archive/README.md) | Historical evidence and retired material kept for traceability only. |
 
+## Anchoring
+
+The numbered domain folders (`00_governance/` through `08_references/` plus `99_archive/`) are a custom convention chosen for this template. They are not a one-to-one mapping to a published standard.
+
+Adopters who must align with arc42 can map the folders as follows:
+
+| Folder | arc42 alignment |
+|---|---|
+| `00_governance/` | Quality goals, stakeholders, constraints (arc42 §1, §2) |
+| `01_strategy/` | Strategic context (arc42 §1) |
+| `02_product/` | Requirements and quality goals (arc42 §1, §10 quality scenarios) |
+| `03_architecture/` | Solution strategy, building blocks, runtime, deployment, crosscutting (arc42 §4-§8) |
+| `04_ai_governance/` | Quality requirements and risks specific to AI (arc42 §10, §11) |
+| `05_testing_acceptance/` | Quality scenarios and verification evidence (arc42 §10) |
+| `06_security_operations/` | Crosscutting concepts and runtime view for operations (arc42 §8, §6) |
+| `07_delivery/` | Deployment view and risk/technical debt (arc42 §7, §11) |
+| `08_references/` | Glossary and external references (arc42 §12) |
+| `adr/` | Architecture decisions (arc42 §9) |
+
+Adopters who prefer to keep this template's numbered taxonomy without arc42 alignment can ignore the table above.
+
 ## Change rules
 
 - If the documentation structure changes, update [README.md](README.md), [Architecture.md](Architecture.md), [00-documentation-standards.md](00-documentation-standards.md), [00-source-of-truth.md](00-source-of-truth.md), and [INDEX.md](INDEX.md) together.

@@ -23,6 +23,7 @@ Use this file to find the one document or landing page that owns a topic. Suppor
 | Solution design template | [03_architecture/01_solution_design_TEMPLATE.md](03_architecture/01_solution_design_TEMPLATE.md) | Starter for architecture baseline, boundaries, and quality concerns. |
 | Interface control template | [03_architecture/06_interface_control_document_TEMPLATE.md](03_architecture/06_interface_control_document_TEMPLATE.md) | Starter for contracts, interfaces, and integration boundaries. |
 | AI governance | [04_ai_governance/README.md](04_ai_governance/README.md) | Owns model-use policy, approvals, evaluation, and oversight. |
+| AI use policy template | [04_ai_governance/01_ai_use_policy_TEMPLATE.md](04_ai_governance/01_ai_use_policy_TEMPLATE.md) | Starter for AI approved use, restrictions, approval workflow, and oversight. |
 | Testing and acceptance | [05_testing_acceptance/README.md](05_testing_acceptance/README.md) | Owns verification, acceptance, and quality evidence structure. |
 | Security and operations | [06_security_operations/README.md](06_security_operations/README.md) | Owns security controls, runbooks, and incident handling. |
 | Delivery | [07_delivery/README.md](07_delivery/README.md) | Owns roadmap, release, rollout, and handoff planning. |
@@ -32,6 +33,7 @@ Use this file to find the one document or landing page that owns a topic. Suppor
 | Architecture decisions | [adr/README.md](adr/README.md) | Owns durable implementation decisions and ADR authoring rules. |
 | Working-history policy | [superpowers/README.md](superpowers/README.md) | Owns rules for specs, plans, and tracked work records. |
 | Archive policy | [99_archive/README.md](99_archive/README.md) | Owns rules for historical evidence and retired material. |
+| Adoption prompts | [../prompts/README.md](../prompts/README.md) | Owns adoption-time prompts that adapt this template to a chosen language stack. |
 
 ## Rule
 
