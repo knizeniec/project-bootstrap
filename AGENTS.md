@@ -17,7 +17,7 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 ## Repository Structure
 
 - Root purpose: repository scaffold and governance baseline.
-- Main directories: `docs/`, `prompts/`, `.github/`, `.agents/`, `.claude/`, `.copilot/`, `.codex/`, `.opencode/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
+- Main directories: `docs/`, `project-initialization/`, `.github/`, `.agents/`, `.claude/`, `.copilot/`, `.codex/`, `.opencode/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
 - Terms used in this repo: `template` is a reusable `_TEMPLATE.md` starter file, `active document` is a project-specific document that governs current work, and `historical record` is a non-canonical planning or archive document.
 - Assistant-native tooling directories `.claude/`, `.copilot/`, `.codex/`, and `.opencode/` are part of the tracked template contract. Codex also uses `.agents/skills/` as a tracked repo-native skill surface. Keep only machine-specific files inside assistant directories ignored.
 
@@ -28,7 +28,7 @@ Run these checks before doing any non-trivial work:
 1. **Check for an existing plan or spec.** Look in `docs/superpowers/plans/` and `docs/superpowers/specs/` for a file that covers the current task. If one exists, read it before writing any code or docs — do not duplicate planning that is already done.
 2. **Read relevant ADRs.** Before making any architectural or cross-cutting decision, check `docs/adr/` for ADRs that apply. ADRs are binding. If an accepted ADR conflicts with your intended approach, follow the ADR or explicitly supersede it with a new one.
 3. **Check the source-of-truth map for structural changes.** Before adding new directories, moving files, or creating new documentation areas, read [`docs/00-source-of-truth.md`](docs/00-source-of-truth.md) to confirm the correct canonical owner for the content.
-4. **Recognize unfilled adaptation slots.** If you encounter `<<FILL IN at adaptation: ...>>` placeholders in any file, do not silently fill them with guesses. Stop, inform the user, and point them to [`prompts/language-adaptation.md`](prompts/language-adaptation.md) to run the adaptation prompt first.
+4. **Recognize unfilled adaptation slots.** If you encounter `<<FILL IN at adaptation: ...>>` placeholders in any file, do not silently fill them with guesses. Stop, inform the user, and point them to run `/init-adapt` to complete the Adapt phase first.
 
 ## When to Write an ADR
 
@@ -46,7 +46,7 @@ For proposals that are not yet decided, open an RFC in `docs/03_architecture/rfc
 
 ## Global Workflow
 
-- A fresh clone of this template is unspecialized. The adoption sequence is documented in the root [`README.md`](README.md): run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md), then [`prompts/refine-specs.md`](prompts/refine-specs.md), then [`prompts/architecture-baseline.md`](prompts/architecture-baseline.md), then [`prompts/language-adaptation.md`](prompts/language-adaptation.md).
+- A fresh clone of this template is unspecialized. The adoption sequence is documented in the root [`README.md`](README.md): run `/init-triage` first, then `/init-intent` through `/init-review` in order. Phase logic lives in [`project-initialization/`](project-initialization/README.md).
 - Define scope before editing and avoid unrelated changes.
 - Prefer root-cause fixes and explicit, simple changes.
 - Keep `AGENTS.md` files up to date when workflow or context-management guidance changes, or when new instructions would materially improve future work.
@@ -103,5 +103,4 @@ Context is money. Keep it clean:
 - `.copilot/AGENTS.md` — Copilot-specific vendored asset guidance.
 - `.codex/AGENTS.md` — Codex-specific vendored asset guidance.
 - `.opencode/AGENTS.md` — OpenCode-specific vendored asset and local-only path guidance.
-- `prompts/AGENTS.md` — adoption-time prompt authoring rules.
 - `src/AGENTS.md` — coding practices and implementation rules for source files.
