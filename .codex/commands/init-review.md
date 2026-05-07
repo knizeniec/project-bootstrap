@@ -17,4 +17,4 @@ Dispatch `agents/init-reviewer.md` with: the complete list of all artifacts prod
 - All findings resolved or advisory → mark Phase 6 `done` in the plan. Declare initialization complete. Suggest commit: `"docs: complete project initialization"`.
 - Unresolved important or critical findings → leave Phase 6 `in-progress`. List what must be fixed. Tell the user to fix them and re-run `/init-review`.
 
-**Update the plan and stop.** Output end-of-run summary from `project-initialization/contract.md`.
+**Update the plan and stop.** Update the plan in one batch with the Phase 6 status (all checks complete). Output end-of-run summary from `project-initialization/contract.md`.
