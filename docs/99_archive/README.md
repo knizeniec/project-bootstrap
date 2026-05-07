@@ -1,9 +1,9 @@
 # Archive Documentation
 
 Status: Archive/evidence
-Owner: [Role or team responsible for historical records]
+Owner: Documentation maintainers
 Purpose: define `docs/99_archive/` as evidence-only storage for retired or historical material
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 This area stores historical records, superseded material, and evidence kept for traceability. It does not define the active baseline.
 

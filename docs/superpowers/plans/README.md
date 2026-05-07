@@ -1,9 +1,9 @@
 # Plans
 
 Status: Working history
-Owner: [Role or team responsible for planning records]
+Owner: Planning maintainers
 Purpose: define the naming and scope conventions for date-stamped implementation plans
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this folder for
 
@@ -17,4 +17,4 @@ Last updated: YYYY-MM-DD
 ## Related documents
 
 - [../README.md](../README.md) for working-history rules.
-- [../../project/adr/README.md](../../project/adr/README.md) for durable implementation decisions.
+- [../../adr/README.md](../../adr/README.md) for durable implementation decisions.

@@ -1,7 +1,7 @@
 ---
 name: Project ADR Records
-description: Use for work under docs/project/. Covers ADR authoring and durable implementation decision records.
-applyTo: "docs/project/**"
+description: Use for work under docs/adr/. Covers ADR authoring and durable implementation decision records.
+applyTo: "docs/adr/**"
 ---
 
 # Project ADR Records

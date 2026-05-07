@@ -1,9 +1,9 @@
 # AI Governance Documentation
 
 Status: Active
-Owner: [Role or team responsible for AI governance docs]
+Owner: AI governance maintainers
 Purpose: provide the landing page for AI policy, approvals, evaluation, and safety controls
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this area for
 

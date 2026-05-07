@@ -1,16 +1,16 @@
 # Documentation Standards
 
 Status: Active
-Owner: [Role or team responsible for documentation]
+Owner: Documentation maintainers
 Purpose: define writing, ownership, and maintenance rules for the active docs system
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Scope
 
 These standards apply to the control spine and the active numbered tree under `docs/`.
 
 - Active canonical docs: `README.md`, `Architecture.md`, `00-documentation-standards.md`, `00-source-of-truth.md`, `INDEX.md`, and `00_governance/` through `08_references/`
-- Durable decisions: `project/adr/`
+- Durable decisions: `adr/`
 - Working history only: `superpowers/`
 - Evidence only: `99_archive/`
 
@@ -29,7 +29,7 @@ These standards apply to the control spine and the active numbered tree under `d
 - Create new canonical content inside the numbered tree.
 - Keep cross-cutting rules in the control spine instead of repeating them across area folders.
 - Use folder landing pages for area-level orientation and keep detailed tree navigation in [INDEX.md](INDEX.md).
-- Store durable implementation decisions in `docs/project/adr/`.
+- Store durable implementation decisions in `docs/adr/`.
 - Store external standards, vendor references, and framework citations in `08_references/`.
 - Use named `_TEMPLATE.md` files in canonical areas for reusable bootstrap starters.
 
@@ -52,7 +52,7 @@ Add `Approval state` or `Review cadence` when the document governs controls or d
 
 1. Update the canonical owner first.
 2. Update `README.md`, `Architecture.md`, `00-source-of-truth.md`, and `INDEX.md` when the structure or ownership map changes.
-3. Update `docs/project/adr/` when a durable implementation decision changes.
+3. Update `docs/adr/` when a durable implementation decision changes.
 4. Keep archive and working-history readmes aligned when their handling rules change.
 5. Run link validation when links change.
 

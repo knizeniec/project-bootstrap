@@ -16,10 +16,15 @@ jobs:
       - name: Validate required governance files
         run: |
           test -f README.md
+          test -f CLAUDE.md
           test -f AGENTS.md
           test -f CONTRIBUTING.md
           test -f SECURITY.md
           test -f CHANGELOG.md
+          test -f REPOSITORY_MAP.md
           test -f .github/CODEOWNERS
           test -f docs/00-source-of-truth.md
-          test -f docs/project/adr/ADR-000-template.md
+          test -f docs/adr/ADR-000-template.md
+      - name: Validate canonical path consistency
+        run: |
+          ! rg -n "docs/project/adr|docs/project/AGENTS|REPOSTORY_MAP" README.md AGENTS.md CONTRIBUTING.md .github diagrams src tests config scripts bin examples docs/README.md docs/INDEX.md docs/00-documentation-standards.md docs/00-source-of-truth.md docs/Architecture.md docs/00_governance docs/01_strategy docs/02_product docs/03_architecture docs/04_ai_governance docs/05_testing_acceptance docs/06_security_operations docs/07_delivery docs/08_references docs/adr

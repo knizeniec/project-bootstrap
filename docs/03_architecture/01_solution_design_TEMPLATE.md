@@ -1,9 +1,9 @@
 # Solution Design Template
 
 Status: Active
-Owner: [Role or team responsible for architecture docs]
+Owner: Architecture maintainers
 Purpose: provide a starter template for describing the target solution, architecture boundaries, and technical design rationale
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## How to use this template
 
@@ -62,5 +62,5 @@ Last updated: YYYY-MM-DD
 ## Related documents
 
 - [06_interface_control_document_TEMPLATE.md](06_interface_control_document_TEMPLATE.md)
-- [../project/adr/README.md](../project/adr/README.md)
+- [../adr/README.md](../adr/README.md)
 - [../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)

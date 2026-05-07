@@ -1,9 +1,9 @@
 # Documentation
 
 Status: Active
-Owner: [Role or team responsible for documentation]
+Owner: Documentation maintainers
 Purpose: serve as the entrypoint for the active documentation system rooted under `docs/`
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 Use this root for canonical project documentation.
 
@@ -38,7 +38,7 @@ Use this root for canonical project documentation.
 
 ## Supporting areas
 
-- [project/adr/README.md](project/adr/README.md) for durable architecture decisions.
+- [adr/README.md](adr/README.md) for durable architecture decisions.
 - [superpowers/README.md](superpowers/README.md) for working-history specs and plans.
 - [99_archive/README.md](99_archive/README.md) for historical evidence only.
 

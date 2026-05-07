@@ -1,9 +1,9 @@
 # References Documentation
 
 Status: Active
-Owner: [Role or team responsible for reference curation]
+Owner: Reference maintainers
 Purpose: provide the landing page for external references, standards, and source material used by the active docs set
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this area for
 

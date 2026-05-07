@@ -1,9 +1,9 @@
 # Interface Control Document Template
 
 Status: Active
-Owner: [Role or team responsible for architecture docs]
+Owner: Architecture maintainers
 Purpose: provide a starter template for documenting an interface, contract, or integration boundary
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## How to use this template
 
@@ -48,4 +48,4 @@ Last updated: YYYY-MM-DD
 ## Related documents
 
 - [01_solution_design_TEMPLATE.md](01_solution_design_TEMPLATE.md)
-- [../project/adr/README.md](../project/adr/README.md)
+- [../adr/README.md](../adr/README.md)

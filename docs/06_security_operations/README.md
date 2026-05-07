@@ -1,9 +1,9 @@
 # Security And Operations Documentation
 
 Status: Active
-Owner: [Role or team responsible for security and operations docs]
+Owner: Security and operations maintainers
 Purpose: provide the landing page for security, privacy, operational control, and recovery documents
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this area for
 

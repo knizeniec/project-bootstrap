@@ -1,9 +1,9 @@
 # Strategy Documentation
 
 Status: Active
-Owner: [Role or team responsible for strategy docs]
+Owner: Strategy maintainers
 Purpose: provide the landing page for strategic framing, prioritization, and roadmap rationale
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this area for
 

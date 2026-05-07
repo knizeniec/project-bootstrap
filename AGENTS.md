@@ -17,8 +17,9 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 ## Repository Structure
 
 - Root purpose: repository scaffold and governance baseline.
-- Main directories: `docs/`, `.github/`, `.opencode/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
-- Reference tree: `REPOSTORY_MAP.md`.
+- Main directories: `docs/`, `.github/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
+- Optional local tooling directories such as `.opencode/` are intentionally gitignored and are not part of the tracked template contract.
+- Reference tree: `REPOSITORY_MAP.md`.
 
 ## Global Workflow
 
@@ -28,6 +29,7 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 - Update documentation in the same task when behavior, workflow, or structure changes.
 - Do not claim success without verification evidence.
 - If verification cannot run, state what was not run, why, and the residual risk.
+- Do not make canonical repository behavior depend on ignored local tooling.
 
 ## Git And Safety
 
@@ -39,9 +41,7 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 ## Routing Map
 
 - `docs/AGENTS.md` — documentation rules and doc update expectations.
-- `docs/project/AGENTS.md` — ADR authoring and durable implementation decision rules.
+- `docs/adr/AGENTS.md` — ADR authoring and durable implementation decision rules.
 - `docs/superpowers/AGENTS.md` — specs, plans, and historical implementation record rules.
 - `.github/AGENTS.md` — CI, CODEOWNERS, and branch protection guidance.
-- `.opencode/AGENTS.md` — OpenCode local tooling and prompt/instruction assets.
-- `.opencode/instructions/AGENTS.md` — instruction file ownership and standards documents.
 - `src/AGENTS.md` — coding practices and implementation rules for source files.

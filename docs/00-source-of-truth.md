@@ -1,9 +1,9 @@
 # Source-of-Truth Map
 
 Status: Active
-Owner: [Role or team responsible for documentation]
+Owner: Documentation maintainers
 Purpose: name the canonical owner for each active documentation concern
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 Use this file to find the one document or landing page that owns a topic. Supporting documents may explain or evidence that topic, but they do not override the owner named here.
 
@@ -29,7 +29,7 @@ Use this file to find the one document or landing page that owns a topic. Suppor
 | Delivery plan template | [07_delivery/01_delivery_plan_TEMPLATE.md](07_delivery/01_delivery_plan_TEMPLATE.md) | Starter for milestones, dependencies, risks, and rollout planning. |
 | Implementation plan template | [07_delivery/02_implementation_plan_TEMPLATE.md](07_delivery/02_implementation_plan_TEMPLATE.md) | Starter for workstreams, sequencing, and validation gates. |
 | References | [08_references/README.md](08_references/README.md) | Owns external references and standards inputs. |
-| Architecture decisions | [project/adr/README.md](project/adr/README.md) | Owns durable implementation decisions and ADR authoring rules. |
+| Architecture decisions | [adr/README.md](adr/README.md) | Owns durable implementation decisions and ADR authoring rules. |
 | Working-history policy | [superpowers/README.md](superpowers/README.md) | Owns rules for specs, plans, and tracked work records. |
 | Archive policy | [99_archive/README.md](99_archive/README.md) | Owns rules for historical evidence and retired material. |
 

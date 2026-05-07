@@ -1,9 +1,9 @@
 # Architecture Documentation
 
 Status: Active
-Owner: [Role or team responsible for architecture docs]
+Owner: Architecture maintainers
 Purpose: provide the landing page for solution design, integrations, runtime patterns, and technical decisions
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this area for
 
@@ -25,6 +25,6 @@ Last updated: YYYY-MM-DD
 
 ## Related documents
 
-- [../project/adr/README.md](../project/adr/README.md) for durable architecture decisions.
+- [../adr/README.md](../adr/README.md) for durable architecture decisions.
 - [../00_governance/README.md](../00_governance/README.md) for traceability and control ownership.
 - [../INDEX.md](../INDEX.md) for full navigation.

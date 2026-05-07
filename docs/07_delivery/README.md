@@ -1,9 +1,9 @@
 # Delivery Documentation
 
 Status: Active
-Owner: [Role or team responsible for delivery docs]
+Owner: Delivery maintainers
 Purpose: provide the landing page for roadmap, release planning, rollout sequencing, and handoff readiness
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this area for
 

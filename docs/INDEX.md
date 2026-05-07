@@ -1,9 +1,9 @@
 # Documentation Index
 
 Status: Active
-Owner: [Role or team responsible for documentation]
+Owner: Documentation maintainers
 Purpose: provide a compact navigation map for the active documentation system
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 Use this index after reading [README.md](README.md), [Architecture.md](Architecture.md), and [00-source-of-truth.md](00-source-of-truth.md).
 
@@ -55,6 +55,6 @@ Use this index after reading [README.md](README.md), [Architecture.md](Architect
 
 | Surface | Scope | Status |
 |---|---|---|
-| [project/adr/README.md](project/adr/README.md) | Durable architecture decision records. | Active |
+| [adr/README.md](adr/README.md) | Durable architecture decision records. | Active |
 | [superpowers/README.md](superpowers/README.md) | Specs, plans, and tracked working history. | Working history |
 | [99_archive/README.md](99_archive/README.md) | Archive entrypoint for historical evidence. | Archive/evidence |

@@ -1,9 +1,9 @@
 # ADR Directory
 
 Status: Active
-Owner: [Role or team responsible for architecture decisions]
-Purpose: define `docs/project/adr/` as the home for durable implementation and architecture decisions
-Last updated: YYYY-MM-DD
+Owner: Architecture decision maintainers
+Purpose: define `docs/adr/` as the home for durable implementation and architecture decisions
+Last updated: 2026-05-06
 
 This directory contains Architecture Decision Records (ADRs).
 

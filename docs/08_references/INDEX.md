@@ -1,9 +1,9 @@
 # References Index
 
 Status: Active
-Owner: [Role or team responsible for reference curation]
+Owner: Reference maintainers
 Purpose: provide a topic-based index for external references used by the active docs set
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Documentation and architecture
 

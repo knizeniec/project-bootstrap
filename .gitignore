@@ -1,10 +1,12 @@
 # Polyglot baseline generated from widely-used GitHub/gitignore patterns
-.opencode
+
+# Optional local tooling
+.opencode/
 # OS
 .DS_Store
 Thumbs.db
 Desktop.ini
-
+CLAUDE.md
 # Editor/IDE
 .idea/
 .vscode/

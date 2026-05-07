@@ -1,9 +1,9 @@
 # Product Documentation
 
 Status: Active
-Owner: [Role or team responsible for product docs]
+Owner: Product maintainers
 Purpose: provide the landing page for scope, requirements, user journeys, and acceptance outcomes
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this area for
 

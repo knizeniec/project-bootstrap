@@ -1,9 +1,9 @@
 # Implementation Plan Template
 
 Status: Active
-Owner: [Role or team responsible for delivery docs]
+Owner: Delivery maintainers
 Purpose: provide a starter template for defining execution phases, workstreams, sequencing, and validation gates
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## How to use this template
 
@@ -50,4 +50,4 @@ Last updated: YYYY-MM-DD
 
 - [01_delivery_plan_TEMPLATE.md](01_delivery_plan_TEMPLATE.md)
 - [../00_governance/12_requirements_traceability_matrix_TEMPLATE.md](../00_governance/12_requirements_traceability_matrix_TEMPLATE.md)
-- [../project/adr/README.md](../project/adr/README.md)
+- [../adr/README.md](../adr/README.md)

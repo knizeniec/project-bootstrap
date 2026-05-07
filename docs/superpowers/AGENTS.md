@@ -10,7 +10,7 @@ This directory stores planning artifacts for agent-driven work.
 
 ## Most Important Rules
 
-- Use `docs/project/adr/` as the primary context for brainstorming and planning.
+- Use `docs/adr/` as the primary context for brainstorming and planning.
 - Store specs in `docs/superpowers/specs/` and plans in `docs/superpowers/plans/`.
 - Treat completed spec and plan files as historical records; create new dated files for later changes instead of rewriting completed ones.
 - Keep canonical project rules in root `docs/`, not here.
@@ -25,4 +25,4 @@ This directory stores planning artifacts for agent-driven work.
 
 - Update only the files relevant to the current task.
 - Keep entries concise and specific.
-- Do not move source-of-truth decisions from `docs/project/adr/` into these historical records.
+- Do not move source-of-truth decisions from `docs/adr/` into these historical records.

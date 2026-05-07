@@ -1,9 +1,9 @@
 # Testing And Acceptance Documentation
 
 Status: Active
-Owner: [Role or team responsible for testing docs]
+Owner: Testing maintainers
 Purpose: provide the landing page for verification strategy, acceptance criteria, and quality evidence
-Last updated: YYYY-MM-DD
+Last updated: 2026-05-06
 
 ## Use this area for
 
