@@ -48,21 +48,21 @@ The repository taught adopters to initialize projects through a prompt-first seq
 
 ### Option 3: Tool-native commands (chosen)
 
-- What it is: seven phase commands per tool dir (`.claude/`, `.copilot/`, `.codex/`), each pointing at shared content in `project-initialization/`. A plan file in `docs/superpowers/plans/` is the state machine. Triage writes a tailored artifact roadmap; phase commands honor it.
+- What it is: seven phase commands per tool dir (`.claude/`, `.copilot/`, `.codex/`), each pointing at shared content in `project-initialization/`. A plan file in `docs/superpowers/plans/` is the state machine. Triage writes a tailored artifact roadmap; phase commands honor it. The repository also keeps `.opencode/` as a tracked assistant-native surface for vendored Superpowers skills and OpenCode bootstrap assets.
 - Pros: auto-discovered by each tool's native command loader; mechanical gating via plan-file precheck; single source of stage truth; adaptive depth via per-artifact modes.
 - Cons: three sets of command files need parity maintenance; vendored `superpowers` plugin must be manually re-synced when upstream changes.
 
 ## Decision outcome
 
-Adopt tool-native phase commands in `.claude/`, `.copilot/`, and `.codex/` as the primary template initialization workflow. `prompts/` is removed. The `project-initialization/` directory at repo root is the single source of stage logic, artifact rubrics, profiles, and the shared contract.
+Adopt tool-native phase commands in `.claude/`, `.copilot/`, and `.codex/` as the primary template initialization workflow. `prompts/` is removed. The `project-initialization/` directory at repo root is the single source of stage logic, artifact rubrics, profiles, and the shared contract. Keep `.opencode/` as a first-class tracked assistant-native directory for vendored Superpowers and OpenCode bootstrap assets.
 
 ### Consequences
 
 - `README.md`, `AGENTS.md`, and `CLAUDE.md` must point to the tool-specific init-triage command.
 - The repository must maintain contract parity across the three tool dirs; CI checks enforce this.
-- The full `superpowers` plugin (v5.0.7) is vendored into each tool dir and updated manually.
+- The full `superpowers` asset set (v5.1.0) is vendored into tracked assistant-native directories and updated manually.
 
 ## More information
 
 - An earlier draft of this record (committed 2026-05-07) proposed `skills/project-initialization/` as the primary path. That draft was revised on the same day before any implementation landed. The revision history is visible in git log.
-- Vendoring source: `/home/hexaper/.copilot/superpowers` at version 5.0.7.
+- Vendoring source: `/home/hexaper/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0`.

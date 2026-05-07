@@ -1,12 +1,16 @@
 # Polyglot baseline generated from widely-used GitHub/gitignore patterns
-.claude
-# Optional local tooling
-.opencode/
+# Assistant-native tracked tooling keeps only machine-specific files ignored
+.claude/settings.local.json
+.opencode/node_modules/
+.opencode/package.json
+.opencode/package-lock.json
+.opencode/bun.lock
+.opencode/memory/
+.opencode/instructions/
 # OS
 .DS_Store
 Thumbs.db
 Desktop.ini
-CLAUDE.md
 # Editor/IDE
 .idea/
 .vscode/

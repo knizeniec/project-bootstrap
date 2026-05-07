@@ -1,6 +1,6 @@
 # Universal Repository Template
 
-A governance-first project template. It gives you a clean engineering scaffold, a structured documentation tree, and a set of AI-assisted prompts that walk you from a blank clone through requirements, architecture, and language specialization before you write implementation code.
+A governance-first project template. It gives you a clean engineering scaffold, a structured documentation tree, AI-assisted prompts for adoption, and tracked assistant-native workflow assets for Claude, Copilot, Codex, and OpenCode.
 
 The core idea is simple: early decisions about purpose, scope, and architecture belong in active documents that the rest of the project refers back to. This template creates that structure upfront so your codebase, docs, and AI agent context stay aligned throughout the project.
 
@@ -58,7 +58,7 @@ After Phase 4 your repository has a coherent structure, all docs agree on the st
 5. Replace placeholder ownership metadata in the active docs under `docs/` as you adopt them.
 6. Keep only the top-level folders you will actually use.
 7. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing.
-8. Keep local workspace tooling such as `.opencode/` gitignored and untracked.
+8. Keep only machine-specific files local; the assistant-native directories `.claude/`, `.copilot/`, `.codex/`, and `.opencode/` are part of the tracked template contract.
 9. Commit the bootstrap state as one or two clean commits before starting feature work.
 
 ## Minimal adoption path
@@ -113,6 +113,10 @@ See [`prompts/README.md`](prompts/README.md) for the full prompt inventory and w
 | `tools/` | Repository-maintained utilities such as documentation validators and maintenance helpers. |
 | `examples/` | Copyable examples for implemented features only. |
 | `diagrams/` | Source diagrams that support active architecture docs and ADRs. |
+| `.claude/` | Tracked Claude Code skills, hooks, and repo-local defaults. |
+| `.copilot/` | Tracked Copilot-oriented Superpowers assets kept in parity with other harnesses. |
+| `.codex/` | Tracked Codex-oriented Superpowers assets kept in parity with other harnesses. |
+| `.opencode/` | Tracked OpenCode skills and plugin bootstrap assets. |
 | `prompts/` | Adoption-time prompts that adapt this template to a chosen language stack. |
 | `docs/` | Canonical documentation tree and governance structure. |
 
@@ -124,6 +128,10 @@ See [`prompts/README.md`](prompts/README.md) for the full prompt inventory and w
 - `docs/99_archive/` is for retired material, not active guidance.
 - `tools/docs_validator/` holds the Python frontmatter validator used by docs-focused local checks and GitHub workflows.
 
-## Optional local tooling
+## Assistant-native tooling
 
-Repository-local helper tooling is allowed but should stay outside the tracked template contract. Keep `.opencode/` and similar workspace directories gitignored so the template remains portable.
+The template ships tracked assistant-native assets in `.claude/`, `.copilot/`, `.codex/`, and `.opencode/`.
+
+- Vendored Superpowers assets are synced from `/home/hexaper/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0`.
+- Keep only machine-specific files local, such as `.claude/settings.local.json` and ignored OpenCode workspace files under `.opencode/`.
+- GitHub Copilot's actual repository instruction entrypoint remains `.github/copilot-instructions.md`.
