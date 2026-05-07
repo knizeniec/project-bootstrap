@@ -17,23 +17,35 @@ This repository is a governance-first template for projects that want a clean en
 
 ## Bootstrap checklist
 
-1. Run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) against this fresh clone to specialize the template to your language stack and project type. See [Adapt to your stack](#adapt-to-your-stack) below.
-2. Update this `README.md` with your project name, purpose, and operator setup.
-3. Replace placeholder ownership metadata in canonical docs under `docs/` as you adopt them.
-4. Keep only the top-level folders you will actually use for your project.
-5. Record durable technical decisions in `docs/adr/`.
-6. Treat `docs/superpowers/` as working history, not canonical guidance.
-7. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing the repository.
-8. Keep local workspace tooling such as `.opencode/` ignored and untracked.
+1. Run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) against this fresh clone to capture project intent and produce a first-pass canonical documentation baseline. See [Bootstrap your project](#bootstrap-your-project) below.
+2. Iterate on the bootstrap canonical docs ([`docs/00_governance/00_project_brief.md`](docs/00_governance/00_project_brief_TEMPLATE.md), [`docs/02_product/01_prd.md`](docs/02_product/01_prd_TEMPLATE.md)) until project specifications, requirements, and goals are robust enough to plan against.
+3. Author the architecture baseline by copying [`docs/03_architecture/01_solution_design_TEMPLATE.md`](docs/03_architecture/01_solution_design_TEMPLATE.md) to `docs/03_architecture/01_solution_design.md` and filling in the chosen language stack, primary technologies, building blocks, runtime and deployment view, and the basic application plan. Record durable decisions as ADRs in [`docs/adr/`](docs/adr/).
+4. Run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) to specialize the structural baseline against those architecture docs. The prompt reads the canonical docs as the source of truth and halts if they are missing or still contain placeholders. See [Adapt to your stack](#adapt-to-your-stack) below.
+5. Replace placeholder ownership metadata in canonical docs under `docs/` as you adopt them.
+6. Keep only the top-level folders you will actually use for your project.
+7. Treat `docs/superpowers/` as working history, not canonical guidance.
+8. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing the repository.
+9. Keep local workspace tooling such as `.opencode/` ignored and untracked.
+10. Continue with deeper documentation work or move into implementation planning on the adapted template.
+
+## Bootstrap your project
+
+This is the first step against a fresh clone. Run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) in your AI coding tool of choice. The prompt:
+
+- Asks three required questions (project name, what the project needs to achieve, planned product description) and a small set of optional follow-ups about users, deployment context, and constraints.
+- Proposes two or three approach directions with non-binding tech-stack options for the user to consider — proposals are starting points, not decisions.
+- Produces a first-pass canonical documentation baseline: an active project brief at `docs/00_governance/00_project_brief.md`, an active PRD at `docs/02_product/01_prd.md`, a refreshed root README, and an optional initial ADR if the user committed to a durable decision during the conversation.
+- Stays implementation-neutral. It does not pick a language, framework, or runtime. Those choices happen in the next step.
 
 ## Adapt to your stack
 
-This template ships language-agnostic. Before populating canonical docs or writing code, run the adaptation prompt at [`prompts/language-adaptation.md`](prompts/language-adaptation.md) in your AI coding tool of choice. The prompt:
+After bootstrap and after the architecture docs ([`docs/03_architecture/01_solution_design.md`](docs/03_architecture/01_solution_design_TEMPLATE.md) plus any accepted ADRs) are filled in with the chosen language stack and basic application plan, run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) to specialize the structural baseline. The prompt:
 
-- Asks the minimum questions needed to specialize the baseline (target language(s), primary technologies, optional deployment target and project description).
-- Adapts the top-level scaffold to the chosen ecosystem and adds language-specific structural directories where they are durable.
-- Updates the documentation control spine, ADRs as needed, baseline files (`.gitignore`, `.editorconfig`, `.gitattributes`), and routed `AGENTS.md` files so they all agree on the chosen stack.
-- Stays implementation-neutral. It does not generate feature code, endpoints, or dependency version pins.
+- Reads the canonical docs as the single source of truth: project brief, PRD, and the solution design. It does not ask the adopter to restate stack facts that the docs already capture.
+- Halts with a precise list of missing or unfilled inputs if the architecture or bootstrap docs are not yet ready, instead of guessing.
+- Adapts the top-level scaffold to the language stack and project shape recorded in the docs and adds language-specific structural directories where they are durable.
+- Updates the documentation control spine, ADRs when the adaptation itself crystallizes a durable decision, baseline files (`.gitignore`, `.editorconfig`, `.gitattributes`), and routed `AGENTS.md` files so they all agree with the canonical docs.
+- Stays implementation-neutral. It does not generate feature code, endpoints, or dependency version pins beyond what an accepted ADR or the solution design already requires.
 
 See [`prompts/README.md`](prompts/README.md) for the full inventory and adoption workflow.
 

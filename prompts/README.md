@@ -9,17 +9,20 @@ This directory is the canonical home for prompts that an adopter runs against a 
 
 ## Inventory
 
-| Prompt | Purpose |
-|---|---|
-| [language-adaptation.md](language-adaptation.md) | Adapt the language-agnostic baseline to a chosen language stack and project type without writing implementation code. |
+| Prompt | Purpose | Run order |
+|---|---|---|
+| [project-bootstrap.md](project-bootstrap.md) | Capture project intent and produce a first-pass canonical documentation baseline (project brief, PRD, refreshed root README, optional initial ADR). | First |
+| [language-adaptation.md](language-adaptation.md) | Specialize the structural baseline to the language stack already recorded in the canonical architecture docs. Reads the docs as the source of truth and refuses to run if they are missing or unfilled. | After bootstrap and architecture docs are filled in |
 
 ## How adopters use this directory
 
-1. Clone the template into your new project directory and follow the bootstrap checklist in the root [README.md](../README.md).
-2. Open [language-adaptation.md](language-adaptation.md) and paste it into your AI coding tool (Claude Code, Codex, Cursor, or another agent that supports prompt instructions).
-3. Answer the mandatory clarification questions (target language(s), primary technologies, deployment target, project description).
-4. Review the proposed structural and documentation changes before accepting them.
-5. Commit the adapted baseline as a single bootstrap commit before starting feature work.
+1. Clone the template into your new project directory.
+2. Open [project-bootstrap.md](project-bootstrap.md) and paste it into your AI coding tool (Claude Code, Codex, Cursor, or another agent that supports prompt instructions). Answer the required questions (project name, what the project needs to achieve, planned product description), review the proposed approach options, and accept the generated first-pass canonical docs.
+3. Iterate on the bootstrap canonical docs ([docs/00_governance/00_project_brief.md](../docs/00_governance/00_project_brief_TEMPLATE.md) and [docs/02_product/01_prd.md](../docs/02_product/01_prd_TEMPLATE.md)) until project specifications, requirements, and goals are robust enough to plan against.
+4. Author the architecture baseline by copying [docs/03_architecture/01_solution_design_TEMPLATE.md](../docs/03_architecture/01_solution_design_TEMPLATE.md) to `docs/03_architecture/01_solution_design.md` and filling in the chosen language stack, primary technologies, building blocks, runtime and deployment view, and the basic application plan. Add ADRs under [docs/adr/](../docs/adr/) when the design crystallizes durable decisions.
+5. Open [language-adaptation.md](language-adaptation.md) and paste it into the same tool. The prompt reads the canonical docs as authoritative input and halts if the architecture baseline is missing or still contains placeholders. Review the structural changes before accepting them.
+6. Follow the remaining steps in the bootstrap checklist in the root [README.md](../README.md) (set the LICENSE, replace placeholder ownership metadata, etc.).
+7. Commit the bootstrap state as one or two clean commits before starting feature work, and continue with deeper documentation work or implementation planning on the adapted template.
 
 ## What adoption prompts may modify
 
