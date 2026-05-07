@@ -52,6 +52,21 @@ Read the strategy first, then the quality plan, then the evidence index, and fin
 4. [04_uat_plan_TEMPLATE.md](04_uat_plan_TEMPLATE.md)
 5. [05_defect_management_TEMPLATE.md](05_defect_management_TEMPLATE.md)
 
+## Which template should I use?
+
+Pick the smallest set of templates that matches your project's risk and scope. Add more only when justified by complexity, regulation, or stakeholder need.
+
+| Release risk | Recommended templates | Skip |
+|---|---|---|
+| **Low** — internal tooling or prototype, single team, no customer-facing SLA, no compliance obligation, defects caught by developers before release | [01_test_strategy_TEMPLATE.md](01_test_strategy_TEMPLATE.md) — scope, levels, environments, and entry or exit controls | [02_quality_plan_TEMPLATE.md](02_quality_plan_TEMPLATE.md), [03_verification_evidence_index_TEMPLATE.md](03_verification_evidence_index_TEMPLATE.md), [04_uat_plan_TEMPLATE.md](04_uat_plan_TEMPLATE.md), [05_defect_management_TEMPLATE.md](05_defect_management_TEMPLATE.md) |
+| **Medium** — customer-facing release, multiple contributors, stakeholder sign-off required, or service SLA that defects could breach | [01_test_strategy_TEMPLATE.md](01_test_strategy_TEMPLATE.md); [02_quality_plan_TEMPLATE.md](02_quality_plan_TEMPLATE.md) — quality objectives, measures, and phase gates; [04_uat_plan_TEMPLATE.md](04_uat_plan_TEMPLATE.md) — when business or end-user acceptance sign-off is needed before go-live | [03_verification_evidence_index_TEMPLATE.md](03_verification_evidence_index_TEMPLATE.md) — add only when an auditor or client must trace requirements to test results; [05_defect_management_TEMPLATE.md](05_defect_management_TEMPLATE.md) — add only when defect triage SLA is formally owned |
+| **High** — regulated environment or safety-critical domain; external audit evidence required; contractual or legal acceptance obligations; defects have financial, safety, or compliance consequences | Full set: all medium templates plus [03_verification_evidence_index_TEMPLATE.md](03_verification_evidence_index_TEMPLATE.md) — traceable evidence matrix linking requirements, tests, runs, and results; [05_defect_management_TEMPLATE.md](05_defect_management_TEMPLATE.md) — triage, severity, SLA, and escaped-defect handling | Nothing — all documents apply |
+
+**Rules of thumb:**
+- Add the verification evidence index ([03_verification_evidence_index_TEMPLATE.md](03_verification_evidence_index_TEMPLATE.md)) only when a third party must independently verify that every requirement has a passing test — not as a default for internal releases.
+- Add the UAT plan ([04_uat_plan_TEMPLATE.md](04_uat_plan_TEMPLATE.md)) as soon as a business owner or client will formally sign off on acceptance — even for medium-risk releases.
+- Keep the test strategy in every profile; test execution without a scope-and-level decision is the primary cause of quality surprises near release.
+
 ## Related documents
 
 - [../02_product/05_acceptance_catalog_TEMPLATE.md](../02_product/05_acceptance_catalog_TEMPLATE.md) — defines the acceptance scenarios that testing and UAT must prove.

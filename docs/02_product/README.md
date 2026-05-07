@@ -51,6 +51,21 @@ Read the PRD first so the more detailed catalogs inherit a clear product narrati
 4. [05_acceptance_catalog_TEMPLATE.md](05_acceptance_catalog_TEMPLATE.md)
 5. [../05_testing_acceptance/01_test_strategy_TEMPLATE.md](../05_testing_acceptance/01_test_strategy_TEMPLATE.md) and [../00_governance/12_requirements_traceability_matrix_TEMPLATE.md](../00_governance/12_requirements_traceability_matrix_TEMPLATE.md)
 
+## Which template should I use?
+
+Pick the smallest set of templates that matches your project's risk and scope. Add more only when justified by complexity, regulation, or stakeholder need.
+
+| Requirement count tier | Recommended templates | Skip |
+|---|---|---|
+| **Tier 1** — ≤10 requirements, single team, no external compliance, straightforward delivery | [01_prd_TEMPLATE.md](01_prd_TEMPLATE.md) — problem, users, goals, requirements, and release intent in one document | [02_requirements_catalog_TEMPLATE.md](02_requirements_catalog_TEMPLATE.md), [03_user_journeys_TEMPLATE.md](03_user_journeys_TEMPLATE.md), [04_backlog_policy_TEMPLATE.md](04_backlog_policy_TEMPLATE.md), [05_acceptance_catalog_TEMPLATE.md](05_acceptance_catalog_TEMPLATE.md) |
+| **Tier 2** — 11–50 requirements, multiple contributors or squads, customer-facing or handoff-dependent delivery | [01_prd_TEMPLATE.md](01_prd_TEMPLATE.md); [02_requirements_catalog_TEMPLATE.md](02_requirements_catalog_TEMPLATE.md) — structured inventory when requirements exceed the PRD scope; [03_user_journeys_TEMPLATE.md](03_user_journeys_TEMPLATE.md) — when UX or product quality depends on journey clarity; [05_acceptance_catalog_TEMPLATE.md](05_acceptance_catalog_TEMPLATE.md) — when QA or UAT needs stable Given/When/Then scenarios | [04_backlog_policy_TEMPLATE.md](04_backlog_policy_TEMPLATE.md) — add only when backlog intake or prioritisation disputes arise |
+| **Tier 3** — >50 requirements, or any compliance obligation (regulatory, contractual, or audit trail required) | Full set: all tier-2 templates plus [04_backlog_policy_TEMPLATE.md](04_backlog_policy_TEMPLATE.md) — explicit intake and prioritisation rules for high-volume backlogs; link [02_requirements_catalog_TEMPLATE.md](02_requirements_catalog_TEMPLATE.md) to [../00_governance/12_requirements_traceability_matrix_TEMPLATE.md](../00_governance/12_requirements_traceability_matrix_TEMPLATE.md) for audit traceability | Nothing — all documents apply |
+
+**Rules of thumb:**
+- Promote requirements from the PRD to the requirements catalog when a single requirement needs its own owner, source link, or acceptance reference that would clutter the PRD.
+- Add the acceptance catalog when QA and stakeholders need pre-agreed Given/When/Then scenarios before sprint work begins, not after.
+- Add the backlog policy when intake volume, prioritisation disputes, or tool-boundary ambiguity cause delivery friction — not as a default on every project.
+
 ## Related documents
 
 - [../01_strategy/README.md](../01_strategy/README.md) — strategy artifacts explain why the work matters and what horizon it supports.

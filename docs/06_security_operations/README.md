@@ -56,6 +56,21 @@ Read the preventive control documents first, then the operating and support mode
 3. [07_backup_and_recovery_TEMPLATE.md](07_backup_and_recovery_TEMPLATE.md), [08_service_acceptance_TEMPLATE.md](08_service_acceptance_TEMPLATE.md), and [10_runbook_index_TEMPLATE.md](10_runbook_index_TEMPLATE.md)
 4. [06_incident_response_TEMPLATE.md](06_incident_response_TEMPLATE.md) and [09_post_launch_review_TEMPLATE.md](09_post_launch_review_TEMPLATE.md)
 
+## Which template should I use?
+
+Pick the smallest set of templates that matches your project's risk and scope. Add more only when justified by complexity, regulation, or stakeholder need.
+
+| Service maturity | Recommended templates | Skip |
+|---|---|---|
+| **Pre-launch** — service not yet in production; no live traffic; initial control design and threat review required before go-live | [01_security_baseline_TEMPLATE.md](01_security_baseline_TEMPLATE.md) — authentication, authorisation, encryption, logging, and secrets baseline; [02_threat_model_TEMPLATE.md](02_threat_model_TEMPLATE.md) — trust boundaries and STRIDE analysis; [08_service_acceptance_TEMPLATE.md](08_service_acceptance_TEMPLATE.md) — go-live acceptance checks | [03_operating_model_TEMPLATE.md](03_operating_model_TEMPLATE.md), [04_support_model_TEMPLATE.md](04_support_model_TEMPLATE.md), [05_access_control_TEMPLATE.md](05_access_control_TEMPLATE.md), [06_incident_response_TEMPLATE.md](06_incident_response_TEMPLATE.md), [07_backup_and_recovery_TEMPLATE.md](07_backup_and_recovery_TEMPLATE.md), [09_post_launch_review_TEMPLATE.md](09_post_launch_review_TEMPLATE.md), [10_runbook_index_TEMPLATE.md](10_runbook_index_TEMPLATE.md), [11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md), [12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md) |
+| **Live** — service is in production with real users; on-call ownership needed; incidents have occurred or are likely; SLA obligations exist | All pre-launch templates plus [03_operating_model_TEMPLATE.md](03_operating_model_TEMPLATE.md) — service ownership and on-call; [04_support_model_TEMPLATE.md](04_support_model_TEMPLATE.md) — tiers, intake, and SLA; [05_access_control_TEMPLATE.md](05_access_control_TEMPLATE.md); [06_incident_response_TEMPLATE.md](06_incident_response_TEMPLATE.md); [07_backup_and_recovery_TEMPLATE.md](07_backup_and_recovery_TEMPLATE.md) — data classes, cadence, and restore drills; [09_post_launch_review_TEMPLATE.md](09_post_launch_review_TEMPLATE.md); [10_runbook_index_TEMPLATE.md](10_runbook_index_TEMPLATE.md) | [11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md), [12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md) — add once first runbook or first postmortem is needed |
+| **Regulated** — external audit obligation; formal evidence of controls required; data protection, financial, health, or safety regulation applies | Full set: all live templates plus [11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md) — per-component runbooks for each critical operation; [12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md) — structured learning and follow-up for every significant incident | Nothing — all documents apply |
+
+**Rules of thumb:**
+- Always start with the security baseline and threat model before writing any other control document — they define the trust assumptions everything else inherits.
+- Add runbooks ([11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md)) when on-call engineers cannot safely perform an operation from memory alone; one runbook per critical or risky procedure.
+- Add the postmortem template ([12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md)) after the first significant incident, not at service launch — it is only useful once there is a failure to learn from.
+
 ## Related documents
 
 - [../07_delivery/07_release_plan_TEMPLATE.md](../07_delivery/07_release_plan_TEMPLATE.md) — consumes service-acceptance and operational-readiness decisions before go-live.

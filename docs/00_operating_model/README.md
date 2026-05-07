@@ -53,6 +53,21 @@ The lifecycle map is the main entry point for deciding what evidence a project s
 - Role and audience anchor: [02_role_audience_map.md](02_role_audience_map.md)
 - Metadata anchor: [04_frontmatter_schema.md](04_frontmatter_schema.md)
 
+## Which template should I use?
+
+Pick the smallest set of templates that matches your project's risk and scope. Add more only when justified by complexity, regulation, or stakeholder need.
+
+| Tailoring profile | Recommended templates | Skip |
+|---|---|---|
+| **Minimum** — single team, no external compliance, internal tooling or prototype | [01_lifecycle_map.md](01_lifecycle_map.md) — understand phases and evidence; [04_frontmatter_schema.md](04_frontmatter_schema.md) — apply consistent metadata | [02_role_audience_map.md](02_role_audience_map.md), [03_source_of_truth_map.md](03_source_of_truth_map.md), [05_audience_and_export_profiles.md](05_audience_and_export_profiles.md), [06_naming_and_structure.md](06_naming_and_structure.md), [07_tailoring_matrix.md](07_tailoring_matrix.md), [08_decision_rights_matrix.md](08_decision_rights_matrix.md) |
+| **Standard** — multi-team or customer-facing product, moderate stakeholder reporting, no regulatory requirement | All minimum templates plus [02_role_audience_map.md](02_role_audience_map.md) — match readers to docs; [03_source_of_truth_map.md](03_source_of_truth_map.md) — avoid duplication with tools; [06_naming_and_structure.md](06_naming_and_structure.md) — ensure consistency | [05_audience_and_export_profiles.md](05_audience_and_export_profiles.md), [07_tailoring_matrix.md](07_tailoring_matrix.md), [08_decision_rights_matrix.md](08_decision_rights_matrix.md) |
+| **High-assurance** — regulated environment, external audit trail, multi-team with distinct ownership and approval paths | Full set: all standard templates plus [05_audience_and_export_profiles.md](05_audience_and_export_profiles.md) — define audience-gated exports; [07_tailoring_matrix.md](07_tailoring_matrix.md) — record tailoring decisions explicitly; [08_decision_rights_matrix.md](08_decision_rights_matrix.md) — authority and approval mapping | Nothing — all documents apply |
+
+**Rules of thumb:**
+- Promote a single tailoring decision to [07_tailoring_matrix.md](07_tailoring_matrix.md) only when an auditor or a new team member needs to understand why an artifact was added or removed.
+- Add [08_decision_rights_matrix.md](08_decision_rights_matrix.md) as soon as approval authority is split across more than one team or organisation boundary.
+- Keep [04_frontmatter_schema.md](04_frontmatter_schema.md) in every profile — consistent metadata is the minimum contract that makes other docs findable.
+
 ## Related documents
 
 - [01_lifecycle_map.md](01_lifecycle_map.md)

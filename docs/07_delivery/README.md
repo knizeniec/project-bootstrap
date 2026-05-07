@@ -50,6 +50,21 @@ Read the delivery plan first to understand the overall execution baseline, then 
 4. [04_status_report_TEMPLATE.md](04_status_report_TEMPLATE.md), [05_dependency_log_TEMPLATE.md](05_dependency_log_TEMPLATE.md), and [06_readiness_tracker_TEMPLATE.md](06_readiness_tracker_TEMPLATE.md)
 5. [07_release_plan_TEMPLATE.md](07_release_plan_TEMPLATE.md) and [08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md)
 
+## Which template should I use?
+
+Pick the smallest set of templates that matches your project's risk and scope. Add more only when justified by complexity, regulation, or stakeholder need.
+
+| Delivery style | Recommended templates | Skip |
+|---|---|---|
+| **Single-stage** — one delivery team, one release, no formal stage gates, minimal external reporting; ≤3 months elapsed time | [01_delivery_plan_TEMPLATE.md](01_delivery_plan_TEMPLATE.md) — workstreams, milestones, and dependencies; [02_implementation_plan_TEMPLATE.md](02_implementation_plan_TEMPLATE.md) — approach and sequencing detail | [03_stage_plan_TEMPLATE.md](03_stage_plan_TEMPLATE.md), [04_status_report_TEMPLATE.md](04_status_report_TEMPLATE.md), [05_dependency_log_TEMPLATE.md](05_dependency_log_TEMPLATE.md), [06_readiness_tracker_TEMPLATE.md](06_readiness_tracker_TEMPLATE.md), [07_release_plan_TEMPLATE.md](07_release_plan_TEMPLATE.md), [08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md), [09_migration_plan_TEMPLATE.md](09_migration_plan_TEMPLATE.md) |
+| **Multi-stage** — multiple teams or workstreams, phased delivery, stakeholder status reporting required, dependencies span team boundaries | All single-stage templates plus [03_stage_plan_TEMPLATE.md](03_stage_plan_TEMPLATE.md) — per-stage scope, entry, and exit criteria; [04_status_report_TEMPLATE.md](04_status_report_TEMPLATE.md) — regular reporting cadence; [05_dependency_log_TEMPLATE.md](05_dependency_log_TEMPLATE.md); [06_readiness_tracker_TEMPLATE.md](06_readiness_tracker_TEMPLATE.md); [07_release_plan_TEMPLATE.md](07_release_plan_TEMPLATE.md) — when release is a distinct, managed event | [08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md) — add only when cutover risk requires a tested rollback plan; [09_migration_plan_TEMPLATE.md](09_migration_plan_TEMPLATE.md) — add only when data or service migration is in scope |
+| **Regulated** — formal stage-gate approval required; external audit or contractual evidence obligations; migration, cutover, or rollback risk requires tested procedures | Full set: all multi-stage templates plus [08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md) — explicit cutover steps and rollback trigger; [09_migration_plan_TEMPLATE.md](09_migration_plan_TEMPLATE.md) — data and service migration scope, steps, and validation | Nothing — all documents apply |
+
+**Rules of thumb:**
+- Add the stage plan ([03_stage_plan_TEMPLATE.md](03_stage_plan_TEMPLATE.md)) when a delivery phase has a distinct set of entry criteria, exit criteria, or approval owners — not when the phases are a calendar convenience.
+- Add the readiness tracker ([06_readiness_tracker_TEMPLATE.md](06_readiness_tracker_TEMPLATE.md)) as soon as more than one team must confirm readiness before a release; without it, gaps surface too late.
+- Add the migration plan ([09_migration_plan_TEMPLATE.md](09_migration_plan_TEMPLATE.md)) only when existing data or live services are being moved or transformed — keep it out of greenfield deliveries.
+
 ## Related documents
 
 - [../00_governance/README.md](../00_governance/README.md) — governance records define the approvals and control rules delivery must satisfy.

@@ -46,6 +46,21 @@ Read the vision first so roadmap decisions have context. Move to governance and 
 2. [02_roadmap_TEMPLATE.md](02_roadmap_TEMPLATE.md)
 3. [../00_governance/01_business_case_TEMPLATE.md](../00_governance/01_business_case_TEMPLATE.md) and [../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md)
 
+## Which template should I use?
+
+Pick the smallest set of templates that matches your project's risk and scope. Add more only when justified by complexity, regulation, or stakeholder need.
+
+| When | Recommended templates | Skip |
+|---|---|---|
+| **Vision only** — problem space still being framed, no approved horizon or funding yet, single team exploring direction | [01_product_vision_TEMPLATE.md](01_product_vision_TEMPLATE.md) — defines destination, target customer, differentiation, and strategic bets | [02_roadmap_TEMPLATE.md](02_roadmap_TEMPLATE.md) — premature until themes and sequencing are approved |
+| **Roadmap only** — vision is already stable and shared, team needs to communicate sequencing and investment timing | [02_roadmap_TEMPLATE.md](02_roadmap_TEMPLATE.md) — sequences themes, milestones, and dependencies across horizons | [01_product_vision_TEMPLATE.md](01_product_vision_TEMPLATE.md) — skip if an approved vision already exists in another document |
+| **Both** — new product or major pivot where leaders need alignment on destination before sequencing; external stakeholders require both artefacts | [01_product_vision_TEMPLATE.md](01_product_vision_TEMPLATE.md) then [02_roadmap_TEMPLATE.md](02_roadmap_TEMPLATE.md) — vision first so roadmap decisions have narrative context | Nothing at this layer — both artefacts are warranted |
+
+**Rules of thumb:**
+- Write the vision before the roadmap; a roadmap without a shared vision produces sequencing debates rather than strategic alignment.
+- Promote the roadmap to its own document only when the planning horizon exceeds one quarter or when dependencies span more than one team.
+- Keep both documents short — a vision longer than two pages and a roadmap with more than three horizons are signs that product or delivery detail has leaked into the wrong layer.
+
 ## Related documents
 
 - [../00_governance/README.md](../00_governance/README.md) — governance records turn strategy into approved scope and funding.

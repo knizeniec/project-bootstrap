@@ -43,6 +43,21 @@ last_reviewed: 2026-05-07
 - Promote accepted durable implementation decisions into `../adr/`.
 - Link each solution design to the relevant C4 views and ADRs so readers can move from overview to binding decision quickly.
 
+## Which template should I use?
+
+Pick the smallest set of templates that matches your project's risk and scope. Add more only when justified by complexity, regulation, or stakeholder need.
+
+| Architectural change scope | Recommended templates | Skip |
+|---|---|---|
+| **Small** — confined to a single component, no shared interface changes, one team owns the entire change | [01_solution_design_TEMPLATE.md](01_solution_design_TEMPLATE.md) — arc42-style primary baseline; record the decision in [../adr/ADR-000-template.md](../adr/ADR-000-template.md) if it is durable | [02_c4_context_TEMPLATE.md](02_c4_context_TEMPLATE.md), [03_c4_container_TEMPLATE.md](03_c4_container_TEMPLATE.md), [04_c4_component_TEMPLATE.md](04_c4_component_TEMPLATE.md), [06_interface_control_document_TEMPLATE.md](06_interface_control_document_TEMPLATE.md), [07_deployment_TEMPLATE.md](07_deployment_TEMPLATE.md), [08_observability_TEMPLATE.md](08_observability_TEMPLATE.md), [09_resilience_TEMPLATE.md](09_resilience_TEMPLATE.md), [10_configuration_baseline_TEMPLATE.md](10_configuration_baseline_TEMPLATE.md), [12_rfc_index_TEMPLATE.md](12_rfc_index_TEMPLATE.md) |
+| **Cross-component** — change affects multiple services, shared APIs, or more than one team; new platform capability or integration pattern introduced | [01_solution_design_TEMPLATE.md](01_solution_design_TEMPLATE.md); [02_c4_context_TEMPLATE.md](02_c4_context_TEMPLATE.md) and [03_c4_container_TEMPLATE.md](03_c4_container_TEMPLATE.md) — system boundary and container views; [06_interface_control_document_TEMPLATE.md](06_interface_control_document_TEMPLATE.md) — when contracts between components must be explicitly agreed; [11_adr_index_TEMPLATE.md](11_adr_index_TEMPLATE.md) — track accepted decisions across the change | [04_c4_component_TEMPLATE.md](04_c4_component_TEMPLATE.md), [05_data_design_TEMPLATE.md](05_data_design_TEMPLATE.md), [07_deployment_TEMPLATE.md](07_deployment_TEMPLATE.md), [08_observability_TEMPLATE.md](08_observability_TEMPLATE.md), [09_resilience_TEMPLATE.md](09_resilience_TEMPLATE.md), [10_configuration_baseline_TEMPLATE.md](10_configuration_baseline_TEMPLATE.md) — add only when those concerns are unresolved |
+| **New system** — greenfield service or major rearchitecture; external compliance, SLA, or audit requirement; multiple teams or organisations involved | Full set: all cross-component templates plus [04_c4_component_TEMPLATE.md](04_c4_component_TEMPLATE.md) — internal structure of key containers; [05_data_design_TEMPLATE.md](05_data_design_TEMPLATE.md); [07_deployment_TEMPLATE.md](07_deployment_TEMPLATE.md); [08_observability_TEMPLATE.md](08_observability_TEMPLATE.md); [09_resilience_TEMPLATE.md](09_resilience_TEMPLATE.md); [10_configuration_baseline_TEMPLATE.md](10_configuration_baseline_TEMPLATE.md); [12_rfc_index_TEMPLATE.md](12_rfc_index_TEMPLATE.md) — for proposals still under review | Nothing — all documents apply |
+
+**Rules of thumb:**
+- Promote a section to its own template when its content exceeds two screens or has a different owner than the solution design.
+- Add an ADR for every durable decision regardless of change scope — small changes often produce the decisions with the longest-lasting effect.
+- Use [rfcs/README.md](rfcs/README.md) before the solution design is stable; once an approach is agreed, close the RFC and update the design.
+
 ## Related documents
 
 - [01_solution_design_TEMPLATE.md](01_solution_design_TEMPLATE.md) — primary architecture baseline.

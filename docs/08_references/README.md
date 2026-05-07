@@ -54,6 +54,23 @@ Use the list below as the quick chooser for this folder.
 - [05_lessons_learned_index_TEMPLATE.md](05_lessons_learned_index_TEMPLATE.md) — reusable learning log linked to releases, reviews, and action status.
 - [INDEX.md](INDEX.md) — compact folder index shaped for future frontmatter-driven generation.
 
+## Which template should I use?
+
+Pick the smallest set of templates that matches your project's risk and scope. Add more only when justified by complexity, regulation, or stakeholder need.
+
+| What you need to find | Recommended templates | Skip |
+|---|---|---|
+| **Standards and frameworks** — need to justify why a specific standard, framework, or methodology is adopted, adapted, or reference-only across the project | [01_standards_register_TEMPLATE.md](01_standards_register_TEMPLATE.md) — adopted, adapted, and reference-only standards with rationale, boundaries, and downstream target areas | [02_glossary_TEMPLATE.md](02_glossary_TEMPLATE.md), [03_decision_rights_matrix_TEMPLATE.md](03_decision_rights_matrix_TEMPLATE.md), [04_policy_mappings_TEMPLATE.md](04_policy_mappings_TEMPLATE.md), [05_lessons_learned_index_TEMPLATE.md](05_lessons_learned_index_TEMPLATE.md) |
+| **Shared vocabulary** — team or cross-team confusion over terms; governance, architecture, or product docs use the same word to mean different things | [02_glossary_TEMPLATE.md](02_glossary_TEMPLATE.md) — canonical term register with definitions, examples, and source links | [01_standards_register_TEMPLATE.md](01_standards_register_TEMPLATE.md), [03_decision_rights_matrix_TEMPLATE.md](03_decision_rights_matrix_TEMPLATE.md), [04_policy_mappings_TEMPLATE.md](04_policy_mappings_TEMPLATE.md), [05_lessons_learned_index_TEMPLATE.md](05_lessons_learned_index_TEMPLATE.md) |
+| **Decision rights** — need a single place that names who can approve, decide, or veto at project or programme level; RACI or DACI alignment required | [03_decision_rights_matrix_TEMPLATE.md](03_decision_rights_matrix_TEMPLATE.md) — project-ready RACI or DACI matrix for governance and change decisions | [01_standards_register_TEMPLATE.md](01_standards_register_TEMPLATE.md), [04_policy_mappings_TEMPLATE.md](04_policy_mappings_TEMPLATE.md), [05_lessons_learned_index_TEMPLATE.md](05_lessons_learned_index_TEMPLATE.md) |
+| **Policy traceability** — auditor or manager needs to verify that external policy or control requirements map to internal artifacts | [04_policy_mappings_TEMPLATE.md](04_policy_mappings_TEMPLATE.md) — external policy or control expectations mapped to internal canonical artifacts | [01_standards_register_TEMPLATE.md](01_standards_register_TEMPLATE.md), [02_glossary_TEMPLATE.md](02_glossary_TEMPLATE.md), [03_decision_rights_matrix_TEMPLATE.md](03_decision_rights_matrix_TEMPLATE.md), [05_lessons_learned_index_TEMPLATE.md](05_lessons_learned_index_TEMPLATE.md) |
+| **Reusable lessons** — project or release has concluded; learning should be preserved and findable for future teams | [05_lessons_learned_index_TEMPLATE.md](05_lessons_learned_index_TEMPLATE.md) — reusable learning log linked to releases, reviews, and action status | [01_standards_register_TEMPLATE.md](01_standards_register_TEMPLATE.md), [02_glossary_TEMPLATE.md](02_glossary_TEMPLATE.md), [03_decision_rights_matrix_TEMPLATE.md](03_decision_rights_matrix_TEMPLATE.md), [04_policy_mappings_TEMPLATE.md](04_policy_mappings_TEMPLATE.md) |
+
+**Rules of thumb:**
+- Open the glossary as soon as two teams write documents that use the same term differently — conflicting vocabulary is the cheapest problem to fix early and the most expensive to fix late.
+- Add the policy-mappings template only when an auditor or external reviewer will assess compliance; do not duplicate control mappings that already exist in security or governance records.
+- Keep the lessons-learned index linked from the post-launch review ([../06_security_operations/09_post_launch_review_TEMPLATE.md](../06_security_operations/09_post_launch_review_TEMPLATE.md)) so learning does not stay siloed in a single release record.
+
 ## Related documents
 
 - [INDEX.md](INDEX.md) — compact navigation for this folder and a pointer back to the root index.
