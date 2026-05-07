@@ -4,17 +4,21 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "docs/**"
+      - "**/*.md"
       - "tools/docs_validator/**"
       - ".github/workflows/docs.yml"
+      - ".github/workflows/ci.yml"
       - ".markdownlint-cli2.yaml"
+      - ".markdownlint.json"
       - "lychee.toml"
   pull_request:
     paths:
-      - "docs/**"
+      - "**/*.md"
       - "tools/docs_validator/**"
       - ".github/workflows/docs.yml"
+      - ".github/workflows/ci.yml"
       - ".markdownlint-cli2.yaml"
+      - ".markdownlint.json"
       - "lychee.toml"
 
 jobs:
@@ -35,8 +39,8 @@ jobs:
       - name: Run validator tests
         run: python -m pytest -q tools/docs_validator/tests
 
-      - name: Run docs validator smoke checks
-        run: python -m docs_validator.cli tools/docs_validator/tests/fixtures
+      - name: Run docs validator on canonical docs
+        run: python -m docs_validator.cli docs docs/_examples
 
   markdownlint:
     runs-on: ubuntu-latest
@@ -50,7 +54,7 @@ jobs:
           node-version: "20"
 
       - name: Run markdownlint
-        run: npx -y markdownlint-cli2 "docs/**/*.md" "!**/node_modules/**"
+        run: npx -y markdownlint-cli2 "**/*.md" "!node_modules" "!.opencode" "!.tmp"
 
   links:
     runs-on: ubuntu-latest
@@ -61,7 +65,7 @@ jobs:
       - name: Run lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --config lychee.toml docs/
+          args: --config lychee.toml --offline --no-progress './**/*.md'
           fail: true
 
   adr-coverage-report:

@@ -41,63 +41,6 @@ jobs:
               exit 1
             fi
           fi
-      - name: Validate canonical doc frontmatter
-        run: |
-          set -e
-          missing=0
-          active_docs="docs/README.md docs/Architecture.md docs/00-documentation-standards.md docs/00-source-of-truth.md docs/INDEX.md prompts/README.md docs/00_governance/README.md docs/02_product/README.md docs/03_architecture/README.md docs/adr/README.md"
-          template_files=$(find docs -mindepth 2 -maxdepth 2 -name '*_TEMPLATE.md' | sort)
-          if [ -z "$template_files" ]; then
-            echo "ERROR: no starter templates found under docs/"
-            missing=1
-          fi
-          for f in $active_docs; do
-            for field in "Status:" "Owner:" "Purpose:" "Last updated:"; do
-              if ! grep -q "^$field" "$f"; then
-                echo "ERROR: $f missing frontmatter field: $field"
-                missing=1
-              fi
-            done
-            metadata_block=$(sed -n '1,25p' "$f")
-            if printf '%s\n' "$metadata_block" | grep -Eq '^(Status|Owner|Purpose|Last updated): (\[|YYYY-MM-DD$)'; then
-              echo "ERROR: $f still contains placeholder metadata"
-              missing=1
-            fi
-          done
-          for f in $template_files; do
-            for field in "Status:" "Owner:" "Purpose:" "Last updated:"; do
-              if ! grep -q "^$field" "$f"; then
-                echo "ERROR: $f missing frontmatter field: $field"
-                missing=1
-              fi
-            done
-          done
-          exit $missing
-
-  markdown-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Run markdownlint
-        uses: DavidAnson/markdownlint-cli2-action@v18
-        with:
-          globs: |
-            **/*.md
-            !node_modules
-            !.opencode
-            !.tmp
-
-  link-check:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Run lychee
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: --offline --no-progress './**/*.md'
-          fail: true
 
   actionlint:
     runs-on: ubuntu-latest

@@ -29,7 +29,7 @@ last_reviewed: 2026-05-07
 
 This tree is the canonical documentation system for a project built from this template. It covers the operating model, governance, strategy, product, architecture, AI governance, testing, operations, delivery, references, and end-user documentation.
 
-- Control spine: [Architecture.md](Architecture.md), [00-documentation-standards.md](00-documentation-standards.md), [00-source-of-truth.md](00-source-of-truth.md), and [INDEX.md](INDEX.md)
+- Control spine: [README.md](README.md), [Architecture.md](Architecture.md), [00-documentation-standards.md](00-documentation-standards.md), [00-source-of-truth.md](00-source-of-truth.md), and [INDEX.md](INDEX.md)
 - Canonical capability areas: [00_operating_model/](00_operating_model/README.md) through [09_user_documentation/](09_user_documentation/README.md)
 - Example artifacts: [docs/_examples/ manager/internal/end-user seeds](./_examples/canonical-manager.md)
 - Supporting or historical areas: [adr/](adr/README.md), [superpowers/](superpowers/README.md), [99_archive/](99_archive/README.md)
@@ -110,9 +110,9 @@ For realistic filled examples of key templates, see [_examples/](_examples/).
 
 Docs quality is checked by automation so navigation, metadata, and links stay reliable.
 
-- Frontmatter and cross-file rules: `PYTHONPATH=tools/docs_validator/src python3 -m docs_validator.cli docs`
-- Markdown style: `markdownlint-cli2`
-- Link checking: `lychee`
+- Frontmatter and cross-file rules: `PYTHONPATH=tools/docs_validator/src python3 -m docs_validator.cli docs docs/_examples`
+- Markdown style: `npx -y markdownlint-cli2 "**/*.md" "!node_modules" "!.opencode" "!.tmp"`
+- Link checking: `lychee --config lychee.toml --offline --no-progress './**/*.md'`
 - Workflow entrypoint: [../.github/workflows/docs.yml](../.github/workflows/docs.yml)
 
 ## How to contribute

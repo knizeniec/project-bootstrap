@@ -76,7 +76,7 @@ Container-level responsibilities are detailed in [03_c4_container_helio.md](../0
 
 ## 6. Runtime view
 
-**Happy path: create invoice**
+### Happy path: create invoice
 
 1. B2B caller sends `POST /v1/invoices` with a JWT bearer token and an `Idempotency-Key` header.
 2. `invoice-api` validates the token against the Keycloak JWKS endpoint (cached, 5-minute TTL).
@@ -86,11 +86,11 @@ Container-level responsibilities are detailed in [03_c4_container_helio.md](../0
 6. The transactional outbox relay publishes the `invoice.created` event to Kafka (asynchronous, ≤2 s).
 7. `invoice-api` returns HTTP 201 with the invoice ID, status, and category suggestion (or `null` if the classifier was unavailable).
 
-**Failure path: classifier unavailable**
+### Failure path: classifier unavailable
 
 At step 4, if the circuit breaker is open or if the LLM returns an error, `category-suggester` returns `{category: null, confidence: null, source: "unavailable"}`. Invoice creation continues normally (steps 5–7). The UI shows the billing administrator that no suggestion is available and prompts manual category entry. The circuit breaker half-opens after 30 s and attempts a single probe call.
 
-**Failure path: Postgres write failure**
+### Failure path: Postgres write failure
 
 If the Postgres write at step 5 fails, `invoice-api` returns HTTP 503 with a `Retry-After: 5` header. No event is published and no audit entry is written (atomic rollback). The caller may retry with the same `Idempotency-Key`.
 
