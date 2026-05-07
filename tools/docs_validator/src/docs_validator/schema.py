@@ -42,6 +42,8 @@ class Capability(str, Enum):
     references = "references"
     user_docs = "user_docs"
     operating_model = "operating_model"
+    strategy = "strategy"
+    ai_governance = "ai_governance"
 
 
 class Phase(str, Enum):

@@ -99,6 +99,21 @@ def test_supporting_record_class_works():
 
 
 # ---------------------------------------------------------------------------
+# New capability enum values
+# ---------------------------------------------------------------------------
+
+
+def test_strategy_capability_is_accepted():
+    fm = Frontmatter.model_validate(make(capability="strategy"))
+    assert fm.capability.value == "strategy"
+
+
+def test_ai_governance_capability_is_accepted():
+    fm = Frontmatter.model_validate(make(capability="ai_governance"))
+    assert fm.capability.value == "ai_governance"
+
+
+# ---------------------------------------------------------------------------
 # Extra field rejection
 # ---------------------------------------------------------------------------
 

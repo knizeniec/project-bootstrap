@@ -4,7 +4,7 @@ status: draft
 record_class: canonical
 audience: [internal, manager, client]
 owner: product-manager
-capability: product
+capability: strategy
 phase: initiation
 cadence: one-shot
 last_reviewed: 2026-05-07
