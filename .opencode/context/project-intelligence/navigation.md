@@ -14,10 +14,12 @@
 | Area | Primary References |
 | --- | --- |
 | Canonical docs system | `docs/README.md`, `docs/00-documentation-standards.md`, `docs/00-source-of-truth.md`, `docs/INDEX.md` |
-| Prompt workflow | `README.md`, `prompts/project-bootstrap.md`, `prompts/refine-specs.md`, `prompts/architecture-baseline.md`, `prompts/language-adaptation.md` |
+| Adoption workflow | `README.md`, `prompts/project-bootstrap.md`, `prompts/refine-specs.md`, `prompts/architecture-baseline.md`, `prompts/language-adaptation.md` |
+| Assistant-native tooling | `.claude/README.md`, `.copilot/README.md`, `.codex/README.md`, `.agents/README.md`, `.opencode/README.md` |
 | Local agent workflow | `.opencode/AGENTS.md` |
 
 ## 📂 Codebase References
 - `.opencode/context/project-intelligence/technical-domain.md` - primary local context file for this repository
 - `README.md` - high-level repository workflow and adoption path
 - `docs/INDEX.md` - canonical docs navigation map
+- `.agents/README.md` - Codex repo-native skill discovery surface

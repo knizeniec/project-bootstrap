@@ -10,6 +10,4 @@ Tracked Codex repo-native skills live here.
 
 Codex reads repo-local skills from `.agents/skills/`. Keep this directory aligned with the vendored mirror in `.codex/skills/`.
 
-## Vendoring source
-
 

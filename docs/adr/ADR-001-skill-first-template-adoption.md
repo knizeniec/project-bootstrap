@@ -1,6 +1,6 @@
 ---
 title: ADR-001 Command-First Template Adoption
-status: active
+status: superseded
 record_class: canonical
 audience: [internal]
 owner: architecture-maintainer
@@ -12,14 +12,14 @@ last_reviewed: 2026-05-07
 
 # ADR-001: Adopt tool-native commands as the primary template initialization workflow
 
-- Status: Accepted
+- Status: Superseded
 - Date: 2026-05-07
 - Deciders: Template maintainers
 - Consulted: Documentation maintainers
 - Informed: Contributors and template adopters
 - Tags: [Architecture, Delivery]
 - Supersedes: None
-- Superseded by: None
+- Superseded by: [ADR-002-prompt-adoption-with-tracked-assistant-tooling.md](ADR-002-prompt-adoption-with-tracked-assistant-tooling.md)
 - Related documents: [../superpowers/specs/2026-05-07-command-first-template-adoption-design.md](../superpowers/specs/2026-05-07-command-first-template-adoption-design.md), [../superpowers/plans/2026-05-07-command-first-template-adoption.md](../superpowers/plans/2026-05-07-command-first-template-adoption.md)
 
 ## Context and problem statement
@@ -66,3 +66,4 @@ Adopt tool-native phase commands in `.claude/`, `.copilot/`, and `.codex/` as th
 
 - An earlier draft of this record (committed 2026-05-07) proposed `skills/project-initialization/` as the primary path. That draft was revised on the same day before any implementation landed. The revision history is visible in git log.
 - Vendoring source: `/home/hexaper/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0`.
+- This ADR was superseded once the implemented repository kept `prompts/` as the documented adoption flow and tracked assistant-native integration assets in-repo.

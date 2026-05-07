@@ -6,12 +6,12 @@
 **Last Updated**: 2026-05-07
 
 ## Quick Reference
-This repository is a governance-first template centered on a structured documentation system.
+This repository is a governance-first template centered on a structured documentation system plus tracked assistant-native tooling.
 
-- Update triggers: documentation structure changes, naming rule changes, prompt workflow changes, agent workflow changes
+- Update triggers: documentation structure changes, naming rule changes, prompt workflow changes, assistant tooling changes, agent workflow changes
 - Audience: developers, documentation maintainers, AI agents
 - Primary surface: canonical Markdown documents under `docs/`
-- Supporting surfaces: prompts, local agent instructions, and maintainer tooling
+- Supporting surfaces: prompts, tracked assistant-native tool assets, local agent instructions, and maintainer tooling
 
 ## Primary Stack
 | Layer | Technology | Notes |
@@ -19,14 +19,15 @@ This repository is a governance-first template centered on a structured document
 | Primary format | Markdown | Canonical docs and prompts are Markdown-first |
 | Metadata | YAML frontmatter | Canonical docs use validated frontmatter |
 | Automation | Shell scripts | Maintainer and workflow helpers |
-| Agent layer | `AGENTS.md` + OpenCode assets | Routing, behavior, and workspace conventions |
+| Agent layer | `AGENTS.md` + tracked assistant-native assets | Routing, behavior, and harness-specific integration |
 
 ## Core Patterns
 Project work starts from curated documentation rather than immediate implementation.
 
 - The active system lives in `docs/` with a control spine and numbered capability folders.
 - Prompts in `prompts/` guide bootstrap, refinement, architecture, and language adaptation.
-- Local AI support files in `.opencode/` are workspace-only and should stay outside the tracked template contract.
+- Assistant-native assets in `.claude/`, `.copilot/`, `.codex/`, `.opencode/`, and `.agents/` are tracked when they define repo behavior or vendored harness integrations.
+- Codex's repo-native runtime surface is root `AGENTS.md`, `.codex/hooks.json`, and `.agents/skills/`.
 - Documentation is treated as a first-class artifact that must be curated before implementation work begins.
 
 ## Naming Conventions
@@ -37,7 +38,7 @@ Project work starts from curated documentation rather than immediate implementat
 | Python files | `camel_case.py` | `docs_validator.py` |
 | General directories | mostly kebab-case | `project-initialization` |
 | Docs directories | numbered folders | `00_operating_model` |
-| Local AI tooling | dot-prefixed folders | `.opencode` |
+| Assistant tooling | dot-prefixed folders plus Codex skills dir | `.opencode`, `.agents/skills` |
 
 ## Code Standards
 - Keep docs canonical and avoid duplicate sources of truth.
@@ -67,5 +68,8 @@ Project work starts from curated documentation rather than immediate implementat
 - `prompts/project-bootstrap.md` - project bootstrap prompt
 - `prompts/architecture-baseline.md` - architecture decision prompt with trade-offs
 - `prompts/language-adaptation.md` - stack adaptation prompt
-- `.opencode/AGENTS.md` - local workspace guidance for OpenCode assets
+- `.claude/README.md` - tracked Claude integration assets
+- `.codex/README.md` - tracked Codex hook wiring and vendored mirror assets
+- `.agents/README.md` - Codex repo-native skills surface
+- `.opencode/AGENTS.md` - local guidance for tracked OpenCode assets
 - `tools/` - repository-maintained validators and helper utilities

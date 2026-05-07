@@ -17,9 +17,9 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 ## Repository Structure
 
 - Root purpose: repository scaffold and governance baseline.
-- Main directories: `docs/`, `prompts/`, `.github/`, `.claude/`, `.copilot/`, `.codex/`, `.opencode/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
+- Main directories: `docs/`, `prompts/`, `.github/`, `.agents/`, `.claude/`, `.copilot/`, `.codex/`, `.opencode/`, `bin/`, `config/`, `diagrams/`, `examples/`, `scripts/`, `src/`, `tests/`.
 - Terms used in this repo: `template` is a reusable `_TEMPLATE.md` starter file, `active document` is a project-specific document that governs current work, and `historical record` is a non-canonical planning or archive document.
-- Assistant-native tooling directories `.claude/`, `.copilot/`, `.codex/`, and `.opencode/` are part of the tracked template contract. Keep only machine-specific files inside them ignored.
+- Assistant-native tooling directories `.claude/`, `.copilot/`, `.codex/`, and `.opencode/` are part of the tracked template contract. Codex also uses `.agents/skills/` as a tracked repo-native skill surface. Keep only machine-specific files inside assistant directories ignored.
 
 ## Before You Start
 
@@ -98,6 +98,7 @@ Context is money. Keep it clean:
 - `docs/adr/AGENTS.md` — ADR authoring and durable implementation decision rules.
 - `docs/superpowers/AGENTS.md` — specs, plans, and historical implementation record rules.
 - `.github/AGENTS.md` — CI, CODEOWNERS, and branch protection guidance.
+- `.agents/AGENTS.md` — Codex repo-native skill discovery guidance.
 - `.claude/AGENTS.md` — Claude-specific vendored skills and hook asset guidance.
 - `.copilot/AGENTS.md` — Copilot-specific vendored asset guidance.
 - `.codex/AGENTS.md` — Codex-specific vendored asset guidance.

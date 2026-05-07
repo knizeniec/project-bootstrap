@@ -17,3 +17,4 @@ Codex uses these repo-native surfaces in this template:
 - `.agents/skills/` — repo-local skill discovery
 
 This directory keeps the Codex-specific hook assets plus a vendored mirror of the skill tree for parity with the other assistant directories.
+
