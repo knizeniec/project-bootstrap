@@ -110,6 +110,7 @@ See [`prompts/README.md`](prompts/README.md) for the full prompt inventory and w
 | `config/` | Environment, runtime, and deployment configuration templates. |
 | `scripts/` | Maintainer automation for development, CI, release, and migration tasks. |
 | `bin/` | Thin user-facing entrypoints or wrappers for runtime commands. |
+| `tools/` | Repository-maintained utilities such as documentation validators and maintenance helpers. |
 | `examples/` | Copyable examples for implemented features only. |
 | `diagrams/` | Source diagrams that support active architecture docs and ADRs. |
 | `prompts/` | Adoption-time prompts that adapt this template to a chosen language stack. |
@@ -121,6 +122,7 @@ See [`prompts/README.md`](prompts/README.md) for the full prompt inventory and w
 - `docs/adr/` holds durable architecture and implementation decisions.
 - `docs/superpowers/` holds dated specs and plans as historical working records, not canonical guidance.
 - `docs/99_archive/` is for retired material, not active guidance.
+- `tools/docs_validator/` holds the Python frontmatter validator used by docs-focused local checks and GitHub workflows.
 
 ## Optional local tooling
 

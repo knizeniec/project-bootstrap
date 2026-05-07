@@ -1,0 +1,21 @@
+config:
+  MD013: false
+  MD025:
+    front_matter_title: "^\\s*title\\s*[:=]"
+  MD029:
+    style: one_or_ordered
+  MD024:
+    siblings_only: true
+  MD033: false
+  MD041: false
+globs:
+  - "docs/**/*.md"
+ignores:
+  - ".tmp/**"
+  - ".opencode/**"
+  - "node_modules/**"
+  - ".venv/**"
+  - "docs/superpowers/**"
+  - "docs/99_archive/**"
+  - "tools/docs_validator/tests/fixtures/**"
+  - "**/CHANGELOG.md"

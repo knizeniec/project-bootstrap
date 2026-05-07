@@ -1,25 +1,43 @@
+---
+title: Requirements Traceability Matrix Template
+status: draft
+record_class: canonical
+audience: [internal, manager, client]
+owner: quality-manager
+capability: governance
+phase: monitoring
+cadence: per-stage
+last_reviewed: 2026-05-07
+---
+
 # Requirements Traceability Matrix Template
 
-Status: Active
-Owner: [Role or team responsible for governance docs]
-Purpose: provide a starter template for tracing requirements through design, decisions, delivery, and verification
-Last updated: YYYY-MM-DD
+> **Purpose**: trace requirements from source through design, delivery, release, and verification.
+> **Audience**: delivery leads, quality leads, managers, and client reviewers who need confidence that approved scope is implemented and tested.
+> **When to update**: update when requirements, design references, test references, or release references change.
 
 ## How to use this template
 
-- Copy this file when requirements need traceable links across the project lifecycle.
-- Keep one row per requirement or acceptance item.
-- Update links when architecture, ADRs, delivery plans, or verification artifacts change.
+Use this template when requirements need explicit traceability across the lifecycle. Keep one row per requirement or acceptance item, use stable IDs, and link to the most specific source available.
 
-## Traceability table
+- Mandatory: requirement ID, source, design ref, test ref, release ref, and status.
+- Optional: summary or owner columns if they help the project manage scale.
+- Remove placeholder rows before the matrix is treated as live evidence.
 
-| Requirement ID | Requirement summary | Product source | Architecture source | ADR | Delivery source | Verification source | Status |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| R-001 | [Requirement summary] | [PRD section or file] | [Design section or file] | [ADR reference or `N/A`] | [Plan section or file] | [Test, checklist, or review evidence] | [Proposed, Active, Verified, or Deferred] |
-| R-002 | [Requirement summary] | [PRD section or file] | [Design section or file] | [ADR reference or `N/A`] | [Plan section or file] | [Test, checklist, or review evidence] | [Status] |
+## Traceability matrix
 
-## Notes
+Use the matrix to prove that each approved requirement has a design home, a verification path, and a release destination. Keep status values simple so reviewers can spot gaps quickly during stage gates or audits.
 
-- Use stable IDs so links remain readable over time.
-- Record `N/A` only when a column genuinely does not apply.
-- Link to the most specific section or document available.
+- Example statuses: proposed, active, verified, deferred, retired.
+- Example references: PRD section, architecture section, test case ID, release milestone.
+
+| Requirement ID | Source | Design ref | Test ref | Release ref | Status |
+| --- | --- | --- | --- | --- | --- |
+| R-001 | [PRD section, brief, or contract reference] | [Design section or ADR] | [Test case, evidence ID, or UAT scenario] | [Release or milestone] | [Status] |
+| R-002 | [Source reference] | [Design reference] | [Test reference] | [Release reference] | [Status] |
+
+## Related documents
+
+- [00_project_brief_TEMPLATE.md](00_project_brief_TEMPLATE.md) — provides the initial scope and success frame that requirements should support.
+- [09_stage_gate_checklist_TEMPLATE.md](09_stage_gate_checklist_TEMPLATE.md) — uses traceability evidence during stage reviews.
+- [../07_delivery/02_implementation_plan_TEMPLATE.md](../07_delivery/02_implementation_plan_TEMPLATE.md) — maps traced requirements into executable work and validation gates.

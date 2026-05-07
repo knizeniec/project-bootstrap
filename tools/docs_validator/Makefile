@@ -1,13 +1,15 @@
 .PHONY: install test validate clean
 
+PYTHON ?= python3
+
 install:
-	python -m pip install -e ".[dev]"
+	$(PYTHON) -m pip install -e ".[dev]"
 
 test:
-	python -m pytest -v
+	$(PYTHON) -m pytest -v
 
 validate:
-	docs-validator ../../docs ../../docs/_examples
+	PYTHONPATH=src $(PYTHON) -m docs_validator.cli ../../docs ../../docs/_examples
 
 clean:
 	rm -rf build dist *.egg-info .pytest_cache __pycache__

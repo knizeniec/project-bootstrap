@@ -1,15 +1,26 @@
+---
+title: Interface Control Document Template
+status: draft
+record_class: canonical
+audience: [internal]
+owner: architecture-maintainer
+capability: architecture
+phase: planning
+cadence: per-stage
+last_reviewed: 2026-05-07
+---
+
 # Interface Control Document Template
 
-Status: Active
-Owner: Architecture maintainers
-Purpose: provide a starter template for documenting an interface, contract, or integration boundary
-Last updated: 2026-05-06
+> **Purpose**: provide a durable contract document for one interface, integration boundary, or external exchange.
+> **Audience**: engineers, integrators, reviewers, and operators who need an exact boundary contract.
+> **When to update**: update when an interface contract, compatibility rule, operational behavior, or ownership changes.
 
 ## How to use this template
 
-- Copy this file when a system boundary needs a durable contract document.
-- Keep it specific to one interface or integration.
-- Link to the parent solution design and any governing ADRs.
+- Keep this document specific to one interface or integration.
+- Link it to the parent solution design, relevant C4 views, and governing ADRs.
+- Include examples only for the parts of the contract that are easy to get wrong.
 
 ## Interface summary
 
@@ -47,5 +58,7 @@ Last updated: 2026-05-06
 
 ## Related documents
 
-- [01_solution_design_TEMPLATE.md](01_solution_design_TEMPLATE.md)
-- [../adr/README.md](../adr/README.md)
+- [01_solution_design_TEMPLATE.md](01_solution_design_TEMPLATE.md) — parent architecture baseline.
+- [03_c4_container_TEMPLATE.md](03_c4_container_TEMPLATE.md) — container-level communication paths.
+- [04_c4_component_TEMPLATE.md](04_c4_component_TEMPLATE.md) — internal component collaborators behind this contract.
+- [../adr/INDEX.md](../adr/INDEX.md) — durable contract and integration decisions.

@@ -1,54 +1,74 @@
+---
+title: Delivery Plan Template
+status: draft
+record_class: canonical
+audience: [internal, manager]
+owner: delivery-manager
+capability: execution
+phase: planning
+cadence: per-stage
+last_reviewed: 2026-05-07
+source_of_truth: repo
+---
+
 # Delivery Plan Template
 
-Status: Active
-Owner: [Role or team responsible for delivery docs]
-Purpose: provide a starter template for defining milestones, dependencies, risks, readiness, and rollout sequencing
-Last updated: YYYY-MM-DD
+> **Purpose**: define the execution baseline for workstreams, milestones, resources, dependencies, risks, and reporting.
+> **Audience**: delivery leads and managers who need the canonical view of how approved scope will be delivered.
+> **When to update**: update when milestone sequencing, major dependencies, staffing assumptions, or reporting expectations change.
 
 ## How to use this template
 
-- Copy this file when a project or major initiative needs a delivery baseline.
-- Keep milestone sequencing consistent with the product, architecture, and implementation documents.
-- Update risks, dependencies, and readiness criteria as work evolves.
+Copy this template when a project or major initiative needs a managed delivery baseline. Keep it aligned to the roadmap and governance artifacts, and summarize only the execution decisions that belong in canonical documentation.
 
-## Delivery overview
+- Mandatory: workstreams, milestones, resourcing, dependencies, risks, and reporting.
+- Optional: links to detailed estimates or tooling views if they are authoritative elsewhere.
+- Remove duplicate implementation detail once it is captured in the implementation plan.
 
-- Delivery objective: [What this plan delivers]
-- Target milestones: [Milestone names or phases]
-- Delivery assumptions: [Assumptions]
+## Workstreams
 
-## Milestones and scope slices
+List the major streams of work and the outcome each stream is expected to produce. Workstreams should be broad enough for leadership reporting but specific enough to anchor ownership and dependencies.
 
-| Milestone | Scope slice | Dependency | Exit criteria |
-| --- | --- | --- | --- |
-| Phase 1 | [Scope slice] | [Dependency or `None`] | [What must be true to exit] |
-| Phase 2 | [Scope slice] | [Dependency] | [Exit criteria] |
+- Example: product configuration, integration build, migration, readiness, training.
+- Example: each workstream row shows owner, outcome, and the main dependency edge.
 
-## Dependencies and critical path
+## Milestones
 
-- Dependency: [External team, system, approval, or prerequisite]
-- Critical path item: [What could block delivery sequence]
+Show the key dates or stage markers that define the delivery rhythm. Milestones should connect upward to roadmap horizons and downward to implementation sequencing.
 
-## Risks and mitigations
+- Example: design sign-off, build complete, pilot ready, go-live, closure review.
+- Example: stage exit criteria or release decision points.
 
-- Risk: [Risk]
-- Mitigation: [Mitigation action]
-- Risk: [Risk]
-- Mitigation: [Mitigation action]
+## Resourcing
 
-## Readiness and approval gates
+Summarize the teams, roles, or capacity assumptions needed to deliver the plan. This section is for execution-critical resource shape, not for detailed staffing rosters.
 
-- Gate 1: [Checkpoint and approval owner]
-- Gate 2: [Checkpoint and approval owner]
+- Example: dedicated delivery manager, shared architect, part-time operations lead.
+- Example: external vendor support needed during migration and cutover.
 
-## Rollout and support
+## Dependencies
 
-- Rollout approach: [Big bang, phased, pilot, migration, and so on]
-- Support model: [Who supports release and early operations]
-- Fallback or rollback plan: [How to respond if rollout fails]
+Capture the major internal and external dependencies that shape sequencing or confidence. Use this section to highlight the critical path rather than every small coordination item.
+
+- Example: procurement approval, environment readiness, external API availability.
+- Example: service acceptance evidence needed before release planning can lock.
+
+## Risks
+
+Summarize the delivery risks that materially affect the baseline and should be watched in reporting. Keep the detailed item management in the RAID register and use this section for the headline plan-level view.
+
+- Example: scope compression risk, staffing bottleneck, late data remediation.
+- Example: mitigation through phased rollout, contingency capacity, or earlier testing.
+
+## Reporting
+
+Define how progress against the plan will be reported and reviewed. The reporting model should line up with governance forums and the cadence of live control artifacts.
+
+- Example: weekly status report to sponsor and monthly board review.
+- Example: readiness review before each release and stage-end summary pack.
 
 ## Related documents
 
-- [02_implementation_plan_TEMPLATE.md](02_implementation_plan_TEMPLATE.md)
-- [../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md)
-- [../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md)
+- [../01_strategy/02_roadmap_TEMPLATE.md](../01_strategy/02_roadmap_TEMPLATE.md) — provides the horizon and milestone context this plan executes.
+- [../00_governance/01_business_case_TEMPLATE.md](../00_governance/01_business_case_TEMPLATE.md) — explains the value case and investment assumptions behind the plan.
+- [02_implementation_plan_TEMPLATE.md](02_implementation_plan_TEMPLATE.md) — expands the baseline into sequencing, environments, and cutover detail.

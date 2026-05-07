@@ -14,7 +14,7 @@ CLAUDE.md
 *.swp
 *.swo
 *~
-
+.github/prompts
 # Logs and runtime artifacts
 *.log
 logs/

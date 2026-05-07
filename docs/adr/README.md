@@ -1,11 +1,26 @@
+---
+title: ADR Directory
+status: active
+record_class: supporting
+audience: [internal]
+owner: architecture-maintainer
+capability: architecture
+phase: planning
+cadence: monthly
+last_reviewed: 2026-05-07
+---
+
 # ADR Directory
 
-Status: Active
-Owner: Architecture decision maintainers
-Purpose: define `docs/adr/` as the home for durable implementation and architecture decisions
-Last updated: 2026-05-07
+> **Purpose**: define `docs/adr/` as the canonical home for durable implementation and architecture decisions.
+> **Audience**: architects, engineers, reviewers, and delivery leads who need binding decision records.
+> **When to update**: update when ADR policy, lifecycle, or relationship to RFCs changes.
 
-This directory contains Architecture Decision Records (ADRs).
+## How to use this template
+
+- Create an ADR when a decision will materially shape implementation, architecture, operations, security, or delivery constraints.
+- Keep one ADR focused on one durable decision.
+- Treat ADRs here as the primary source of truth when other documents summarize the same decision.
 
 ## When to write an ADR
 
@@ -18,54 +33,28 @@ Create an ADR when a decision materially affects one or more of these areas:
 - delivery constraints, rollout strategy, or major implementation tradeoffs
 - non-functional requirements such as reliability, performance, scalability, or maintainability
 
-Do not create an ADR for routine implementation details, local refactors with no durable tradeoff, or transient planning notes that belong in working-history docs.
-
-## Record rules
-
-- One ADR should capture one significant decision.
-- Use stable file names in the form `ADR-XXX-short-title.md`.
-- Keep accepted ADRs immutable except for approved factual corrections.
-- Replace old decisions by creating a new ADR that explicitly supersedes the prior one.
-- Link ADRs to related product, architecture, delivery, and verification documents when those links exist.
-
 ## Status lifecycle
 
-- `Proposed` - under review and not yet binding.
-- `Accepted` - approved and binding for active work until superseded by a later accepted ADR.
-- `Superseded` - replaced by a newer accepted ADR.
-- `Deprecated` - no longer preferred, but not replaced by a direct successor.
+- Proposed — under review and not yet binding.
+- Accepted — approved and binding for active work until superseded.
+- Superseded — replaced by a later ADR.
+- Archived — retained for history without active authority.
+
+## Relationship to RFCs
+
+- Use RFCs in `../03_architecture/rfcs/` for open proposal review.
+- Create or update an ADR when the outcome becomes a durable implementation decision.
+- RFCs may inform ADRs, but ADRs are the binding record once accepted.
 
 ## Authority rules
 
-- ADRs are the primary source of truth for durable implementation decisions.
-- Update ADRs before implementation begins when a decision changes.
-- Do not change an accepted ADR during implementation except for approved factual corrections.
+- `docs/adr/` is the primary source of truth for durable implementation decisions.
+- Update ADRs before implementation when a decision changes.
 - Other docs may reference ADRs but must not override them.
-
-Accepted ADRs are binding for active work until superseded by a later accepted ADR.
-Proposed ADRs are not binding.
-
-## Roles and review
-
-- Author: the person or team proposing the decision.
-- Deciders: the role or group with authority to accept or reject the decision.
-- Consulted: roles or teams that provide material input.
-- Informed: roles or teams that need visibility after the decision is made.
-
-If a project needs stricter approval rules, define them in the relevant governance and delivery documents and reference them from the ADR.
-
-## Review and supersession triggers
-
-Revisit an accepted ADR when one or more of these conditions occurs:
-
-- assumptions or constraints have materially changed
-- a new requirement conflicts with the accepted decision
-- incidents, benchmarks, or delivery experience invalidate the original tradeoffs
-- a dependent system or interface changes in a way that affects the decision
-- the project adopts a new architecture direction that replaces the prior choice
 
 ## Related documents
 
-- [../03_architecture/README.md](../03_architecture/README.md) for active architecture ownership.
-- [../00-source-of-truth.md](../00-source-of-truth.md) for canonical ownership.
-- [ADR-000-template.md](ADR-000-template.md) for the default ADR format.
+- [ADR-000-template.md](ADR-000-template.md) — default starting point for new ADRs.
+- [INDEX.md](INDEX.md) — canonical ADR listing with status tracking.
+- [../03_architecture/README.md](../03_architecture/README.md) — active architecture document set.
+- [../03_architecture/rfcs/README.md](../03_architecture/rfcs/README.md) — proposal-stage review before ADR graduation.
