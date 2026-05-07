@@ -20,7 +20,7 @@ Last updated: YYYY-MM-DD
 ## Milestones and scope slices
 
 | Milestone | Scope slice | Dependency | Exit criteria |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Phase 1 | [Scope slice] | [Dependency or `None`] | [What must be true to exit] |
 | Phase 2 | [Scope slice] | [Dependency] | [Exit criteria] |
 

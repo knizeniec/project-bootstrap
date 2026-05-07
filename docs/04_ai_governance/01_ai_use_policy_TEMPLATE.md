@@ -20,14 +20,14 @@ Last updated: YYYY-MM-DD
 ## Approved use cases
 
 | ID | Use case | Owner | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AI-001 | [Approved purpose, audience, and data class] | [Role or team] | [Constraints or model class] |
 | AI-002 | [Approved purpose] | [Owner] | [Notes] |
 
 ## Restricted or prohibited use cases
 
 | ID | Restriction | Reason | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AI-R-001 | [Disallowed purpose, audience, or data class] | [Risk, regulatory, or contract reason] | [Notes] |
 | AI-R-002 | [Restriction] | [Reason] | [Notes] |
 

@@ -7,4 +7,5 @@ The format follows Keep a Changelog and versioning intent follows Semantic Versi
 ## [Unreleased]
 
 ### Added
+
 - Initial language-agnostic single-project repository scaffold.

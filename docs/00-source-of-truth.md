@@ -8,7 +8,7 @@ Last updated: 2026-05-06
 Use this file to find the one document or landing page that owns a topic. Supporting documents may explain or evidence that topic, but they do not override the owner named here.
 
 | Concern | Canonical file | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Docs entrypoint | [README.md](README.md) | Start here for the active documentation system. |
 | Docs structure | [Architecture.md](Architecture.md) | Defines the shape of the active docs system. |
 | Docs standards | [00-documentation-standards.md](00-documentation-standards.md) | Writing, ownership, and update rules. |
@@ -34,6 +34,7 @@ Use this file to find the one document or landing page that owns a topic. Suppor
 | Working-history policy | [superpowers/README.md](superpowers/README.md) | Owns rules for specs, plans, and tracked work records. |
 | Archive policy | [99_archive/README.md](99_archive/README.md) | Owns rules for historical evidence and retired material. |
 | Adoption prompts | [../prompts/README.md](../prompts/README.md) | Owns adoption-time prompts that adapt this template to a chosen language stack. |
+| Architecture baseline prompt | [../prompts/architecture-baseline.md](../prompts/architecture-baseline.md) | Guides the stack decision conversation and generates the solution design and ADRs. |
 
 ## Rule
 

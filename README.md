@@ -1,58 +1,106 @@
 # Universal Repository Template
 
-This repository is a governance-first template for projects that want a clean engineering scaffold plus durable documentation for product, architecture, delivery, and decision tracking.
+A governance-first project template. It gives you a clean engineering scaffold, a structured documentation tree, and a set of AI-assisted prompts that walk you from a blank clone through requirements, architecture, and language specialization — before you write a single line of implementation code.
 
-## Good fit
+The core idea: decisions made early (what the project is for, what it needs to achieve, which stack and why) should be recorded in canonical documents that the rest of the project refers back to. This template creates that structure upfront, so your codebase, docs, and AI agent context stay in sync throughout the project's life.
 
-- backend services and internal tools
-- web applications with a real delivery process
-- multi-stakeholder or compliance-sensitive projects
-- teams that want lightweight code scaffolding with stronger documentation defaults
+The most important part is the documentation curation. This template aims to enable producing robust and complete project documentation that allows for planning and executing an implementation without any guesswork and sudden changes of the core concepts.
 
-## Less ideal
+## Project journey
 
-- throwaway prototypes
-- single-file utilities
-- projects that do not want any structured documentation workflow
+A new project using this template goes through four phases before implementation. Each phase produces canonical documents that the next phase reads from.
+
+```text
+Clone
+  │
+  ▼
+Phase 1 — Intent
+  Run prompts/project-bootstrap.md
+  Produces: project brief, PRD, refreshed README
+  Output: docs/00_governance/00_project_brief.md
+          docs/02_product/01_prd.md
+  │
+  ▼
+Phase 2 — Specifications
+  Iterate on the canonical docs with your AI tool
+  Refine scope, requirements, goals, and constraints
+  until they are robust enough to design against
+  Output: solid project brief + PRD, optional early ADRs
+  │
+  ▼
+Phase 3 — Architecture
+  Run prompts/architecture-baseline.md
+  Reads project brief and PRD, guides stack decision conversation,
+  proposes 2-3 architectural approaches, generates solution design
+  Output: docs/03_architecture/01_solution_design.md
+          docs/adr/ADR-NNN-*.md (one per durable decision)
+  │
+  ▼
+Phase 4 — Structure
+  Run prompts/language-adaptation.md
+  The prompt reads your canonical docs as the source of truth
+  and specializes the repo scaffold to match
+  Output: language-specific src/, tests/, config/, .gitignore,
+          updated AGENTS.md routing, ADRs, docs control spine
+  │
+  ▼
+Implementation planning or deeper documentation work
+```
+
+After Phase 4 your repository has a coherent structure, all docs agree on the stack and project shape, and you can move straight into writing specs, planning workstreams, or starting implementation.
 
 ## Bootstrap checklist
 
-1. Run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) against this fresh clone to capture project intent and produce a first-pass canonical documentation baseline. See [Bootstrap your project](#bootstrap-your-project) below.
-2. Iterate on the bootstrap canonical docs ([`docs/00_governance/00_project_brief.md`](docs/00_governance/00_project_brief_TEMPLATE.md), [`docs/02_product/01_prd.md`](docs/02_product/01_prd_TEMPLATE.md)) until project specifications, requirements, and goals are robust enough to plan against.
-3. Author the architecture baseline by copying [`docs/03_architecture/01_solution_design_TEMPLATE.md`](docs/03_architecture/01_solution_design_TEMPLATE.md) to `docs/03_architecture/01_solution_design.md` and filling in the chosen language stack, primary technologies, building blocks, runtime and deployment view, and the basic application plan. Record durable decisions as ADRs in [`docs/adr/`](docs/adr/).
-4. Run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) to specialize the structural baseline against those architecture docs. The prompt reads the canonical docs as the source of truth and halts if they are missing or still contain placeholders. See [Adapt to your stack](#adapt-to-your-stack) below.
+1. Run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) — capture intent, produce first-pass canonical docs.
+2. Iterate on [`docs/00_governance/00_project_brief.md`](docs/00_governance/00_project_brief_TEMPLATE.md) and [`docs/02_product/01_prd.md`](docs/02_product/01_prd_TEMPLATE.md) until specifications, requirements, and goals are solid.
+3. Run [`prompts/architecture-baseline.md`](prompts/architecture-baseline.md) — guides the stack and architecture decision conversation, then generates the solution design and ADRs.
+4. Run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) — specializes the scaffold against the architecture docs.
 5. Replace placeholder ownership metadata in canonical docs under `docs/` as you adopt them.
-6. Keep only the top-level folders you will actually use for your project.
-7. Treat `docs/superpowers/` as working history, not canonical guidance.
-8. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing the repository.
-9. Keep local workspace tooling such as `.opencode/` ignored and untracked.
-10. Continue with deeper documentation work or move into implementation planning on the adapted template.
+6. Keep only the top-level folders you will actually use.
+7. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing.
+8. Keep local workspace tooling such as `.opencode/` gitignored and untracked.
+9. Commit the bootstrap state as one or two clean commits before starting feature work.
 
 ## Bootstrap your project
 
-This is the first step against a fresh clone. Run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) in your AI coding tool of choice. The prompt:
+Run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) in your AI coding tool of choice (Claude Code, Codex, Cursor, or any tool that accepts Markdown prompt files). The prompt:
 
-- Asks three required questions (project name, what the project needs to achieve, planned product description) and a small set of optional follow-ups about users, deployment context, and constraints.
-- Proposes two or three approach directions with non-binding tech-stack options for the user to consider — proposals are starting points, not decisions.
-- Produces a first-pass canonical documentation baseline: an active project brief at `docs/00_governance/00_project_brief.md`, an active PRD at `docs/02_product/01_prd.md`, a refreshed root README, and an optional initial ADR if the user committed to a durable decision during the conversation.
-- Stays implementation-neutral. It does not pick a language, framework, or runtime. Those choices happen in the next step.
+- Asks three required questions (project name, what the project needs to achieve, planned product description) and optional follow-ups about users, deployment context, and constraints.
+- Proposes two or three approach directions as starting points — not decisions.
+- Produces a first-pass project brief and PRD with `[TBD: ...]` markers wherever the answers were incomplete, so iteration is targeted.
+- Stays implementation-neutral: no language, framework, or runtime is chosen here.
+
+After bootstrap, spend time on Phase 2. Work through the canonical docs with your AI tool: challenge assumptions, sharpen requirements, resolve TBD markers, and capture any early durable decisions as ADRs. The architecture phase depends on having solid inputs.
+
+## Author the architecture baseline
+
+Run [`prompts/architecture-baseline.md`](prompts/architecture-baseline.md) in your AI coding tool once the project brief and PRD are solid. The prompt:
+
+- Reads the project brief and PRD and summarises what it already knows before asking anything — confirming understanding before driving decisions.
+- Asks only what the docs don't already capture: language, primary framework, data storage approach, deployment target, and structural shape (monolith vs. services vs. hybrid).
+- Proposes two or three architecture approaches that fit the requirements and constraints, each with explicit trade-offs and risks.
+- Generates [`docs/03_architecture/01_solution_design.md`](docs/03_architecture/01_solution_design_TEMPLATE.md) fully filled in and an ADR for every durable decision made in the conversation.
+- Stays implementation-neutral: no code, no version pins, no module names.
+
+The solution design is the single source of truth that [`prompts/language-adaptation.md`](prompts/language-adaptation.md) reads from. If it is missing or still contains template placeholders, the language-adaptation prompt will halt and tell you exactly what is missing.
 
 ## Adapt to your stack
 
-After bootstrap and after the architecture docs ([`docs/03_architecture/01_solution_design.md`](docs/03_architecture/01_solution_design_TEMPLATE.md) plus any accepted ADRs) are filled in with the chosen language stack and basic application plan, run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) to specialize the structural baseline. The prompt:
+Run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) once the architecture baseline is complete. The prompt:
 
-- Reads the canonical docs as the single source of truth: project brief, PRD, and the solution design. It does not ask the adopter to restate stack facts that the docs already capture.
-- Halts with a precise list of missing or unfilled inputs if the architecture or bootstrap docs are not yet ready, instead of guessing.
-- Adapts the top-level scaffold to the language stack and project shape recorded in the docs and adds language-specific structural directories where they are durable.
-- Updates the documentation control spine, ADRs when the adaptation itself crystallizes a durable decision, baseline files (`.gitignore`, `.editorconfig`, `.gitattributes`), and routed `AGENTS.md` files so they all agree with the canonical docs.
-- Stays implementation-neutral. It does not generate feature code, endpoints, or dependency version pins beyond what an accepted ADR or the solution design already requires.
+- Reads the project brief, PRD, solution design, and accepted ADRs as the single source of truth. It does not ask you to restate stack facts the docs already capture.
+- Halts with a precise list of missing inputs if the architecture or bootstrap docs are not ready.
+- Adapts the top-level scaffold, adds language-specific structural directories, updates baseline files (`.gitignore`, `.editorconfig`, `.gitattributes`), updates the documentation control spine, and updates routed `AGENTS.md` files so everything agrees with the canonical docs.
+- Stays implementation-neutral: no feature code, no endpoint stubs, no dependency version pins beyond what an accepted ADR explicitly requires.
 
-See [`prompts/README.md`](prompts/README.md) for the full inventory and adoption workflow.
+After adaptation, the repository is structurally ready. You can continue expanding the documentation (interface contracts, delivery plans, security runbooks) or move directly into implementation planning on the adapted template.
+
+See [`prompts/README.md`](prompts/README.md) for the full prompt inventory and workflow detail.
 
 ## Top-level layout
 
 | Path | Purpose |
-|---|---|
+| --- | --- |
 | `src/` | Implementation code and reusable modules. |
 | `tests/` | Automated verification, ideally mirroring `src/` by scope. |
 | `config/` | Environment, runtime, and deployment configuration templates. |
@@ -65,11 +113,11 @@ See [`prompts/README.md`](prompts/README.md) for the full inventory and adoption
 
 ## Documentation model
 
-- `docs/README.md`, `docs/Architecture.md`, `docs/00-documentation-standards.md`, `docs/00-source-of-truth.md`, and `docs/INDEX.md` form the control spine.
+- `docs/README.md`, `docs/Architecture.md`, `docs/00-documentation-standards.md`, `docs/00-source-of-truth.md`, and `docs/INDEX.md` form the control spine — the source of truth for how documentation is structured in this project.
 - `docs/adr/` holds durable architecture and implementation decisions.
-- `docs/superpowers/` holds dated specs and plans as historical working records.
-- `docs/99_archive/` is for historical evidence, not active guidance.
+- `docs/superpowers/` holds dated specs and plans as historical working records, not canonical guidance.
+- `docs/99_archive/` is for retired material, not active guidance.
 
 ## Optional local tooling
 
-Repository-local helper tooling is allowed, but it should stay outside the tracked template contract. Keep `.opencode/` and similar workspace directories gitignored so the template remains portable.
+Repository-local helper tooling is allowed but should stay outside the tracked template contract. Keep `.opencode/` and similar workspace directories gitignored so the template remains portable.

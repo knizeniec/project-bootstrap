@@ -20,7 +20,7 @@ Last updated: 2026-05-06
 ## Workstreams
 
 | Workstream | Outcome | Dependencies | Owner role |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Workstream 1 | [Outcome] | [Dependencies] | [Role or team] |
 | Workstream 2 | [Outcome] | [Dependencies] | [Role or team] |
 

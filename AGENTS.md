@@ -22,7 +22,7 @@ Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` befo
 
 ## Global Workflow
 
-- A fresh clone of this template is unspecialized. The first action for a new adopter is to run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) to capture project intent, then iterate on the bootstrap canonical docs and author the architecture baseline at [`docs/03_architecture/01_solution_design.md`](docs/03_architecture/01_solution_design_TEMPLATE.md), and only then run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) to specialize the structural baseline against those docs. See the bootstrap checklist in the root [`README.md`](README.md) for the full sequence.
+- A fresh clone of this template is unspecialized. The adoption sequence is: run [`prompts/project-bootstrap.md`](prompts/project-bootstrap.md) to capture project intent → iterate on specs → run [`prompts/architecture-baseline.md`](prompts/architecture-baseline.md) to decide the stack and produce the architecture docs → run [`prompts/language-adaptation.md`](prompts/language-adaptation.md) to specialize the structural baseline. See the bootstrap checklist in the root [`README.md`](README.md) for the full sequence.
 - Define scope before editing and avoid unrelated changes.
 - Prefer root-cause fixes and explicit, simple changes.
 - Keep `AGENTS.md` files up to date when workflow or context-management guidance changes, or when new instructions would materially improve future work.

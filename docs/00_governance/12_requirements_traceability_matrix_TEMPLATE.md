@@ -14,8 +14,8 @@ Last updated: YYYY-MM-DD
 ## Traceability table
 
 | Requirement ID | Requirement summary | Product source | Architecture source | ADR | Delivery source | Verification source | Status |
-|---|---|---|---|---|---|---|---|
-| R-001 | [Requirement summary] | [PRD section or file] | [Design section or file] | [ADR reference or `N/A`] | [Plan section or file] | [Test, checklist, or review evidence] | [Proposed | Active | Verified | Deferred] |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| R-001 | [Requirement summary] | [PRD section or file] | [Design section or file] | [ADR reference or `N/A`] | [Plan section or file] | [Test, checklist, or review evidence] | [Proposed, Active, Verified, or Deferred] |
 | R-002 | [Requirement summary] | [PRD section or file] | [Design section or file] | [ADR reference or `N/A`] | [Plan section or file] | [Test, checklist, or review evidence] | [Status] |
 
 ## Notes

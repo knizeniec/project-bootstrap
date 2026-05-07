@@ -50,14 +50,14 @@ Last updated: YYYY-MM-DD
 ## Functional requirements
 
 | ID | Requirement | Priority | Notes |
-|---|---|---|---|
-| FR-001 | [Requirement] | [Must | Should | Could] | [Notes] |
+| --- | --- | --- | --- |
+| FR-001 | [Requirement] | [Must, Should, or Could] | [Notes] |
 | FR-002 | [Requirement] | [Priority] | [Notes] |
 
 ## Non-functional requirements
 
 | ID | Requirement | Measure or constraint |
-|---|---|---|
+| --- | --- | --- |
 | NFR-001 | [Reliability, performance, security, usability, or compliance requirement] | [Target, threshold, or rule] |
 | NFR-002 | [Requirement] | [Target, threshold, or rule] |
 

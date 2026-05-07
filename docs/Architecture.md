@@ -35,7 +35,7 @@ docs/
 ## Document classes
 
 | Class | Surface | Role |
-|---|---|---|
+| --- | --- | --- |
 | Control spine | [README.md](README.md), [Architecture.md](Architecture.md), [00-documentation-standards.md](00-documentation-standards.md), [00-source-of-truth.md](00-source-of-truth.md), [INDEX.md](INDEX.md) | Entry, structure, standards, ownership, and navigation for the active docs system. |
 | Active domain docs | [00_governance/](00_governance/README.md) through [08_references/](08_references/README.md) | Canonical documentation by domain. |
 | Starter templates | Named `_TEMPLATE.md` files in canonical areas | Reusable project bootstrap surfaces for governance, product, architecture, and delivery documentation. |
@@ -50,7 +50,7 @@ The numbered domain folders (`00_governance/` through `08_references/` plus `99_
 Adopters who must align with arc42 can map the folders as follows:
 
 | Folder | arc42 alignment |
-|---|---|
+| --- | --- |
 | `00_governance/` | Quality goals, stakeholders, constraints (arc42 §1, §2) |
 | `01_strategy/` | Strategic context (arc42 §1) |
 | `02_product/` | Requirements and quality goals (arc42 §1, §10 quality scenarios) |

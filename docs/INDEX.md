@@ -10,7 +10,7 @@ Use this index after reading [README.md](README.md), [Architecture.md](Architect
 ## Status meanings
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | Active | Canonical current documentation. |
 | Working history | Tracked implementation records that are not canonical. |
 | Archive/evidence | Historical evidence only. |
@@ -18,7 +18,7 @@ Use this index after reading [README.md](README.md), [Architecture.md](Architect
 ## Control spine
 
 | Surface | Scope | Status |
-|---|---|---|
+| --- | --- | --- |
 | [README.md](README.md) | Main docs entrypoint. | Active |
 | [Architecture.md](Architecture.md) | Structure of the documentation system. | Active |
 | [00-documentation-standards.md](00-documentation-standards.md) | Documentation rules and update discipline. | Active |
@@ -28,7 +28,7 @@ Use this index after reading [README.md](README.md), [Architecture.md](Architect
 ## Active tree
 
 | Area | Scope | Status |
-|---|---|---|
+| --- | --- | --- |
 | [00_governance/README.md](00_governance/README.md) | Governance, controls, traceability, and ownership. | Active |
 | [01_strategy/README.md](01_strategy/README.md) | Strategic framing, priorities, and roadmapping inputs. | Active |
 | [02_product/README.md](02_product/README.md) | Scope, requirements, journeys, and acceptance outcomes. | Active |
@@ -42,7 +42,7 @@ Use this index after reading [README.md](README.md), [Architecture.md](Architect
 ## Bootstrap starter templates
 
 | Surface | Scope | Status |
-|---|---|---|
+| --- | --- | --- |
 | [00_governance/00_project_brief_TEMPLATE.md](00_governance/00_project_brief_TEMPLATE.md) | Project purpose, scope, stakeholders, and success framing. | Active |
 | [00_governance/12_requirements_traceability_matrix_TEMPLATE.md](00_governance/12_requirements_traceability_matrix_TEMPLATE.md) | Requirement traceability across product, architecture, delivery, ADRs, and verification. | Active |
 | [02_product/01_prd_TEMPLATE.md](02_product/01_prd_TEMPLATE.md) | Product problem, users, requirements, and acceptance outcomes. | Active |
@@ -55,7 +55,7 @@ Use this index after reading [README.md](README.md), [Architecture.md](Architect
 ## Supporting areas
 
 | Surface | Scope | Status |
-|---|---|---|
+| --- | --- | --- |
 | [adr/README.md](adr/README.md) | Durable architecture decision records. | Active |
 | [superpowers/README.md](superpowers/README.md) | Specs, plans, and tracked working history. | Working history |
 | [99_archive/README.md](99_archive/README.md) | Archive entrypoint for historical evidence. | Archive/evidence |

@@ -12,6 +12,7 @@ This prompt runs against a fresh, unspecialized clone of the template **before**
 Use the user arguments as hard requirements.
 
 Mandatory clarification gate:
+
 - Block document generation until all required inputs below are explicit. Never invent answers; ask one targeted question per gap if the user's input is vague.
 - Required questions:
   - What is the project name?
@@ -27,6 +28,7 @@ Mandatory clarification gate:
 - Keep the conversation focused on intent, scope, and outcome. Do not ask about implementation details, frameworks, or runtimes during this gate.
 
 Approach proposal:
+
 - After the required answers are gathered, propose two or three reasonable directions the project could take. Each proposal must include:
   - a one-sentence summary of the approach,
   - the trade-off it favors (for example: speed-of-delivery vs. extensibility, monolith vs. service-oriented, batteries-included vs. minimal, on-premises vs. managed),
@@ -37,12 +39,14 @@ Approach proposal:
 - If the user explicitly commits to a durable direction during this conversation (for example: open-source vs proprietary release, single-tenant vs multi-tenant, regulated environment), record that decision in an ADR per the document creation rules below. Do not record decisions the user did not make.
 
 Primary objective:
+
 - Produce a first-pass canonical documentation baseline that captures intent, scope, and requirements.
 - Keep all documents implementation-neutral. No language pinning, no framework choice, no version locks.
 - Make it easy for the user to iterate on these documents later as scope sharpens.
 - Use explicit `[TBD: <what is unknown>]` markers in every spot the user did not answer, so future iteration is targeted and greppable.
 
 Document creation rules:
+
 - Always create or overwrite the following first-pass files using the matching `_TEMPLATE.md` as the starting point:
   - [`docs/00_governance/00_project_brief.md`](../docs/00_governance/00_project_brief_TEMPLATE.md) from [`docs/00_governance/00_project_brief_TEMPLATE.md`](../docs/00_governance/00_project_brief_TEMPLATE.md). Fill project name, sponsor, problem statement, target outcome, goals, success measures, in-scope and out-of-scope items, stakeholders and roles, constraints, assumptions, risks, dependencies, governance and approval model.
   - [`docs/02_product/01_prd.md`](../docs/02_product/01_prd_TEMPLATE.md) from [`docs/02_product/01_prd_TEMPLATE.md`](../docs/02_product/01_prd_TEMPLATE.md). Fill problem and opportunity, target outcome, primary and secondary users, stakeholders, goals, non-goals, in-scope and out-of-scope items, an initial functional requirements table (use sequential `FR-001`, `FR-002` IDs even if some rows are TBD), an initial non-functional requirements table (`NFR-001`, `NFR-002`), user journeys, acceptance criteria, dependencies and risks.
@@ -67,20 +71,24 @@ Document creation rules:
   - Do not invent a decision the user did not explicitly make.
 
 Out-of-scope updates:
+
 - Do not modify [`docs/Architecture.md`](../docs/Architecture.md), [`docs/00-documentation-standards.md`](../docs/00-documentation-standards.md), the existing `_TEMPLATE.md` files, any `AGENTS.md`, or any file outside the list above.
 - Do not create documents in canonical areas the user has not engaged with (no security-operations runbook, no delivery plan, no AI use policy from a one-line product description).
 
 TBD discipline:
+
 - Replace each unanswered placeholder with `[TBD: <what is unknown>]`. Keep the marker inline; do not leave the original square-bracket template hint in place.
 - Bump `Last updated:` to the current date on every file you touch.
 - Set `Owner:` to a role the user named or to `[TBD: owner]` when no role was given.
 - Do not pre-populate fields with plausible-sounding inventions. Empty is better than wrong.
 
 Adopter handoff:
+
 - After generation, summarize what was created, list every `[TBD: ...]` marker grouped by file, and recommend that the user run [`language-adaptation.md`](language-adaptation.md) next.
 - Recommend that any durable decision the user makes between now and language-adaptation be recorded as an ADR per the rule above.
 
 Project bootstrap quality gate:
+
 - Documents reflect the user's actual answers, not invented detail.
 - Every file is implementation-neutral. No language, framework, runtime, or version pinning leaks into any file.
 - Tech-stack proposals are framed as options, not decisions, in any file that mentions them.
@@ -89,6 +97,7 @@ Project bootstrap quality gate:
 - All internal links in the created documents resolve to real paths in the current tree.
 
 Output expectations:
+
 1. Show the final list of created and modified files.
 2. List the gathered project facts that drove generation.
 3. Summarize the proposed approaches that were offered and which (if any) the user confirmed.
@@ -96,6 +105,7 @@ Output expectations:
 5. State the recommended next step ([`language-adaptation.md`](language-adaptation.md)) and any decisions the user should record as ADRs first.
 
 Response format:
+
 - `Gathered Facts`
 - `Proposed Approaches`
 - `Created And Updated Files`
@@ -104,6 +114,7 @@ Response format:
 - `Next Steps`
 
 Non-goals:
+
 - Do not pick a language, framework, or runtime. That happens in [`language-adaptation.md`](language-adaptation.md) or via an explicit ADR.
 - Do not generate code, configuration, infrastructure, or sample data.
 - Do not create docs in canonical areas the user has not engaged with.
