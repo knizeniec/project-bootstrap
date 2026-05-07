@@ -42,8 +42,26 @@ These standards apply to the control spine and the active numbered tree under `d
 - Use [00_operating_model/](00_operating_model/README.md) for lifecycle, audience, schema, naming, and tailoring rules.
 - Use folder landing pages for area-level orientation and keep detailed navigation in [INDEX.md](INDEX.md).
 - Store durable implementation decisions in [adr/](adr/README.md).
+- Store proposal-stage design discussion in [03_architecture/rfcs/](03_architecture/rfcs/README.md); graduate accepted proposals to ADRs.
 - Store external standards, vendor references, and framework citations in [08_references/](08_references/README.md).
 - Use named `_TEMPLATE.md` files in canonical areas for reusable bootstrap starters.
+
+## Template conventions
+
+Every canonical `*_TEMPLATE.md` file must carry two standard sections:
+
+- `## What not to include` — lists content that belongs in a different artifact, preventing scope creep and cross-contamination between templates.
+- `## Frontmatter quick reference` — shows the minimum valid frontmatter block for that template with the expected `capability`, `record_class`, and `audience` values.
+
+When creating a new template, include both sections. When reviewing an existing template, verify both are present before approving.
+
+## Folder README conventions
+
+Every capability folder `README.md` must carry a `## Which template should I use?` decision table with at least three tiers (for example: small / cross-component / new system; single-stage / multi-stage / regulated; pre-launch / live / regulated). Each tier row should name recommended templates with links, templates to skip, and explicit rules of thumb below the table. This table is the primary template-selection mechanism; contributors should be directed to read it before copying any template.
+
+## Worked-examples convention
+
+Filled, realistic examples that illustrate complete frontmatter and section content for key templates are stored in [_examples/](../_examples/). Current filled examples follow the "Helio" fictional scenario and cover the PRD, solution design, and AI use policy. Use these as known-good references, not as project documents. When a new high-traffic template is added, consider adding a corresponding filled example.
 
 ## Required metadata
 
@@ -67,6 +85,7 @@ last_reviewed: 2026-05-07
 - Active documents must not retain starter placeholders in required fields.
 - Add `superseded_by` only when `status: superseded`.
 - Add `source_of_truth` when the schema requires it, especially for `capability: execution` records.
+- Current valid `capability` values include `strategy` and `ai_governance` in addition to the base set; see the schema doc for the full enum.
 
 ## Update checklist
 

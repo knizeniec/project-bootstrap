@@ -15,6 +15,7 @@ This directory stores planning artifacts for agent-driven work.
 ## Most important rules
 
 - Use [docs/adr/](../adr/README.md) as the primary context for brainstorming and planning.
+- For architecture proposals that are not yet decided, prefer opening an RFC in [docs/03_architecture/rfcs/](../03_architecture/rfcs/README.md) rather than recording a speculative decision in an ADR.
 - Store specs in `docs/superpowers/specs/` and plans in `docs/superpowers/plans/`.
 - Treat completed spec and plan files as historical records; create new dated files for later changes instead of rewriting completed ones.
 - Keep canonical project rules in root `docs/`, not here.

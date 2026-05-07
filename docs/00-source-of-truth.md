@@ -45,13 +45,20 @@ Use this file to find the one active document or landing page that owns a topic.
 | Architecture | [03_architecture/README.md](03_architecture/README.md) | Owns system design, integration boundaries, and technical patterns. |
 | Solution design template | [03_architecture/01_solution_design_TEMPLATE.md](03_architecture/01_solution_design_TEMPLATE.md) | Starter template for architecture baseline, boundaries, and quality concerns. |
 | Interface control template | [03_architecture/06_interface_control_document_TEMPLATE.md](03_architecture/06_interface_control_document_TEMPLATE.md) | Starter template for contracts, interfaces, and integration boundaries. |
+| RFC index template | [03_architecture/12_rfc_index_TEMPLATE.md](03_architecture/12_rfc_index_TEMPLATE.md) | Starter index for tracking RFC proposals in a project. |
+| RFC files and process | [03_architecture/rfcs/README.md](03_architecture/rfcs/README.md) | Owns RFC lifecycle, review rules, and ADR graduation process. |
+| RFC template | [03_architecture/rfcs/RFC-000-template.md](03_architecture/rfcs/RFC-000-template.md) | Starter template for design proposals before they become ADRs. |
 | AI governance | [04_ai_governance/README.md](04_ai_governance/README.md) | Owns model-use policy, approvals, evaluation, and oversight. |
 | AI use policy template | [04_ai_governance/01_ai_use_policy_TEMPLATE.md](04_ai_governance/01_ai_use_policy_TEMPLATE.md) | Starter template for AI approved use, restrictions, approval workflow, and oversight. |
 | Testing and acceptance | [05_testing_acceptance/README.md](05_testing_acceptance/README.md) | Owns verification, acceptance, and quality evidence structure. |
 | Security and operations | [06_security_operations/README.md](06_security_operations/README.md) | Owns security controls, runbooks, and incident handling. |
+| Runbook index template | [06_security_operations/10_runbook_index_TEMPLATE.md](06_security_operations/10_runbook_index_TEMPLATE.md) | Central pointer list for component or service runbooks. |
+| Per-runbook template | [06_security_operations/11_runbook_TEMPLATE.md](06_security_operations/11_runbook_TEMPLATE.md) | Starter template for a single operational procedure or on-call runbook. |
+| Incident postmortem template | [06_security_operations/12_incident_postmortem_TEMPLATE.md](06_security_operations/12_incident_postmortem_TEMPLATE.md) | Starter template for structured learning and follow-up after a significant incident. |
 | Delivery | [07_delivery/README.md](07_delivery/README.md) | Owns roadmap, release, rollout, and handoff planning. |
 | Delivery plan template | [07_delivery/01_delivery_plan_TEMPLATE.md](07_delivery/01_delivery_plan_TEMPLATE.md) | Starter template for milestones, dependencies, risks, and rollout planning. |
 | Implementation plan template | [07_delivery/02_implementation_plan_TEMPLATE.md](07_delivery/02_implementation_plan_TEMPLATE.md) | Starter template for workstreams, sequencing, and validation gates. |
+| Migration plan template | [07_delivery/09_migration_plan_TEMPLATE.md](07_delivery/09_migration_plan_TEMPLATE.md) | Starter template for data or service migration scope, steps, and validation. |
 | References | [08_references/README.md](08_references/README.md) | Owns external references and standards inputs. |
 | User documentation | [09_user_documentation/README.md](09_user_documentation/README.md) | Owns end-user tutorials, how-to guides, reference, explanation, changelog, and release notes. |
 | Architecture decisions | [adr/README.md](adr/README.md) | Owns durable implementation decisions and ADR authoring rules. |

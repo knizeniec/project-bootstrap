@@ -39,7 +39,7 @@ Allowed values are defined by the validator enums and should be treated as the c
 - `status`: `draft`, `proposed`, `accepted`, `active`, `superseded`, `archived`
 - `record_class`: `canonical`, `supporting`, `historical`
 - `audience`: `internal`, `manager`, `client`, `end_user`, `auditor`
-- `capability`: `governance`, `product`, `architecture`, `execution`, `quality`, `operations`, `knowledge`, `references`, `user_docs`, `operating_model`
+- `capability`: `governance`, `product`, `architecture`, `execution`, `quality`, `operations`, `knowledge`, `references`, `user_docs`, `operating_model`, `strategy`, `ai_governance`
 - `phase`: `initiation`, `planning`, `execution`, `monitoring`, `closure`, `n/a`
 - `cadence`: `ad-hoc`, `weekly`, `monthly`, `per-stage`, `per-release`, `one-shot`
 

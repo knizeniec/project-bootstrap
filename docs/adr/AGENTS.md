@@ -19,6 +19,13 @@ This directory is reserved for Architecture Decision Records.
 - Keep ADR canonical files in `docs/adr/`.
 - Keep canonical area docs in root `docs/`.
 
+## Relationship to RFCs
+
+- RFCs live in `../03_architecture/rfcs/` and represent proposals that are not yet decided. Use an RFC when structured team review of a change is needed before committing.
+- ADRs record a decision that has already been made and should be upheld. Create an ADR when an RFC is accepted and the outcome becomes durable implementation direction.
+- Do not write an ADR until the decision is settled; premature ADRs mislead readers about what is actually binding.
+- Supersede, do not delete, ADRs when a decision changes — the history of why an earlier approach was chosen and then replaced is part of the architectural record.
+
 ## Authoring Rules
 
 - Keep ADRs concise, dated, and explicit about the decision, context, and consequences.

@@ -22,6 +22,7 @@ last_reviewed: 2026-05-07
 - Role map: [00_operating_model/02_role_audience_map.md](00_operating_model/02_role_audience_map.md)
 - Frontmatter schema: [00_operating_model/04_frontmatter_schema.md](00_operating_model/04_frontmatter_schema.md)
 - Example artifacts: [manager](_examples/canonical-manager.md), [internal](_examples/canonical-internal.md), [end user](_examples/end-user-doc.md)
+- Filled worked examples (realistic, Helio scenario): [_examples/](_examples/) — see `filled_prd_example.md`, `filled_solution_design_example.md`, `filled_ai_use_policy_example.md`
 - Contribution path: [How to contribute](#how-to-contribute)
 
 ## What this repository documents
@@ -67,13 +68,15 @@ The docs system uses explicit audience tags so readers can find the right depth 
 - Governance: [00_governance/README.md](00_governance/README.md)
 - Strategy: [01_strategy/README.md](01_strategy/README.md)
 - Product: [02_product/README.md](02_product/README.md)
-- Architecture: [03_architecture/README.md](03_architecture/README.md)
+- Architecture: [03_architecture/README.md](03_architecture/README.md) — includes RFC subsystem at [03_architecture/rfcs/README.md](03_architecture/rfcs/README.md)
 - AI governance: [04_ai_governance/README.md](04_ai_governance/README.md)
 - Testing and acceptance: [05_testing_acceptance/README.md](05_testing_acceptance/README.md)
-- Security and operations: [06_security_operations/README.md](06_security_operations/README.md)
-- Delivery: [07_delivery/README.md](07_delivery/README.md)
+- Security and operations: [06_security_operations/README.md](06_security_operations/README.md) — includes runbook ([11_runbook_TEMPLATE.md](06_security_operations/11_runbook_TEMPLATE.md)) and postmortem ([12_incident_postmortem_TEMPLATE.md](06_security_operations/12_incident_postmortem_TEMPLATE.md))
+- Delivery: [07_delivery/README.md](07_delivery/README.md) — includes migration plan ([09_migration_plan_TEMPLATE.md](07_delivery/09_migration_plan_TEMPLATE.md))
 - References: [08_references/README.md](08_references/README.md)
 - User documentation: [09_user_documentation/README.md](09_user_documentation/README.md)
+
+Each capability folder README contains a `## Which template should I use?` decision table with tier-based guidance and rules of thumb. Consult the relevant folder README before selecting a template.
 
 For the full cross-cutting map, use [INDEX.md](INDEX.md).
 
@@ -91,8 +94,17 @@ Quick examples:
 
 - New product scope: start from [02_product/01_prd_TEMPLATE.md](02_product/01_prd_TEMPLATE.md)
 - New technical baseline: start from [03_architecture/01_solution_design_TEMPLATE.md](03_architecture/01_solution_design_TEMPLATE.md)
+- Architecture proposal (pre-decision): start from [03_architecture/rfcs/RFC-000-template.md](03_architecture/rfcs/RFC-000-template.md)
+- Durable architecture decision: start from [adr/ADR-000-template.md](adr/ADR-000-template.md)
 - New delivery control: start from [07_delivery/04_status_report_TEMPLATE.md](07_delivery/04_status_report_TEMPLATE.md)
+- Data or service migration: start from [07_delivery/09_migration_plan_TEMPLATE.md](07_delivery/09_migration_plan_TEMPLATE.md)
+- Operations runbook: start from [06_security_operations/11_runbook_TEMPLATE.md](06_security_operations/11_runbook_TEMPLATE.md)
+- Incident postmortem: start from [06_security_operations/12_incident_postmortem_TEMPLATE.md](06_security_operations/12_incident_postmortem_TEMPLATE.md)
 - New user-facing help page: start from [09_user_documentation/tutorials/01-getting-started-TEMPLATE.md](09_user_documentation/tutorials/01-getting-started-TEMPLATE.md)
+
+Each template contains a `## What not to include` section and a `## Frontmatter quick reference` section — read both before filling.
+
+For realistic filled examples of key templates, see [_examples/](_examples/).
 
 ## How CI validates docs
 

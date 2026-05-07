@@ -39,6 +39,7 @@ The templates move from baseline planning through live control to release execut
 - Baselines: [01_delivery_plan_TEMPLATE.md](01_delivery_plan_TEMPLATE.md), [02_implementation_plan_TEMPLATE.md](02_implementation_plan_TEMPLATE.md), [03_stage_plan_TEMPLATE.md](03_stage_plan_TEMPLATE.md)
 - Live control: [04_status_report_TEMPLATE.md](04_status_report_TEMPLATE.md), [05_dependency_log_TEMPLATE.md](05_dependency_log_TEMPLATE.md), [06_readiness_tracker_TEMPLATE.md](06_readiness_tracker_TEMPLATE.md)
 - Release: [07_release_plan_TEMPLATE.md](07_release_plan_TEMPLATE.md), [08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md)
+- Migration: [09_migration_plan_TEMPLATE.md](09_migration_plan_TEMPLATE.md) — data and service migration scope, steps, and validation; use only when existing data or services are being moved or transformed.
 
 ## Reading order
 
@@ -49,6 +50,7 @@ Read the delivery plan first to understand the overall execution baseline, then 
 3. [03_stage_plan_TEMPLATE.md](03_stage_plan_TEMPLATE.md)
 4. [04_status_report_TEMPLATE.md](04_status_report_TEMPLATE.md), [05_dependency_log_TEMPLATE.md](05_dependency_log_TEMPLATE.md), and [06_readiness_tracker_TEMPLATE.md](06_readiness_tracker_TEMPLATE.md)
 5. [07_release_plan_TEMPLATE.md](07_release_plan_TEMPLATE.md) and [08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md)
+6. [09_migration_plan_TEMPLATE.md](09_migration_plan_TEMPLATE.md) — when data or live services are in scope for migration
 
 ## Which template should I use?
 

@@ -46,6 +46,8 @@ The templates below move from preventive controls into live operation and early-
 - [08_service_acceptance_TEMPLATE.md](08_service_acceptance_TEMPLATE.md) — go-live acceptance checks and conditional acceptance rules.
 - [09_post_launch_review_TEMPLATE.md](09_post_launch_review_TEMPLATE.md) — early-live outcomes, issues, benefits, and follow-up actions.
 - [10_runbook_index_TEMPLATE.md](10_runbook_index_TEMPLATE.md) — central pointer list for component or service runbooks.
+- [11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md) — per-procedure or per-component operational runbook for on-call use.
+- [12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md) — structured incident learning, timeline, root cause, and follow-up actions.
 
 ## Reading order
 
@@ -55,6 +57,7 @@ Read the preventive control documents first, then the operating and support mode
 2. [03_operating_model_TEMPLATE.md](03_operating_model_TEMPLATE.md), [04_support_model_TEMPLATE.md](04_support_model_TEMPLATE.md), and [05_access_control_TEMPLATE.md](05_access_control_TEMPLATE.md)
 3. [07_backup_and_recovery_TEMPLATE.md](07_backup_and_recovery_TEMPLATE.md), [08_service_acceptance_TEMPLATE.md](08_service_acceptance_TEMPLATE.md), and [10_runbook_index_TEMPLATE.md](10_runbook_index_TEMPLATE.md)
 4. [06_incident_response_TEMPLATE.md](06_incident_response_TEMPLATE.md) and [09_post_launch_review_TEMPLATE.md](09_post_launch_review_TEMPLATE.md)
+5. [11_runbook_TEMPLATE.md](11_runbook_TEMPLATE.md) (one per critical operation) and [12_incident_postmortem_TEMPLATE.md](12_incident_postmortem_TEMPLATE.md) (after first significant incident)
 
 ## Which template should I use?
 

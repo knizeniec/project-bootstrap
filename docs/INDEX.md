@@ -203,6 +203,8 @@ This index should eventually be generated from frontmatter metadata. For now it 
 - [03_architecture/10_configuration_baseline_TEMPLATE.md](03_architecture/10_configuration_baseline_TEMPLATE.md)
 - [03_architecture/11_adr_index_TEMPLATE.md](03_architecture/11_adr_index_TEMPLATE.md)
 - [03_architecture/12_rfc_index_TEMPLATE.md](03_architecture/12_rfc_index_TEMPLATE.md)
+- [03_architecture/rfcs/README.md](03_architecture/rfcs/README.md)
+- [03_architecture/rfcs/RFC-000-template.md](03_architecture/rfcs/RFC-000-template.md)
 
 ### AI governance
 
@@ -236,6 +238,8 @@ This index should eventually be generated from frontmatter metadata. For now it 
 - [06_security_operations/08_service_acceptance_TEMPLATE.md](06_security_operations/08_service_acceptance_TEMPLATE.md)
 - [06_security_operations/09_post_launch_review_TEMPLATE.md](06_security_operations/09_post_launch_review_TEMPLATE.md)
 - [06_security_operations/10_runbook_index_TEMPLATE.md](06_security_operations/10_runbook_index_TEMPLATE.md)
+- [06_security_operations/11_runbook_TEMPLATE.md](06_security_operations/11_runbook_TEMPLATE.md)
+- [06_security_operations/12_incident_postmortem_TEMPLATE.md](06_security_operations/12_incident_postmortem_TEMPLATE.md)
 
 ### Execution
 
@@ -248,6 +252,7 @@ This index should eventually be generated from frontmatter metadata. For now it 
 - [07_delivery/06_readiness_tracker_TEMPLATE.md](07_delivery/06_readiness_tracker_TEMPLATE.md)
 - [07_delivery/07_release_plan_TEMPLATE.md](07_delivery/07_release_plan_TEMPLATE.md)
 - [07_delivery/08_cutover_and_rollback_TEMPLATE.md](07_delivery/08_cutover_and_rollback_TEMPLATE.md)
+- [07_delivery/09_migration_plan_TEMPLATE.md](07_delivery/09_migration_plan_TEMPLATE.md)
 
 ### References
 

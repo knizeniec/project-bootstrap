@@ -37,6 +37,36 @@ Apply these rules when editing anything under `docs/`.
 - Accept partial answers. When information is still unknown, record it explicitly as an assumption, open question, or follow-up item instead of blocking the draft.
 - When adding a new reusable canonical template, update the owning area landing page plus [README.md](README.md), [INDEX.md](INDEX.md), and [00-source-of-truth.md](00-source-of-truth.md) in the same change.
 
+## Template routing by artifact type
+
+Use these rules to route to the right template or area quickly.
+
+**Architecture proposals and decisions:**
+- RFC (proposal not yet decided, needs structured team review): [03_architecture/rfcs/RFC-000-template.md](03_architecture/rfcs/RFC-000-template.md); manage via [03_architecture/rfcs/README.md](03_architecture/rfcs/README.md).
+- ADR (decision made, durable): [adr/ADR-000-template.md](adr/ADR-000-template.md); manage via [adr/README.md](adr/README.md).
+- Nothing (single-component change, no shared interface): proceed with implementation and reference any existing ADR in commit messages.
+- Relationship: RFCs are proposals pre-decision; ADRs are binding records post-adoption. Graduate an RFC to an ADR when the outcome becomes durable implementation direction.
+
+**Operations:**
+- Runbook (per-component or per-operation procedure): [06_security_operations/11_runbook_TEMPLATE.md](06_security_operations/11_runbook_TEMPLATE.md); register in [06_security_operations/10_runbook_index_TEMPLATE.md](06_security_operations/10_runbook_index_TEMPLATE.md).
+- Incident postmortem (structured learning after a significant incident): [06_security_operations/12_incident_postmortem_TEMPLATE.md](06_security_operations/12_incident_postmortem_TEMPLATE.md).
+
+**Delivery:**
+- Migration plan (data or service migration, not greenfield): [07_delivery/09_migration_plan_TEMPLATE.md](07_delivery/09_migration_plan_TEMPLATE.md).
+
+**Worked examples:**
+- See [_examples/](../_examples/) for filled, realistic examples using the "Helio" fictional scenario: [filled_prd_example.md](_examples/filled_prd_example.md), [filled_solution_design_example.md](_examples/filled_solution_design_example.md), [filled_ai_use_policy_example.md](_examples/filled_ai_use_policy_example.md).
+
+## Template selection mechanism
+
+Each capability folder `README.md` contains a `## Which template should I use?` decision table with three tiers (e.g. small / cross-component / new system; single-stage / multi-stage / regulated) and rules of thumb. Consult the owning folder README before selecting a template.
+
+## Template structure conventions
+
+Every canonical `*_TEMPLATE.md` file contains two standard sections that every agent should read before filling:
+- `## What not to include` — lists content that belongs in a different artifact or a different document altogether.
+- `## Frontmatter quick reference` — shows the minimum valid frontmatter for that template type with the expected `capability`, `record_class`, and `audience` values.
+
 ## Information architecture
 
 - Organize docs by reader need: tutorial, how-to, reference, explanation.
@@ -51,6 +81,7 @@ Apply these rules when editing anything under `docs/`.
 
 - Read [docs/adr/AGENTS.md](adr/AGENTS.md) before editing `docs/adr/**`.
 - Read [docs/superpowers/AGENTS.md](superpowers/AGENTS.md) before editing `docs/superpowers/**`.
+- For `docs/03_architecture/rfcs/**`, follow [03_architecture/rfcs/README.md](03_architecture/rfcs/README.md).
 - For `docs/00_operating_model/**`, follow this file plus that folder's [README.md](00_operating_model/README.md).
 - For `docs/09_user_documentation/**`, follow this file plus that folder's [README.md](09_user_documentation/README.md).
 
