@@ -3,7 +3,7 @@ name: Repository Agent Routing
 description: Global instructions for all work in this repository. Keep this file minimal and route detailed rules to the closest subdirectory AGENTS.md.
 applyTo: "**"
 ---
-
+If you use superpowers commands never use git worktree
 # Repository Agent Routing
 
 Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` before editing files in that area.
