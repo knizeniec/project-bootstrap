@@ -1,3 +1,15 @@
+---
+title: Template Workflow Hardening Implementation Plan
+status: active
+record_class: historical
+audience: [internal]
+owner: Planning maintainers
+capability: knowledge
+phase: n/a
+cadence: ad-hoc
+last_reviewed: 2026-05-07
+---
+
 # Template Workflow Hardening Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.

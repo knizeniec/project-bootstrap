@@ -1,5 +1,5 @@
 # Polyglot baseline generated from widely-used GitHub/gitignore patterns
-
+.claude
 # Optional local tooling
 .opencode/
 # OS
@@ -14,7 +14,7 @@ CLAUDE.md
 *.swp
 *.swo
 *~
-
+.github/prompts
 # Logs and runtime artifacts
 *.log
 logs/

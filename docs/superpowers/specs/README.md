@@ -1,3 +1,15 @@
+---
+title: Specs
+status: active
+record_class: supporting
+audience: [internal]
+owner: Planning maintainers
+capability: knowledge
+phase: n/a
+cadence: ad-hoc
+last_reviewed: 2026-05-07
+---
+
 # Specs
 
 Status: Working history
