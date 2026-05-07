@@ -8,15 +8,18 @@
 ## Gating criteria
 
 The acceptance catalog is complete when:
-- Every MUST requirement from the requirements catalog (if active) or PRD scope has at least one acceptance criterion.
+- Every MUST requirement from the requirements catalog (or the PRD scope if requirements-catalog was skipped) has at least one acceptance criterion.
 - Each criterion is binary: it is either met or not.
 - No criterion requires subjective judgment to evaluate.
+- No criterion restates a PRD out-of-scope item as a verifiable gate (out-of-scope items cannot be accepted, only excluded).
 
 ## Interview mode
 
-For each MUST requirement:
-1. "How would you verify that [requirement] is satisfied? Describe a test or observable outcome."
-2. "What is the failure case — what would you see if this requirement is NOT met?"
+Work through MUST requirements one at a time. For each:
+1. "How would you verify that [requirement] is satisfied? Describe a specific test or observable outcome."
+2. "What would you see if this requirement is NOT met? Name the observable failure."
+
+Repeat for every MUST requirement before moving to SHOULD requirements.
 
 ## Confirm mode
 

@@ -15,7 +15,7 @@ The PRD is complete when:
 
 ## Interview mode
 
-1. "The brief names [problem] and [users]. Does the PRD scope match, or are there important differences?"
+1. "The brief names [problem] and [users]. Does the PRD scope match exactly? If there are differences — different problem framing, expanded users, or narrowed scope — state them explicitly so the PRD is self-contained."
 2. "What is explicitly out of scope for the first release? List at least three things we are not building."
 3. "What does success look like in three to six months? Name at least one outcome you could measure."
 4. "Are there competing or related products the PRD should acknowledge for differentiation?"
@@ -34,6 +34,6 @@ Fill `docs/02_product/01_prd_TEMPLATE.md` from `Project Facts` and Future-Phase 
 - Problem statement matches the brief's problem — no scope creep introduced in the PRD.
 - Out-of-scope list exists and is not empty.
 - Success metrics are measurable: not "improve UX" but "reduce time-to-first-action by 30%".
-- Target users in PRD match the brief's user description.
+- Target users in PRD match the brief's user description, or any differences are intentional and explained in the PRD scope section.
 - Output path `docs/02_product/01_prd.md` exists and is the file that was written.
 - Frontmatter complete per schema (`docs/00_operating_model/04_frontmatter_schema.md`).

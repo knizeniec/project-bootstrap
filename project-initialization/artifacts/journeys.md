@@ -9,7 +9,7 @@
 
 The user journeys artifact is complete when:
 - At least one complete journey exists per primary user type named in the PRD.
-- Each journey has a defined start point, at least three steps, and a success outcome.
+- Each journey has a defined start point, at least three steps (a step = one atomic action by one actor with one observable result), and a success outcome.
 - Each step names actor, action, and result.
 - No step contains implementation detail (no UI element names, API calls, or database terms).
 
@@ -24,11 +24,11 @@ Repeat questions 2-4 for each user type.
 
 ## Confirm mode
 
-Present extracted user types and any journey fragments from Future-Phase Facts. Ask for missing steps or user types.
+Present extracted user types and any journey fragments from Future-Phase Facts. For each step presented, confirm it has the form: Actor → Action → Observable result. Ask for missing steps, user types, or missing result statements.
 
 ## Extract mode
 
-Build journeys from PRD user descriptions and any source material provided. Mark incomplete journeys with `[NEEDS-REVIEW: missing steps]`. Files with `[NEEDS-REVIEW]` markers do not pass the phase gate — resolve every marker before marking the artifact complete.
+Build journeys from PRD user descriptions and any source material provided. Mark incomplete journeys with `[NEEDS-REVIEW: missing steps]`. Flag any step containing implementation detail (UI element names, API names, database terms) with `[NEEDS-REVIEW: remove implementation detail]`. Files with `[NEEDS-REVIEW]` markers do not pass the phase gate — resolve every marker before marking the artifact complete.
 
 ## Review hooks
 

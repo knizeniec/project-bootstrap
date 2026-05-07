@@ -10,15 +10,16 @@
 The requirements catalog is complete when:
 - At least five functional requirements are listed.
 - Each requirement has a priority: MUST, SHOULD, COULD, or WON'T.
-- No requirement duplicates an acceptance catalog entry (different granularity).
+- No requirement restates a PRD out-of-scope item as a positive requirement (scope inversion).
 - No requirement contains implementation detail (how, not what).
 
 ## Interview mode
 
 1. "List the functional things the system must do — start with MUST requirements, then SHOULD."
-2. "For each MUST requirement: what does failure look like? This will drive acceptance criteria later."
-3. "Are there non-functional requirements (performance, availability, data retention) the architecture must respect?"
-4. "What requirements did you consider and explicitly decide not to include in this release?"
+2. "Review the requirements you just listed: does any of them describe *how* the system should work rather than *what* it should do? Implementation detail should be moved to ADRs, not requirements."
+3. "For each MUST requirement: what would you observe if it were NOT met? These failure descriptions will define acceptance criteria — confirm they are observable, not subjective."
+4. "Are there non-functional requirements (performance, availability, data retention) the architecture must respect?"
+5. "What requirements did you consider and explicitly decide not to include in this release?"
 
 ## Confirm mode
 
