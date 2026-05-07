@@ -1,6 +1,6 @@
 ---
 title: ADR-001 Command-First Template Adoption
-status: superseded
+status: active
 record_class: canonical
 audience: [internal]
 owner: architecture-maintainer
@@ -12,7 +12,7 @@ last_reviewed: 2026-05-07
 
 # ADR-001: Adopt tool-native commands as the primary template initialization workflow
 
-- Status: Superseded
+- Status: Active
 - Date: 2026-05-07
 - Deciders: Template maintainers
 - Consulted: Documentation maintainers

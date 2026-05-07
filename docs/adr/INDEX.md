@@ -27,7 +27,7 @@ last_reviewed: 2026-05-07
 | ADR | Title | Status | Date | Notes |
 | --- | --- | --- | --- | --- |
 | [ADR-002](ADR-002-prompt-adoption-with-tracked-assistant-tooling.md) | Prompt-Based Template Adoption with Tracked Assistant-Native Tooling | Accepted | 2026-05-07 | Keeps prompts as the adoption workflow and tracks harness-native integration assets in-repo. |
-| [ADR-001](ADR-001-skill-first-template-adoption.md) | Command-First Template Adoption | Superseded | 2026-05-07 | Replaced once the implemented repo kept prompts as the adoption flow and added tracked assistant-native tooling. |
+| [ADR-001](ADR-001-skill-first-template-adoption.md) | Command-First Template Adoption | Active | 2026-05-07 | Current accepted decision for command-first template adoption workflow. |
 | ADR-000 | Template | draft | 2026-05-07 | Starting point for new decisions |
 
 ## Status notes
