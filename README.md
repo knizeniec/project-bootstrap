@@ -1,14 +1,31 @@
 # Universal Repository Template
 
-A governance-first project template. It gives you a clean engineering scaffold, a structured documentation tree, AI-assisted prompts for adoption, and tracked assistant-native integration assets for Claude, Copilot, Codex, and OpenCode.
+A documentation-first project template with custom agentic tooling for a structured, repeatable path from blank repository to implementation-ready state.
 
-The core idea is simple: early decisions about purpose, scope, and architecture belong in active documents that the rest of the project refers back to. This template creates that structure upfront so your codebase, docs, and AI agent context stay aligned throughout the project.
+The core principle is simple: decisions about purpose, scope, and architecture belong in active documents *before* code is written. This template creates that structure upfront — giving your codebase, docs, and AI agent context a shared foundation from day one.
 
-The most important part is the documentation curation. The template is designed to produce complete project documentation that supports planning and execution without guesswork or sudden changes to core concepts.
+## Goals
 
-## Project journey
+- Provide a clean, consistent engineering scaffold that any project can adopt without reinventing its structure.
+- Establish a comprehensive documentation tree that AI agents can read and act on throughout the project lifecycle.
+- Remove the "how should this project be organized?" question before the first commit.
+- Deliver a single-command initialization workflow that adapts to any project type, from solo experiments to team products.
 
-A new project using this template goes through seven phases before implementation, but the user only needs to remember one command: `/init`.
+## What this template gives you today
+
+| Asset | Description |
+| --- | --- |
+| `/init` command | A custom agentic tool that walks you through seven initialization phases. One command, fully resumable at any point. |
+| Documentation tree (`docs/`) | A structured, role-tagged documentation system with templates covering governance, strategy, product, architecture, testing, delivery, and operations. |
+| AI agent integration | Tracked assistant-native assets for Claude, Copilot, Codex, and OpenCode — so your AI tool has the right context from the start. |
+| Governance baseline | ADR system, frontmatter validator, markdown linting, and link checking included and wired to CI. |
+| Lifecycle templates | Dozens of `_TEMPLATE.md` starters across every project artifact type, with worked examples and role-based reading paths. |
+
+More agentic tooling is in development — the roadmap includes commands that handle common cross-cutting tasks without manual coordination.
+
+## Initialization workflow
+
+A new project goes through seven structured phases before implementation begins. The user only needs to remember one command: `/init`.
 
 ```text
 Clone
@@ -33,23 +50,22 @@ Clone
 | 5 | `project-initialization/phases/5-adapt.md` | language-specific scaffold and repository sync updates |
 | 6 | `project-initialization/phases/6-review.md` | final review pass and completed plan |
 
-## Bootstrap checklist
+## Get started
+
+Run `/init` in Claude Code, GitHub Copilot Chat, Codex, or any AI tool that supports per-project slash commands:
 
 1. Clone this repository.
-2. Run `/init` in your AI tool to start Phase 0 (Triage) and write the initialization plan.
-3. Run `/init` again whenever you want to continue; it will resume the next incomplete phase automatically.
-4. Use `/init <phase-or-artifact-name>` if you need to revisit a completed phase or artifact directly.
+2. Run `/init` to start Phase 0 (Triage) and generate your initialization plan.
+3. Run `/init` again to continue — it resumes the next incomplete phase automatically.
+4. Use `/init <phase-or-artifact-name>` to revisit any completed phase or artifact.
 5. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing.
-6. Keep machine-specific overrides local-only. The assistant directories `.claude/`, `.copilot/`, `.codex/`, and `.opencode/` are part of the tracked template contract; only `settings.local.json` and similar machine-specific files should stay untracked.
+6. Keep machine-specific overrides local-only. The assistant directories `.claude/`, `.copilot/`, `.codex/`, and `.opencode/` are tracked template assets; only `settings.local.json` and similar machine-specific files should stay untracked.
 7. Commit the bootstrap state as one or two clean commits before starting feature work.
 
-## Initialize your project
-
-Run `/init` in Claude Code, GitHub Copilot Chat, Codex, or any tool that supports per-project slash commands. The command:
+`/init` behavior at a glance:
 
 - Starts triage if no plan exists.
-- Reads the existing plan file and shows a status block when initialization is already in progress.
-- Lets the user continue, revisit completed work, or print the plan path and resume context.
+- Shows a status block and resumes the next phase when initialization is in progress.
 - Supports direct jumps with `/init <phase-or-artifact-name>`.
 
 See [`project-initialization/README.md`](project-initialization/README.md) for the full phase catalog and shared contract.
@@ -84,4 +100,6 @@ See [`project-initialization/README.md`](project-initialization/README.md) for t
 
 ## Assistant-native tooling
 
-The template ships tracked assistant-native assets in `.claude/`, `.copilot/`, `.codex/`, and `.opencode/`.
+The template ships tracked assistant-native assets in `.claude/`, `.copilot/`, `.codex/`, and `.opencode/`. Each directory contains the skills, hooks, and context files that give the corresponding AI tool a working understanding of this project's conventions without manual setup.
+
+The `/init` command is the first of these agentic tools. Additional tools covering common cross-cutting development tasks are planned for future releases.
