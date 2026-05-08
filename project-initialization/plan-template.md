@@ -38,11 +38,12 @@ last_reviewed: YYYY-MM-DD
 
 ## Artifact Roadmap
 
-| Phase | Artifact | Status | Mode (initial) | Mode (effective) | Output path |
-| --- | --- | --- | --- | --- | --- |
+| Phase | Artifact | Status | Mode (initial) | Mode (effective) | Output path | Last Revisited |
+| --- | --- | --- | --- | --- | --- | --- |
 
 <!-- Add one row per artifact. Populate during triage. -->
 <!-- Mode values: interview | confirm | extract | skipped -->
+<!-- Last Revisited: YYYY-MM-DD after a revisit completes; blank otherwise -->
 
 ## Project Facts
 

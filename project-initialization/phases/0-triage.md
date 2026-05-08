@@ -6,7 +6,7 @@ Produce the plan file that all subsequent phase commands rely on. Write the Phas
 
 ## Precheck
 
-If `docs/superpowers/plans/*-project-initialization.md` already exists, stop: "An initialization plan already exists. Run the next phase command, or delete the plan file and re-run `/init-triage` to start over."
+If `docs/superpowers/plans/*-project-initialization.md` already exists, stop: "An initialization plan already exists. Run `/init` to continue, revisit a completed item, or delete the plan file and re-run `/init` to start over."
 
 ## Step 1 — Routing questions
 
@@ -66,7 +66,7 @@ Initialize `docs/superpowers/plans/YYYY-MM-DD-project-initialization.md` from `p
 - `Goal` — one sentence from project name and summary.
 - `Profile` — selected profile and rationale.
 - `Phase Roadmap` — all phases as `pending` (Phase 0 = `done`).
-- `Artifact Roadmap` — all rows with initial and effective mode (same at this point), status `pending` or `skipped`.
+- `Artifact Roadmap` — all rows with initial and effective mode (same at this point), status `pending` or `skipped`, and `Last Revisited` blank.
 - `Project Facts` — everything extracted in Step 3.
 - `Future-Phase Facts` — sub-sections for any future-phase facts extracted in Step 3.
 
@@ -78,5 +78,5 @@ Docs Updated: docs/superpowers/plans/YYYY-MM-DD-project-initialization.md
 Review Fixes Applied: none
 Concerns And Recommendations: <list or "none">
 Parked Questions: <list or "none">
-Next Recommended Step: Run `/init-intent` to begin Phase 1 (Intent).
+Next Recommended Step: Run `/init` to continue to Phase 1 (Intent).
 ```

@@ -4,6 +4,7 @@ description: Global instructions for all work in this repository. Keep this file
 applyTo: "**"
 ---
 If you use superpowers commands never use git worktree
+
 # Repository Agent Routing
 
 Use this file for repo-wide rules only. Read the closest deeper `AGENTS.md` before editing files in that area.
@@ -28,7 +29,7 @@ Run these checks before doing any non-trivial work:
 1. **Check for an existing plan or spec.** Look in `docs/superpowers/plans/` and `docs/superpowers/specs/` for a file that covers the current task. If one exists, read it before writing any code or docs — do not duplicate planning that is already done.
 2. **Read relevant ADRs.** Before making any architectural or cross-cutting decision, check `docs/adr/` for ADRs that apply. ADRs are binding. If an accepted ADR conflicts with your intended approach, follow the ADR or explicitly supersede it with a new one.
 3. **Check the source-of-truth map for structural changes.** Before adding new directories, moving files, or creating new documentation areas, read [`docs/00-source-of-truth.md`](docs/00-source-of-truth.md) to confirm the correct canonical owner for the content.
-4. **Recognize unfilled adaptation slots.** If you encounter `<<FILL IN at adaptation: ...>>` placeholders in any file, do not silently fill them with guesses. Stop, inform the user, and point them to run `/init-adapt` to complete the Adapt phase first.
+4. **Recognize unfilled adaptation slots.** If you encounter `<<FILL IN at adaptation: ...>>` placeholders in any file, do not silently fill them with guesses. Stop, inform the user, and point them to run `/init` so it can route into the Adapt phase first.
 
 ## When to Write an ADR
 
@@ -46,7 +47,7 @@ For proposals that are not yet decided, open an RFC in `docs/03_architecture/rfc
 
 ## Global Workflow
 
-- A fresh clone of this template is unspecialized. The adoption sequence is documented in the root [`README.md`](README.md): run `/init-triage` first, then `/init-intent` through `/init-review` in order. Phase logic lives in [`project-initialization/`](project-initialization/README.md).
+- A fresh clone of this template is unspecialized. The adoption sequence is documented in the root [`README.md`](README.md): run `/init`; it will start triage, then resume the next incomplete initialization phase on subsequent runs. Phase logic lives in [`project-initialization/`](project-initialization/README.md).
 - Define scope before editing and avoid unrelated changes.
 - Prefer root-cause fixes and explicit, simple changes.
 - Keep `AGENTS.md` files up to date when workflow or context-management guidance changes, or when new instructions would materially improve future work.

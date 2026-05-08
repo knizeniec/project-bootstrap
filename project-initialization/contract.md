@@ -1,15 +1,15 @@
 # Project Initialization Contract
 
-All phase commands follow these rules exactly. This file is the single authority for cross-phase behavior.
+All initialization runs follow these rules exactly. This file is the single authority for cross-phase behavior.
 
 ## Per-run stop rules
 
-1. Read the plan file. If missing, stop — tell the user to run `/init-triage`.
-2. Verify the previous phase is `done`. If not, stop — name the incomplete phase.
+1. Read the plan file. If missing, stop — tell the user to run `/init`.
+2. Verify the previous phase is `done` unless `/init <name>` explicitly routed into a revisit of a completed phase or artifact. If a required prior phase is incomplete, stop — name the incomplete phase.
 3. Run all active artifacts end-to-end without intra-phase pauses.
 4. Run end-of-phase review before updating the plan.
 5. Update the plan in one batch at the end of the run, never incrementally.
-6. After the plan update, stop. Do not begin the next phase or read ahead for it. Tell the user the next command.
+6. After the plan update, stop. Do not begin the next phase or read ahead for it. Tell the user to run `/init` to continue.
 
 ## Cross-phase fact capture
 
@@ -55,5 +55,5 @@ Docs Updated: <comma-separated list of files written or modified>
 Review Fixes Applied: <list of critical/important findings that were fixed, or "none">
 Concerns And Recommendations: <list of five-part concerns raised this run, or "none">
 Parked Questions: <questions raised but not fitting any active artifact, or "none">
-Next Recommended Step: Run `/<next-command>` to begin Phase N+1 (<Next Phase Name>).
+Next Recommended Step: Run `/init` to continue. The command will route to the next incomplete phase or revisit target.
 ```

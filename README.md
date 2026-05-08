@@ -8,72 +8,49 @@ The most important part is the documentation curation. The template is designed 
 
 ## Project journey
 
-A new project using this template goes through seven phases before implementation. Run the commands in order using your AI tool's slash-command interface.
+A new project using this template goes through seven phases before implementation, but the user only needs to remember one command: `/init`.
 
 ```text
 Clone
   │
   ▼
-/init-triage   (Phase 0)
-  Asks five routing questions, selects a project profile,
-  assigns per-artifact modes (interview / confirm / extract),
-  and writes the plan file that all subsequent phases read from.
-  Output: docs/superpowers/plans/YYYY-MM-DD-project-initialization.md
-  │
-  ▼
-/init-intent   (Phase 1)
-  Produces the project brief and optional business case.
-  Output: docs/00_governance/00_project_brief.md
-          docs/00_governance/01_business_case.md (if activated)
-  │
-  ▼
-/init-spec     (Phase 2)
-  Produces PRD, requirements catalog, user journeys, acceptance catalog.
-  Output: docs/02_product/01_prd.md + active specification artifacts
-  │
-  ▼
-/init-design   (Phase 3)
-  Produces solution design and an ADR per durable decision.
-  Output: docs/03_architecture/01_solution_design.md
-          docs/adr/ADR-NNN-*.md (one per durable decision)
-  │
-  ▼
-/init-govern   (Phase 4)
-  Produces AI use policy, test strategy, security baseline, delivery plan.
-  Output: active govern & operate artifacts per profile
-  │
-  ▼
-/init-adapt    (Phase 5)
-  Specializes src/, tests/, config/, .gitignore, and entry docs to match.
-  Output: language-specific scaffold, updated AGENTS.md and README.md
-  │
-  ▼
-/init-review   (Phase 6)
-  Validates cross-doc coherence and declares initialization complete.
-  Output: updated plan file; commit suggestion
+/init
+  Starts Phase 0 (Triage) if no plan exists.
+  Otherwise shows status, resumes the next phase,
+  or lets the user revisit a completed phase or artifact.
+  State lives in docs/superpowers/plans/YYYY-MM-DD-project-initialization.md
 ```
 
-Each command reads the plan file written by `/init-triage` and refuses to run if its prerequisites are unmet.
+`/init` routes into these phases:
+
+| Phase | Routed target | Output |
+| --- | --- | --- |
+| 0 | `project-initialization/phases/0-triage.md` | plan file in `docs/superpowers/plans/` |
+| 1 | `project-initialization/phases/1-intent.md` | `docs/00_governance/00_project_brief.md` and optional `01_business_case.md` |
+| 2 | `project-initialization/phases/2-specification.md` | active specification artifacts |
+| 3 | `project-initialization/phases/3-design.md` | `docs/03_architecture/01_solution_design.md`, ADRs, optional C4 views |
+| 4 | `project-initialization/phases/4-govern-operate.md` | govern and operate artifacts per profile |
+| 5 | `project-initialization/phases/5-adapt.md` | language-specific scaffold and repository sync updates |
+| 6 | `project-initialization/phases/6-review.md` | final review pass and completed plan |
 
 ## Bootstrap checklist
 
 1. Clone this repository.
-2. Run `/init-triage` in your AI tool to answer five routing questions and write the initialization plan.
-3. Run `/init-intent` through `/init-review` in order. Each command stops when its phase is complete.
-4. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing.
-5. Keep machine-specific overrides local-only. The assistant directories `.claude/`, `.copilot/`, `.codex/`, and `.opencode/` are part of the tracked template contract; only `settings.local.json` and similar machine-specific files should stay untracked.
-6. Commit the bootstrap state as one or two clean commits before starting feature work.
+2. Run `/init` in your AI tool to start Phase 0 (Triage) and write the initialization plan.
+3. Run `/init` again whenever you want to continue; it will resume the next incomplete phase automatically.
+4. Use `/init <phase-or-artifact-name>` if you need to revisit a completed phase or artifact directly.
+5. Replace the placeholder [`LICENSE`](LICENSE) with your chosen license before publishing.
+6. Keep machine-specific overrides local-only. The assistant directories `.claude/`, `.copilot/`, `.codex/`, and `.opencode/` are part of the tracked template contract; only `settings.local.json` and similar machine-specific files should stay untracked.
+7. Commit the bootstrap state as one or two clean commits before starting feature work.
 
 ## Initialize your project
 
-Run `/init-triage` in Claude Code, GitHub Copilot Chat, Codex, or any tool that supports per-project slash commands. The command:
+Run `/init` in Claude Code, GitHub Copilot Chat, Codex, or any tool that supports per-project slash commands. The command:
 
-- Asks five routing questions: project type, AI involvement, regulatory posture, team shape, and an optional existing description paste.
-- Selects a project profile (product, internal tool, library, or platform) and builds a per-artifact roadmap.
-- Assigns each artifact a mode: `interview` (full question flow), `confirm` (show extracted content and ask for gaps), or `extract` (draft from pasted content without questions).
-- Writes the initialization plan file to `docs/superpowers/plans/` — every subsequent command reads this file.
-
-After triage, run `/init-intent` through `/init-review` in sequence. If you paste a detailed project description at triage, later phases skip questions for content already captured.
+- Starts triage if no plan exists.
+- Reads the existing plan file and shows a status block when initialization is already in progress.
+- Lets the user continue, revisit completed work, or print the plan path and resume context.
+- Supports direct jumps with `/init <phase-or-artifact-name>`.
 
 See [`project-initialization/README.md`](project-initialization/README.md) for the full phase catalog and shared contract.
 

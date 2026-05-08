@@ -22,7 +22,7 @@ Steps:
 2. Update `README.md`: replace template description with project name and summary; update the layout table to reflect actual directories in use; remove the initialization journey diagram (it is no longer needed post-init).
 3. Update `AGENTS.md`: update directory inventory; update routing guidance to reference project-specific docs instead of template guidance.
 4. Update slot READMEs to describe their actual role in this project.
-5. Verify `CLAUDE.md` still accurately points to `.claude/commands/init-triage.md` (no change needed post-init, but confirm).
+5. Verify repository entry surfaces now point users at the consolidated `/init` workflow instead of any retired `/init-*` command.
 
 ## Review hooks
 

@@ -6,6 +6,7 @@ Tracked Copilot-facing Superpowers assets for this template live here.
 
 - `skills/` — vendored Superpowers 5.1.0 skills
 - `hooks/` — vendored bootstrap helper scripts retained for Copilot-oriented tooling flows
+- `commands/init.md` — consolidated initialization command surface kept in parity with the sibling tool directories
 
 ## Runtime note
 

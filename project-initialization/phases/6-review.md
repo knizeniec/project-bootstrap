@@ -23,7 +23,7 @@ Run these in order using `init-reviewer` with the full artifact list:
 
 - `README.md` project description matches the brief's one-line summary.
 - `AGENTS.md` directory inventory includes all directories created or adapted during Phase 5.
-- Tool-specific command pointers (`.claude/`, `.copilot/`, `.codex/`) are accurate.
+- Tracked assistant command entrypoints are accurate.
 
 ### 3. Completeness check
 
@@ -39,15 +39,8 @@ Run these in order using `init-reviewer` with the full artifact list:
 ## Verdict
 
 - **Pass**: All findings resolved or `advisory`. Mark Phase 6 `done`. Declare initialization complete. Suggest commit: `"docs: complete project initialization"`.
-- **Concerns remain**: Leave Phase 6 `in-progress`. List what must be fixed before declaring complete. The user runs `/init-review` again after fixes.
+- **Concerns remain**: Leave Phase 6 `in-progress`. List what must be fixed before declaring complete. The user runs `/init` again after fixes.
 
 ## Output
 
-```text
-Stage Completed: Phase 6 — Final Review
-Docs Updated: <plan file Review Findings section>
-Review Fixes Applied: <list or "none">
-Concerns And Recommendations: <list or "none">
-Parked Questions: <list or "none">
-Next Recommended Step: <commit suggestion if passing, or fix list if not>
-```
+Use the shared end-of-run output format from `project-initialization/contract.md`.

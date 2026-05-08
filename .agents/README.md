@@ -10,4 +10,4 @@ Tracked Codex repo-native skills live here.
 
 Codex reads repo-local skills from `.agents/skills/`. Keep this directory aligned with the vendored mirror in `.codex/skills/`.
 
-
+- The consolidated `/init` workflow is command-driven; keep any Codex repo-native skill or documentation references aligned with the tracked command surfaces.
