@@ -100,7 +100,7 @@ Organize items into groups: backups and snapshots, capacity and infrastructure, 
 
 Link to the runbook that contains the step-by-step execution procedure for this migration. Do not paste the procedure here — keep this document at the planning level and the runbook at the execution level.
 
-- Runbook: [11_<topic>_runbook_<projectname>.md](<relative-path>) — contains the numbered execution steps, expected outcomes, and rollback actions for each step.
+- Runbook: [../06_security_operations/11_runbook_TEMPLATE.md](../06_security_operations/11_runbook_TEMPLATE.md) — replace with your project-specific runbook path and keep the numbered execution steps, expected outcomes, and rollback actions there.
 - If no runbook exists yet, create one using [../06_security_operations/11_runbook_TEMPLATE.md](../06_security_operations/11_runbook_TEMPLATE.md) before the pre-migration checklist is signed off.
 
 ## Validation
@@ -178,4 +178,4 @@ Define the condition that triggers a formal post-migration review and who is res
 - [01_delivery_plan_TEMPLATE.md](01_delivery_plan_TEMPLATE.md) — the delivery plan that includes this migration as a milestone or dependency.
 - [08_cutover_and_rollback_TEMPLATE.md](08_cutover_and_rollback_TEMPLATE.md) — the release-level cutover and rollback plan; this migration plan feeds into or aligns with that artifact.
 - [../06_security_operations/11_runbook_TEMPLATE.md](../06_security_operations/11_runbook_TEMPLATE.md) — the runbook template used to document the step-by-step execution procedure for this migration.
-- [../03_architecture/03_data_design_TEMPLATE.md](../03_architecture/03_data_design_TEMPLATE.md) — the data design that specifies the target schema and data model this migration delivers.
+- [../03_architecture/05_data_design_TEMPLATE.md](../03_architecture/05_data_design_TEMPLATE.md) — the data design that specifies the target schema and data model this migration delivers.

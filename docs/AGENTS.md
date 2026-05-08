@@ -55,7 +55,7 @@ Use these rules to route to the right template or area quickly.
 - Migration plan (data or service migration, not greenfield): [07_delivery/09_migration_plan_TEMPLATE.md](07_delivery/09_migration_plan_TEMPLATE.md).
 
 **Worked examples:**
-- See [_examples/](../_examples/) for filled, realistic examples using the "Helio" fictional scenario: [filled_prd_example.md](_examples/filled_prd_example.md), [filled_solution_design_example.md](_examples/filled_solution_design_example.md), [filled_ai_use_policy_example.md](_examples/filled_ai_use_policy_example.md).
+- See [_examples/](_examples/) for filled, realistic examples using the "Helio" fictional scenario: [filled_prd_example.md](_examples/filled_prd_example.md), [filled_solution_design_example.md](_examples/filled_solution_design_example.md), [filled_ai_use_policy_example.md](_examples/filled_ai_use_policy_example.md).
 
 ## Template selection mechanism
 

@@ -18,7 +18,7 @@ last_reviewed: 2026-05-07
 
 Helio replaces a nightly batch invoice-export job with a real-time invoicing API. The goal is to reduce invoice availability time from up to 24 hours to ≤5 minutes p95, measured from billable-event creation to invoice retrievable via the API. Secondary goals are auditability (immutable event trail per invoice), AI-assisted categorisation (confidence-gated suggestion with human override), and EU data residency.
 
-This document is the primary architecture baseline for the Helio initiative. It covers the `invoice-api` service, the `category-suggester` component, the invoice data store, and the event-publishing integration. The product requirements that drive these goals are in [../02_product/01_prd_helio.md](../02_product/01_prd_helio.md) — see also the worked example: [filled_prd_example.md](filled_prd_example.md).
+This document is the primary architecture baseline for the Helio initiative. It covers the `invoice-api` service, the `category-suggester` component, the invoice data store, and the event-publishing integration. The product requirements that drive these goals are in [../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md) — see also the worked example: [filled_prd_example.md](filled_prd_example.md).
 
 Key architecture success measures:
 - Invoice creation endpoint: ≤500 ms p95 at 200 req/s sustained load.
@@ -50,7 +50,7 @@ Key architecture success measures:
 - OAuth2 IdP (Keycloak): issues tokens for all API callers.
 - Kafka cluster: receives `invoices.events` topic publications from `invoice-api`.
 
-A C4 context diagram is maintained at [02_c4_context_helio.md](../03_architecture/02_c4_context_helio.md).
+A C4 context diagram is maintained at [02_c4_context_TEMPLATE.md](../03_architecture/02_c4_context_TEMPLATE.md).
 
 ## 4. Solution strategy
 
@@ -72,7 +72,7 @@ Decisions that shaped this strategy are captured in ADR-0001 (invoice-api servic
 | `event-publisher` | Publish `invoice.created` and `invoice.status_changed` events to Kafka | In-process library within `invoice-api`; uses transactional outbox pattern |
 | `webhook-worker` | Consume Kafka events and deliver HTTP webhooks to B2B subscribers with retry | Python / Celery, separate ECS task, shares `invoice-store` for delivery-state tracking |
 
-Container-level responsibilities are detailed in [03_c4_container_helio.md](../03_architecture/03_c4_container_helio.md).
+Container-level responsibilities are detailed in [03_c4_container_TEMPLATE.md](../03_architecture/03_c4_container_TEMPLATE.md).
 
 ## 6. Runtime view
 
@@ -104,7 +104,7 @@ If the Postgres write at step 5 fails, `invoice-api` returns HTTP 503 with a `Re
 
 **Scaling:** ECS service auto-scales on CPU (target 60 %) and ALB request count. Minimum 2 tasks per region; maximum 20 tasks. `webhook-worker` scales on Kafka consumer-group lag.
 
-Detailed environment topology is in [07_deployment_helio.md](../03_architecture/07_deployment_helio.md).
+Detailed environment topology is in [07_deployment_TEMPLATE.md](../03_architecture/07_deployment_TEMPLATE.md).
 
 ## 8. Cross-cutting concepts
 
@@ -122,8 +122,8 @@ Detailed environment topology is in [07_deployment_helio.md](../03_architecture/
 
 | ADR | Decision | Status |
 | --- | --- | --- |
-| [ADR-0001](../adr/ADR-0001-invoice-api-isolation.md) | Deploy `invoice-api` as an independent microservice rather than extending the billing monolith | Accepted |
-| [ADR-0002](../adr/ADR-0002-llm-provider-choice.md) | Use Claude Haiku Helio-1 (EU-hosted endpoint) as the primary category classifier with a rule-based fallback | Accepted |
+| [ADR-0001](../adr/ADR-000-template.md) | Deploy `invoice-api` as an independent microservice rather than extending the billing monolith | Accepted |
+| [ADR-0002](../adr/ADR-000-template.md) | Use Claude Haiku Helio-1 (EU-hosted endpoint) as the primary category classifier with a rule-based fallback | Accepted |
 
 See [../adr/INDEX.md](../adr/INDEX.md) for the full ADR index.
 
@@ -167,8 +167,7 @@ See [../adr/INDEX.md](../adr/INDEX.md) for the full ADR index.
 - [filled_prd_example.md](filled_prd_example.md) — worked example PRD for Helio; defines the functional and non-functional requirements this design addresses.
 - [filled_ai_use_policy_example.md](filled_ai_use_policy_example.md) — worked example AI use policy for the invoice-category classifier.
 - [../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md) — the template this example was derived from.
-- [../02_product/01_prd_helio.md](../02_product/01_prd_helio.md) — the project's actual PRD (not an example).
-- [../adr/ADR-0001-invoice-api-isolation.md](../adr/ADR-0001-invoice-api-isolation.md) — decision: service isolation approach.
-- [../adr/ADR-0002-llm-provider-choice.md](../adr/ADR-0002-llm-provider-choice.md) — decision: LLM provider and fallback strategy.
-- [02_c4_context_helio.md](../03_architecture/02_c4_context_helio.md) — system context diagram.
-- [03_c4_container_helio.md](../03_architecture/03_c4_container_helio.md) — container-level diagram.
+- [../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md) — the PRD template that this example scenario maps to.
+- [../adr/ADR-000-template.md](../adr/ADR-000-template.md) — ADR template for recording service-isolation and model-provider decisions.
+- [02_c4_context_TEMPLATE.md](../03_architecture/02_c4_context_TEMPLATE.md) — system context diagram template.
+- [03_c4_container_TEMPLATE.md](../03_architecture/03_c4_container_TEMPLATE.md) — container-level diagram template.

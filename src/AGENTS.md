@@ -8,9 +8,9 @@ applyTo: "src/**"
 
 Apply these rules when editing files under `src/`.
 
-This file is a **slot template**. A fresh clone of the template is language-agnostic, so the placeholders below are intentionally unfilled. Run [`prompts/language-adaptation.md`](../prompts/language-adaptation.md) to populate them, or fill them by hand if you skip the prompt.
+This file is a **slot template**. A fresh clone of the template is language-agnostic, so the placeholders below are intentionally unfilled. Run the [project-initialization Adapt phase](../project-initialization/phases/5-adapt.md) to populate them, or fill them by hand if you skip that workflow.
 
-**If you encounter unfilled `<<FILL IN at adaptation: ...>>` slots: stop. Do not guess or infer values. Inform the user that the repository has not been adapted yet and direct them to run [`prompts/language-adaptation.md`](../prompts/language-adaptation.md) first.**
+**If you encounter unfilled `<<FILL IN at adaptation: ...>>` slots: stop. Do not guess or infer values. Inform the user that the repository has not been adapted yet and direct them to run `/init` first.**
 
 ## Most Important Rules
 

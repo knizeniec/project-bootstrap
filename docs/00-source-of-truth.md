@@ -71,8 +71,8 @@ Use this file to find the one active document or landing page that owns a topic.
 | Copilot repository instructions | [../.github/copilot-instructions.md](../.github/copilot-instructions.md) | Owns repo-wide Copilot instruction entrypoint. |
 | Codex tool assets | [../.codex/README.md](../.codex/README.md) | Owns repo-tracked Codex hook wiring and vendored helper assets. |
 | OpenCode tool assets | [../.opencode/README.md](../.opencode/README.md) | Owns repo-tracked OpenCode skills and plugin bootstrap assets. |
-| Adoption prompts | [../prompts/README.md](../prompts/README.md) | Owns adoption-time prompts that adapt this template to a chosen language stack. |
-| Architecture baseline prompt | [../prompts/architecture-baseline.md](../prompts/architecture-baseline.md) | Guides the stack decision conversation and generates the solution design and ADRs. |
+| Project initialization workflow | [../project-initialization/README.md](../project-initialization/README.md) | Owns the consolidated `/init` workflow that drives project setup and adaptation. |
+| Adaptation guidance | [../project-initialization/artifacts/language-adaptation.md](../project-initialization/artifacts/language-adaptation.md) | Defines adaptation-time outputs and checks used by the Adapt phase. |
 
 ## Rule
 

@@ -61,7 +61,7 @@ Two enterprise accounts escalated in Q4 2025: one paused renewal discussions cit
 | FR-001 | The system shall create an invoice record via `POST /v1/invoices` and return a stable, unique invoice ID within 500 ms p95. | Must | AC-001 |
 | FR-002 | The system shall make a created invoice available via `GET /v1/invoices/{id}` immediately after creation, with no eventual-consistency delay visible to the caller. | Must | AC-002 |
 | FR-003 | The system shall expose invoice status (`draft`, `issued`, `paid`, `disputed`, `cancelled`) and reflect status transitions within 30 s of the triggering event. | Must | AC-003 |
-| FR-004 | The system shall emit an `invoice.created` and `invoice.status_changed` event to the event bus for each state transition, with the event payload matching the agreed schema in [../03_architecture/06_interface_control_document_helio.md](../03_architecture/06_interface_control_document_helio.md). | Must | AC-004 |
+| FR-004 | The system shall emit an `invoice.created` and `invoice.status_changed` event to the event bus for each state transition, with the event payload matching the agreed schema in [../03_architecture/06_interface_control_document_TEMPLATE.md](../03_architecture/06_interface_control_document_TEMPLATE.md). | Must | AC-004 |
 | FR-005 | The system shall call the invoice-category classifier during invoice creation and return the top suggested category with a confidence score (0.0–1.0) in the API response. | Must | AC-005 |
 | FR-006 | The system shall allow a billing administrator to accept or override the AI-suggested category before the invoice is issued; override action must require no more than two UI interactions. | Must | AC-006 |
 | FR-007 | The system shall record an immutable audit log entry for every invoice create, update, status change, and category accept/override event, capturing timestamp, actor ID, and field-level delta. | Must | AC-007 |
@@ -108,15 +108,15 @@ In addition: no unresolved Severity-1 defects at release gate; NFR-001 through N
 
 - **Target release window:** end of Q3 2026 (week of 28 September 2026), subject to stage-gate sign-off at the end of the build phase (target: 31 July 2026).
 - **Rollout stages:** internal dogfooding with the billing-ops team for two weeks; limited external beta with three opted-in enterprise accounts for four weeks; full GA with feature flag lift.
-- **Key dependencies:** AI governance approval for the category classifier use case (see [../04_ai_governance/01_ai_use_policy_helio_classifier.md](../04_ai_governance/01_ai_use_policy_helio_classifier.md)); deployment topology sign-off from Anna Mirov (SRE); EU data-residency review by legal (due 15 June 2026).
+- **Key dependencies:** AI governance approval for the category classifier use case (see [../04_ai_governance/01_ai_use_policy_TEMPLATE.md](../04_ai_governance/01_ai_use_policy_TEMPLATE.md)); deployment topology sign-off from Anna Mirov (SRE); EU data-residency review by legal (due 15 June 2026).
 - **Rollback assumption:** the new API is deployed alongside the existing batch job for the beta period; the batch job can be re-enabled as the primary feed within 30 minutes if a critical defect is discovered post-GA.
-- **Detailed delivery mechanics:** see [../07_delivery/01_delivery_plan_helio.md](../07_delivery/01_delivery_plan_helio.md).
+- **Detailed delivery mechanics:** see [../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md).
 
 ## Related documents
 
-- [../03_architecture/01_solution_design_helio.md](../03_architecture/01_solution_design_helio.md) — architecture baseline for the Helio invoice API; shows how the functional and non-functional requirements are met technically. See also the worked example: [filled_solution_design_example.md](filled_solution_design_example.md).
-- [../04_ai_governance/01_ai_use_policy_helio_classifier.md](../04_ai_governance/01_ai_use_policy_helio_classifier.md) — AI use policy for the invoice-category classifier; see also the worked example: [filled_ai_use_policy_example.md](filled_ai_use_policy_example.md).
-- [../00_governance/00_project_brief_helio.md](../00_governance/00_project_brief_helio.md) — project brief that approved the Helio initiative.
+- [../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md) — architecture baseline template corresponding to this PRD scenario. See also the worked example: [filled_solution_design_example.md](filled_solution_design_example.md).
+- [../04_ai_governance/01_ai_use_policy_TEMPLATE.md](../04_ai_governance/01_ai_use_policy_TEMPLATE.md) — AI use policy template for the invoice-category classifier scenario; see also the worked example: [filled_ai_use_policy_example.md](filled_ai_use_policy_example.md).
+- [../00_governance/00_project_brief_TEMPLATE.md](../00_governance/00_project_brief_TEMPLATE.md) — project brief template for approving the initiative.
 - [../02_product/01_prd_TEMPLATE.md](../02_product/01_prd_TEMPLATE.md) — the template this example was derived from.
-- [../07_delivery/01_delivery_plan_helio.md](../07_delivery/01_delivery_plan_helio.md) — delivery plan with milestones, stage gates, and rollout schedule.
-- [../00_governance/12_requirements_traceability_matrix_helio.md](../00_governance/12_requirements_traceability_matrix_helio.md) — maps each FR/NFR to design, test, and release evidence.
+- [../07_delivery/01_delivery_plan_TEMPLATE.md](../07_delivery/01_delivery_plan_TEMPLATE.md) — delivery plan template with milestones, stage gates, and rollout structure.
+- [../00_governance/12_requirements_traceability_matrix_TEMPLATE.md](../00_governance/12_requirements_traceability_matrix_TEMPLATE.md) — requirements traceability template mapping each FR/NFR to design, test, and release evidence.

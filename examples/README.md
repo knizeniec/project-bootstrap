@@ -2,7 +2,7 @@
 
 Purpose: Usage examples and sample assets.
 
-This directory is a slot. The [`prompts/language-adaptation.md`](../prompts/language-adaptation.md) adoption prompt may populate or remove it depending on the chosen project type — services and applications often skip it; libraries and CLIs typically keep it.
+This directory is a slot. The [project-initialization Adapt phase](../project-initialization/phases/5-adapt.md) may populate or remove it depending on the chosen project type — services and applications often skip it; libraries and CLIs typically keep it.
 
 Template default:
 
