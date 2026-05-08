@@ -51,6 +51,7 @@ Create an ADR when a decision materially affects one or more of these areas:
 - `docs/adr/` is the primary source of truth for durable implementation decisions.
 - Update ADRs before implementation when a decision changes.
 - Other docs may reference ADRs but must not override them.
+- Archived repository ADR history is stored under [../99_archive/repo/adr/README.md](../99_archive/repo/adr/README.md); keep this directory focused on active ADR templates and current records.
 
 ## Which template should I use?
 

@@ -20,6 +20,21 @@ This directory stores planning artifacts for agent-driven work.
 - Treat completed spec and plan files as historical records; create new dated files for later changes instead of rewriting completed ones.
 - Keep canonical project rules in root `docs/`, not here.
 
+## Spec vs Plan
+
+These are different artifact types. Use the right one:
+
+| Artifact | Purpose | When to create |
+|----------|---------|----------------|
+| **Spec** (`specs/`) | Defines *what* to build — scope, requirements, interface contracts, acceptance criteria, open questions. Implementation-neutral. | Before design or architecture work begins on a feature or capability. |
+| **Plan** (`plans/`) | Defines *how* to build it — ordered tasks, subagent assignments, checkpoints, dependencies. References a spec or ADR as its source of truth. | After a spec or ADR exists and you are ready to begin execution. |
+
+Rules:
+- A spec answers "what does done look like?" A plan answers "what steps get us there?"
+- Never write a plan without a corresponding spec or ADR to anchor it.
+- Name files with an ISO date prefix: `YYYY-MM-DD-short-description.md`.
+- Completed files are historical records. Create new dated files for later revisions rather than overwriting finished ones.
+
 ## Workflow
 
 - Keep planning artifacts concrete, implementation-focused, and easy to execute.

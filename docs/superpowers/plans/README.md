@@ -21,6 +21,7 @@ Last updated: 2026-05-06
 
 - implementation plans derived from approved specs
 - execution records that remain historical after the work is done
+- new active plan records; archived repository plans are under [../../99_archive/repo/superpowers/plans/README.md](../../99_archive/repo/superpowers/plans/README.md)
 
 ## Convention
 

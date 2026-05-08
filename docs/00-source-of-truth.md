@@ -64,6 +64,13 @@ Use this file to find the one active document or landing page that owns a topic.
 | Architecture decisions | [adr/README.md](adr/README.md) | Owns durable implementation decisions and ADR authoring rules. |
 | Working-history policy | [superpowers/README.md](superpowers/README.md) | Owns historical records for specs, plans, and tracked work. |
 | Archive policy | [99_archive/README.md](99_archive/README.md) | Owns rules for historical evidence and retired material. |
+| Assistant-native tooling contract | [../README.md](../README.md) | Owns which tracked assistant directories ship with the template and what stays local-only. |
+| Codex repo skills | [../.agents/README.md](../.agents/README.md) | Owns Codex repo-native skill discovery under `.agents/skills/`. |
+| Claude tool assets | [../.claude/README.md](../.claude/README.md) | Owns repo-tracked Claude-specific skills and hook helpers. |
+| Copilot tool assets | [../.copilot/README.md](../.copilot/README.md) | Owns repo-tracked Copilot-specific vendored workflow assets. |
+| Copilot repository instructions | [../.github/copilot-instructions.md](../.github/copilot-instructions.md) | Owns repo-wide Copilot instruction entrypoint. |
+| Codex tool assets | [../.codex/README.md](../.codex/README.md) | Owns repo-tracked Codex hook wiring and vendored helper assets. |
+| OpenCode tool assets | [../.opencode/README.md](../.opencode/README.md) | Owns repo-tracked OpenCode skills and plugin bootstrap assets. |
 | Adoption prompts | [../prompts/README.md](../prompts/README.md) | Owns adoption-time prompts that adapt this template to a chosen language stack. |
 | Architecture baseline prompt | [../prompts/architecture-baseline.md](../prompts/architecture-baseline.md) | Guides the stack decision conversation and generates the solution design and ADRs. |
 

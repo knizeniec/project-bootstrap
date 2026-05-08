@@ -22,6 +22,7 @@ This folder stores specs, plans, and other working records created during implem
 
 - [specs/README.md](specs/README.md) for date-stamped design notes and scoped specs.
 - [plans/README.md](plans/README.md) for date-stamped implementation plans.
+- [../99_archive/repo/superpowers/README.md](../99_archive/repo/superpowers/README.md) for archived repository-specific specs and plans.
 
 ## Rule
 
@@ -33,3 +34,4 @@ If a decision or requirement still matters after the work is done, move it into 
 - [../adr/README.md](../adr/README.md) — durable implementation decisions.
 - [../README.md](../README.md) — root docs entry point.
 - [../99_archive/README.md](../99_archive/README.md) — evidence-only storage for retired material.
+- [../99_archive/repo/superpowers/README.md](../99_archive/repo/superpowers/README.md) — archived repository working history.

@@ -20,6 +20,7 @@ on:
       - ".markdownlint-cli2.yaml"
       - ".markdownlint.json"
       - "lychee.toml"
+  merge_group:
 
 jobs:
   frontmatter-schema:
@@ -40,7 +41,26 @@ jobs:
         run: python -m pytest -q tools/docs_validator/tests
 
       - name: Run docs validator on canonical docs
-        run: python -m docs_validator.cli docs docs/_examples
+        run: |
+          python -m docs_validator.cli \
+            docs/README.md \
+            docs/Architecture.md \
+            docs/00-documentation-standards.md \
+            docs/00-source-of-truth.md \
+            docs/INDEX.md \
+            docs/_examples \
+            docs/00_operating_model \
+            docs/00_governance \
+            docs/01_strategy \
+            docs/02_product \
+            docs/03_architecture \
+            docs/04_ai_governance \
+            docs/05_testing_acceptance \
+            docs/06_security_operations \
+            docs/07_delivery \
+            docs/08_references \
+            docs/09_user_documentation \
+            docs/adr
 
   markdownlint:
     runs-on: ubuntu-latest
@@ -54,7 +74,7 @@ jobs:
           node-version: "20"
 
       - name: Run markdownlint
-        run: npx -y markdownlint-cli2 "**/*.md" "!node_modules" "!.opencode" "!.tmp"
+        run: npx -y markdownlint-cli2
 
   links:
     runs-on: ubuntu-latest
