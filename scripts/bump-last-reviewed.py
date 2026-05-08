@@ -30,7 +30,9 @@ from pathlib import Path
 FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---", re.DOTALL)
 LAST_REVIEWED_RE = re.compile(r"^(last_reviewed:\s*)(.+)$", re.MULTILINE)
 
+# Mirrors the skip list used by docs_validator CLI so behaviour is consistent.
 SKIP_DIRECTORIES = {".git", "node_modules", ".venv", "__pycache__", "dist", "build"}
+# AGENTS.md files contain agent instructions, not canonical docs; skip them.
 SKIP_FILENAMES = {"AGENTS.md"}
 
 

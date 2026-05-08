@@ -59,8 +59,6 @@ pre-commit install
 The `markdownlint-fix` hook auto-fixes staged files. The other two hooks are
 detection-only; they print errors so you can fix them before the commit lands.
 
-
-
 - Include a concise rationale and impact summary.
 - Link changed ADR, spec, or plan docs.
 - Keep branch protections and required checks intact.

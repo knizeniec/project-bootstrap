@@ -64,7 +64,8 @@ jobs:
           TITLE="[docs] Stale documentation detected"
           LABEL="documentation"
           STALE_LIST=$(cat /tmp/staleness-output.txt)
-          BODY="The following documents are past their review cadence threshold (checked on $(date -u '+%Y-%m-%d')):
+          BODY=$(cat <<EOF
+          The following documents are past their review cadence threshold (checked on $(date -u '+%Y-%m-%d')):
 
           \`\`\`
           ${STALE_LIST}
@@ -72,7 +73,9 @@ jobs:
 
           **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-          Please review and update the \`last_reviewed\` frontmatter field. Use \`scripts/bump-last-reviewed.py\` to update dates automatically after reviewing."
+          Please review and update the \`last_reviewed\` frontmatter field. Use \`scripts/bump-last-reviewed.py\` to update dates automatically after reviewing.
+          EOF
+          )
 
           EXISTING=$(gh issue list --state open --label "$LABEL" --search "$TITLE" --json number --jq '.[0].number // empty')
 
