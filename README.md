@@ -86,7 +86,4 @@ See [`project-initialization/README.md`](project-initialization/README.md) for t
 
 The template ships tracked assistant-native assets in `.claude/`, `.copilot/`, `.codex/`, and `.opencode/`.
 
-- Vendored Superpowers assets are synced from `/home/hexaper/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0`.
-- Keep only machine-specific files local, such as `.claude/settings.local.json` and ignored OpenCode workspace files under `.opencode/`.
-- GitHub Copilot's actual repository instruction entrypoint remains `.github/copilot-instructions.md`.
-- Codex uses root `AGENTS.md`, `.codex/hooks.json`, and `.agents/skills/` as its repo-native runtime surface.
+
