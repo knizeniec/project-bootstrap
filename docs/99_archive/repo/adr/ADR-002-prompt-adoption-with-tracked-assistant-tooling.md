@@ -1,7 +1,7 @@
 ---
 title: ADR-002 Prompt-Based Template Adoption with Tracked Assistant-Native Tooling
-status: active
-record_class: canonical
+status: archived
+record_class: historical
 audience: [internal]
 owner: architecture-maintainer
 capability: architecture
@@ -12,7 +12,7 @@ last_reviewed: 2026-05-07
 
 # ADR-002: Keep prompt-based template adoption and track assistant-native tooling in-repo
 
-- Status: Accepted
+- Status: Archived
 - Date: 2026-05-07
 - Deciders: Template maintainers
 - Consulted: Documentation maintainers
@@ -20,7 +20,7 @@ last_reviewed: 2026-05-07
 - Tags: [Architecture, Delivery]
 - Supersedes: [ADR-001-skill-first-template-adoption.md](ADR-001-skill-first-template-adoption.md)
 - Superseded by: None
-- Related documents: [../README.md](../README.md), [../00-source-of-truth.md](../00-source-of-truth.md)
+- Related documents: [../../../README.md](../../../README.md), [../../../00-source-of-truth.md](../../../00-source-of-truth.md)
 
 ## Context and problem statement
 

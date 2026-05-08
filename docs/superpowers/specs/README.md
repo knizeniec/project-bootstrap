@@ -21,6 +21,7 @@ Last updated: 2026-05-06
 
 - design notes created before coding
 - scoped specs for one coherent unit of work
+- new active spec records; archived repository specs are under [../../99_archive/repo/superpowers/specs/README.md](../../99_archive/repo/superpowers/specs/README.md)
 
 ## Convention
 

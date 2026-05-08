@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Check that the consolidated init workflow exists across .claude/, .copilot/, .codex/
-and that retired phase wrappers are gone. Run from repo root.
+Check that the consolidated init workflow and bootstrap wiring exist across
+tracked tool surfaces and that retired phase wrappers are gone. Run from repo root.
 """
 
 from pathlib import Path
 import json
 import sys
 
-TOOL_DIRS = [".claude", ".copilot", ".codex"]
+TOOL_DIRS = [".claude", ".copilot", ".codex", ".opencode"]
 RETIRED = [
     "init-triage.md",
     "init-intent.md",
@@ -38,6 +38,15 @@ HOOK_COMMAND_SNIPPETS = {
     ".copilot": '${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd" session-start',
     ".codex": '.codex/hooks/run-hook.cmd" session-start',
 }
+
+OPENCODE_PLUGIN_PATH = Path(".opencode/plugins/superpowers.js")
+
+OPENCODE_PLUGIN_TEXT_CHECKS = [
+    "using-superpowers",
+    "config.skills.paths",
+    "experimental.chat.messages.transform",
+    "EXTREMELY_IMPORTANT",
+]
 
 errors = []
 
@@ -75,10 +84,22 @@ for tool, path in HOOK_FILES.items():
     if not any(HOOK_COMMAND_SNIPPETS[tool] in command for command in commands):
         errors.append(f"SessionStart command mismatch in {path}")
 
+if not OPENCODE_PLUGIN_PATH.exists():
+    errors.append(f"MISSING OPENCODE BOOTSTRAP: {OPENCODE_PLUGIN_PATH}")
+else:
+    plugin_content = OPENCODE_PLUGIN_PATH.read_text()
+    for phrase in OPENCODE_PLUGIN_TEXT_CHECKS:
+        if phrase not in plugin_content:
+            errors.append(
+                f"MISSING OPENCODE BOOTSTRAP PHRASE in {OPENCODE_PLUGIN_PATH}: {phrase!r}"
+            )
+
 if errors:
     print("Parity check FAILED:")
     for error in errors:
         print(f"  {error}")
     sys.exit(1)
 
-print("Parity check PASSED: consolidated init workflow present across all tool surfaces.")
+print(
+    "Parity check PASSED: consolidated init workflow and bootstrap wiring present across tracked tool surfaces."
+)

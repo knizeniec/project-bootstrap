@@ -20,9 +20,7 @@ last_reviewed: 2026-05-08
 
 A fresh clone of this template is unspecialized. To initialize it for a specific project, run `/init` in your AI tool's command surface.
 
-- Claude: `.claude/commands/init.md`
-- Copilot: `.copilot/commands/init.md`
-- Codex: `.codex/commands/init.md`
+Tool-specific `/init` wrappers live outside this directory. This directory remains tool-neutral and defines the shared workflow contract they must all follow.
 
 The command reads `docs/superpowers/plans/YYYY-MM-DD-project-initialization.md` as its sole source of truth.
 

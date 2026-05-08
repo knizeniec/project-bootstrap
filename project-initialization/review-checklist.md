@@ -28,7 +28,7 @@ Read this file before running any review pass. This is the rubric for the `init-
 - All produced docs are reachable from `docs/INDEX.md`.
 - `README.md` project description matches the brief's one-line summary.
 - `AGENTS.md` directory inventory includes all directories added during Adapt.
-- `CLAUDE.md` pointer is accurate.
+- Tracked repository entry surfaces and tool-specific `/init` wrappers match the current initialization workflow.
 - No slot-template placeholder text remains unfilled in any adapted file.
 - All `src/AGENTS.md`, `bin/README.md`, `diagrams/README.md`, `examples/README.md` slot guidance reflects the chosen stack.
 

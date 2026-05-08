@@ -15,7 +15,7 @@ This directory is part of the tracked template contract.
 - Keep machine-specific overrides local-only. `settings.local.json` stays untracked; `settings.json` is the tracked repo default.
 
 ## Editing Guidance
-- Do not use a CLAUDE.md files in this repository; 
-- Put repository-wide workflow rules in root `AGENTS.md`, not here.
-- Document any vendoring source/version change in this directory's `README.md` and the root docs updated in the same task. 
 
+- Do not use `CLAUDE.md` files in this repository.
+- Put repository-wide workflow rules in root `AGENTS.md`, not here.
+- Document any vendoring source/version change in this directory's `README.md` and the root docs updated in the same task.

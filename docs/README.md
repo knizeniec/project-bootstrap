@@ -32,7 +32,7 @@ This tree is the canonical documentation system for a project built from this te
 - Control spine: [README.md](README.md), [Architecture.md](Architecture.md), [00-documentation-standards.md](00-documentation-standards.md), [00-source-of-truth.md](00-source-of-truth.md), and [INDEX.md](INDEX.md)
 - Canonical capability areas: [00_operating_model/](00_operating_model/README.md) through [09_user_documentation/](09_user_documentation/README.md)
 - Example artifacts: [docs/_examples/ manager/internal/end-user seeds](./_examples/canonical-manager.md)
-- Supporting or historical areas: [adr/](adr/README.md), [superpowers/](superpowers/README.md), [99_archive/](99_archive/README.md)
+- Supporting or historical areas: [adr/](adr/README.md), [superpowers/](superpowers/README.md), [99_archive/](99_archive/README.md), and repository-specific archived records in [99_archive/repo/README.md](99_archive/repo/README.md)
 
 ## Audience model
 
@@ -110,8 +110,10 @@ For realistic filled examples of key templates, see [_examples/](_examples/).
 
 Docs quality is checked by automation so navigation, metadata, and links stay reliable.
 
-- Frontmatter and cross-file rules: `PYTHONPATH=tools/docs_validator/src python3 -m docs_validator.cli docs docs/_examples`
-- Markdown style: `npx -y markdownlint-cli2 "**/*.md" "!node_modules" "!.opencode" "!.tmp"`
+- Install docs validator: `python -m pip install -e "./tools/docs_validator[dev]"`
+- Docs validator tests: `python -m pytest -q tools/docs_validator/tests`
+- Frontmatter and cross-file rules on active canonical docs: `python -m docs_validator.cli docs/README.md docs/Architecture.md docs/00-documentation-standards.md docs/00-source-of-truth.md docs/INDEX.md docs/_examples docs/00_operating_model docs/00_governance docs/01_strategy docs/02_product docs/03_architecture docs/04_ai_governance docs/05_testing_acceptance docs/06_security_operations docs/07_delivery docs/08_references docs/09_user_documentation docs/adr`
+- Markdown style: `npx -y markdownlint-cli2`
 - Link checking: `lychee --config lychee.toml --offline --no-progress './**/*.md'`
 - Workflow entrypoint: [../.github/workflows/docs.yml](../.github/workflows/docs.yml)
 

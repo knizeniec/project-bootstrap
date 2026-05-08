@@ -1,7 +1,7 @@
 # Artifact Rubric: Repository Sync
 
 - Phase: 5 (Adapt)
-- Output paths: `README.md`, `AGENTS.md`, `CLAUDE.md`, `bin/README.md`, `diagrams/README.md`, `examples/README.md`
+- Output paths: `README.md`, `AGENTS.md`, `bin/README.md`, `diagrams/README.md`, `examples/README.md`
 - Template: n/a — updates existing files to match canonical docs
 - Prerequisites: language-adaptation (must be done first)
 
@@ -22,7 +22,7 @@ Steps:
 2. Update `README.md`: replace template description with project name and summary; update the layout table to reflect actual directories in use; remove the initialization journey diagram (it is no longer needed post-init).
 3. Update `AGENTS.md`: update directory inventory; update routing guidance to reference project-specific docs instead of template guidance.
 4. Update slot READMEs to describe their actual role in this project.
-5. Verify repository entry surfaces now point users at the consolidated `/init` workflow instead of any retired `/init-*` command.
+5. Verify repository entry surfaces and tracked tool-specific `/init` wrappers now point users at the consolidated `/init` workflow instead of any retired `/init-*` command.
 
 ## Review hooks
 

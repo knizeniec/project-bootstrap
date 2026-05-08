@@ -26,8 +26,8 @@ last_reviewed: 2026-05-07
 
 | ADR | Title | Status | Date | Notes |
 | --- | --- | --- | --- | --- |
-| [ADR-002](ADR-002-prompt-adoption-with-tracked-assistant-tooling.md) | Prompt-Based Template Adoption with Tracked Assistant-Native Tooling | Accepted | 2026-05-07 | Keeps prompts as the adoption workflow and tracks harness-native integration assets in-repo. |
-| [ADR-001](ADR-001-skill-first-template-adoption.md) | Command-First Template Adoption | Active | 2026-05-07 | Current accepted decision for command-first template adoption workflow. |
+| [ADR-002](../99_archive/repo/adr/ADR-002-prompt-adoption-with-tracked-assistant-tooling.md) | Prompt-Based Template Adoption with Tracked Assistant-Native Tooling | Archived | 2026-05-07 | Archived repository bootstrap ADR retained for traceability. |
+| [ADR-001](../99_archive/repo/adr/ADR-001-skill-first-template-adoption.md) | Command-First Template Adoption | Archived | 2026-05-07 | Archived repository bootstrap ADR retained for traceability. |
 | ADR-000 | Template | draft | 2026-05-07 | Starting point for new decisions |
 
 ## Status notes
@@ -41,5 +41,6 @@ last_reviewed: 2026-05-07
 
 - [README.md](README.md) — ADR policy, lifecycle, and authority rules.
 - [ADR-000-template.md](ADR-000-template.md) — default ADR authoring template.
+- [../99_archive/repo/adr/README.md](../99_archive/repo/adr/README.md) — archived repository ADR history.
 - [../03_architecture/11_adr_index_TEMPLATE.md](../03_architecture/11_adr_index_TEMPLATE.md) — architecture-side ADR snapshot template.
 - [../03_architecture/01_solution_design_TEMPLATE.md](../03_architecture/01_solution_design_TEMPLATE.md) — links architecture baseline sections to ADRs.

@@ -282,6 +282,7 @@ This index should eventually be generated from frontmatter metadata. For now it 
 - [adr/README.md](adr/README.md) — durable decisions that support canonical architecture docs.
 - [superpowers/README.md](superpowers/README.md) — historical specs and plans, not current guidance.
 - [99_archive/README.md](99_archive/README.md) — evidence and retired material only.
+- [99_archive/repo/README.md](99_archive/repo/README.md) — archived repository-specific ADRs, specs, and plans.
 
 ## Related documents
 
