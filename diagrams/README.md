@@ -2,7 +2,7 @@
 
 Purpose: Architecture and workflow diagrams supporting decision records.
 
-This directory is a slot. The [`prompts/language-adaptation.md`](../prompts/language-adaptation.md) adoption prompt may populate or remove it depending on whether the project will maintain diagram sources alongside the code.
+This directory is a slot. The [project-initialization Adapt phase](../project-initialization/phases/5-adapt.md) may populate or remove it depending on whether the project will maintain diagram sources alongside the code.
 
 Template default:
 

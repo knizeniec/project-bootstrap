@@ -45,7 +45,7 @@ This policy does not cover any other AI or ML use on the Helio project, nor does
 
 **Prohibited data.** All PII fields present in the invoice record (customer name, VAT number, billing address, contact email) must not be sent to the LLM provider. The `category-suggester` enforces this by constructing a minimal request object from a strict allowlist of fields; it does not pass the full invoice record.
 
-**Approved model.** Claude Haiku Helio-1 hosted on the provider's EU inference endpoint (`eu-api.anthropic-fictional.example/v1`). Model version is pinned in the `category-suggester` configuration and must not be updated without a documented change review and a new entry in the prompt registry ([05_prompt_registry_helio.md](../04_ai_governance/05_prompt_registry_helio.md)).
+**Approved model.** Claude Haiku Helio-1 hosted on the provider's EU inference endpoint (`eu-api.anthropic-fictional.example/v1`). Model version is pinned in the `category-suggester` configuration and must not be updated without a documented change review and a new entry in the prompt registry (template: [05_prompt_registry_TEMPLATE.md](../04_ai_governance/05_prompt_registry_TEMPLATE.md)).
 
 **Fallback classifier.** When the LLM is unavailable (circuit breaker open), the rule-based fallback classifier applies keyword matching against the 12 categories. Fallback output uses the same response schema with `source: "fallback"` and `confidence: null`. Billing administrators see a distinct indicator when the suggestion came from the fallback.
 
@@ -63,14 +63,14 @@ New AI use cases in Helio follow the organisation's standard AI intake process:
    - Low risk (assistive, human-in-the-loop, no PII): Priya Saxena approves; Lena Rosen (Sponsor) is notified.
    - Medium risk: Lena Rosen approves; legal is consulted.
    - High risk: board-level review required before deployment.
-4. **Evidence linkage:** the approved use case is added to this policy table with a link to the evaluation report and model card. The ADR for the model choice ([ADR-0002](../adr/ADR-0002-llm-provider-choice.md)) records the decision rationale.
+4. **Evidence linkage:** the approved use case is added to this policy table with a link to the evaluation report and model card. The ADR for the model choice (example placeholder: [ADR-0002](../adr/ADR-000-template.md)) records the decision rationale.
 5. **Re-review triggers:** model version change; confidence threshold adjustment; new category labels; any change to the data sent to the classifier; a measured drop in precision/recall below threshold.
 
 The current use case (AI-001) is classified as **low risk** and was approved by Priya Saxena on 2026-04-15, with notification to Lena Rosen.
 
 ## Evaluation and safety
 
-**Pre-deployment evaluation.** Before the classifier is deployed to production, a labelled test set of 1,000 invoice samples (drawn from anonymised historical invoices) must be evaluated. Required thresholds: precision ≥0.85 and recall ≥0.80 across all 12 categories. Results are recorded in [04_evaluation_report_helio_classifier.md](../04_ai_governance/04_evaluation_report_helio_classifier.md).
+**Pre-deployment evaluation.** Before the classifier is deployed to production, a labelled test set of 1,000 invoice samples (drawn from anonymised historical invoices) must be evaluated. Required thresholds: precision ≥0.85 and recall ≥0.80 across all 12 categories. Results are recorded in [04_evaluation_report_TEMPLATE.md](../04_ai_governance/04_evaluation_report_TEMPLATE.md).
 
 **Confidence threshold.** Category suggestions with a confidence score below 0.6 are surfaced to the billing administrator with a visible low-confidence indicator. The administrator cannot accept a low-confidence suggestion without actively confirming it (an extra confirmation step is required in the UI). This threshold is reviewed as part of the monthly drift review and may be adjusted by Priya Saxena without a new policy approval, provided it does not drop below 0.4.
 
@@ -107,8 +107,8 @@ The current use case (AI-001) is classified as **low risk** and was approved by 
 - [filled_prd_example.md](filled_prd_example.md) — worked example PRD for Helio; FR-005, FR-006, NFR-006, and NFR-007 define the product requirements this policy governs.
 - [filled_solution_design_example.md](filled_solution_design_example.md) — worked example solution design; sections 4, 8, and 10 describe the technical implementation of the classifier and its controls.
 - [../04_ai_governance/01_ai_use_policy_TEMPLATE.md](../04_ai_governance/01_ai_use_policy_TEMPLATE.md) — the template this example was derived from.
-- [../04_ai_governance/02_model_card_helio_classifier.md](../04_ai_governance/02_model_card_helio_classifier.md) — model card for Claude Haiku Helio-1; describes training data, known limitations, and provider SLA.
-- [../04_ai_governance/04_evaluation_report_helio_classifier.md](../04_ai_governance/04_evaluation_report_helio_classifier.md) — pre-deployment evaluation results (precision/recall by category).
-- [../04_ai_governance/05_prompt_registry_helio.md](../04_ai_governance/05_prompt_registry_helio.md) — registered prompts used by the `category-suggester`; version-controlled and reviewed on each model update.
-- [../adr/ADR-0002-llm-provider-choice.md](../adr/ADR-0002-llm-provider-choice.md) — architectural decision record for LLM provider selection.
-- [../06_security_operations/01_security_baseline_helio.md](../06_security_operations/01_security_baseline_helio.md) — security baseline defining the control floor the classifier implementation must meet.
+- [../04_ai_governance/02_model_card_TEMPLATE.md](../04_ai_governance/02_model_card_TEMPLATE.md) — model card template for documenting model capabilities, limitations, and provider SLA.
+- [../04_ai_governance/04_evaluation_report_TEMPLATE.md](../04_ai_governance/04_evaluation_report_TEMPLATE.md) — evaluation report template for pre-deployment precision/recall results.
+- [../04_ai_governance/05_prompt_registry_TEMPLATE.md](../04_ai_governance/05_prompt_registry_TEMPLATE.md) — prompt registry template for version-controlled classifier prompts.
+- [../adr/ADR-000-template.md](../adr/ADR-000-template.md) — ADR template for recording model-provider selection decisions.
+- [../06_security_operations/01_security_baseline_TEMPLATE.md](../06_security_operations/01_security_baseline_TEMPLATE.md) — security baseline template defining the control floor the classifier implementation must meet.

@@ -61,7 +61,7 @@ Every capability folder `README.md` must carry a `## Which template should I use
 
 ## Worked-examples convention
 
-Filled, realistic examples that illustrate complete frontmatter and section content for key templates are stored in [_examples/](../_examples/). Current filled examples follow the "Helio" fictional scenario and cover the PRD, solution design, and AI use policy. Use these as known-good references, not as project documents. When a new high-traffic template is added, consider adding a corresponding filled example.
+Filled, realistic examples that illustrate complete frontmatter and section content for key templates are stored in [_examples/](_examples/). Current filled examples follow the "Helio" fictional scenario and cover the PRD, solution design, and AI use policy. Use these as known-good references, not as project documents. When a new high-traffic template is added, consider adding a corresponding filled example.
 
 ## Required metadata
 

@@ -175,7 +175,7 @@ Fill this section when the RFC closes (status becomes `accepted`, `rejected`, or
 - **Decision date:** YYYY-MM-DD
 - **Outcome:** [Accepted / Rejected / Superseded by RFC-NNN]
 - **Rationale summary:** [1–3 sentences on the deciding factors.]
-- **Resulting ADR:** [ADR-NNN: Title](../../adr/ADR-NNN-title.md) *(if accepted and a durable decision was recorded)*
+- **Resulting ADR:** [ADR-NNN: Title](../../adr/ADR-000-template.md) *(if accepted and a durable decision was recorded; replace with the actual ADR file path)*
 - **Follow-up actions:** [Linked tickets or next steps, if any.]
 
 ## Related documents
