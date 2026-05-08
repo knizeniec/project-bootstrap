@@ -12,8 +12,20 @@ exclude = [
 ]
 
 exclude_path = [
+  ".tmp",
+  ".agents/skills",
+  ".claude/agents",
+  ".claude/skills",
+  ".codex/agents",
+  ".codex/skills",
+  ".copilot/agents",
+  ".copilot/skills",
+  ".opencode/agents",
+  ".opencode/node_modules",
+  ".opencode/skills",
   "node_modules",
   ".venv",
   "tools/docs_validator/tests/fixtures",
   "docs/99_archive",
+  "docs/superpowers",
 ]
