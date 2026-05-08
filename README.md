@@ -85,5 +85,3 @@ See [`project-initialization/README.md`](project-initialization/README.md) for t
 ## Assistant-native tooling
 
 The template ships tracked assistant-native assets in `.claude/`, `.copilot/`, `.codex/`, and `.opencode/`.
-
-
